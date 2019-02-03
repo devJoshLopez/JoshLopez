@@ -7,10 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Lopez Creative - Creative Front End Web Development to engage your users</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Oswald:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 </head>
 
 <body>
-  <div class="grid-wrapper">
+  <div class="page-wrapper">
 
     <header>
       <nav>
@@ -21,14 +26,14 @@
           <h1>Lopez Creative</h1>
         </a>
 
-        <p>Not being noticed online? I create websites and online content that attracts attention so you have an advantage over your competition.</p>
+        <p class="nav-callout">Most businesses are drowning in a sea of conformity. I am a Creative Front End Web Developer who want's to see your business stand out.</p>
 
         <ul>
-          <li>About</li>
-          <li>Portfolio</li>
-          <li>Testimonials</li>
-          <li>Videos</li>
-          <li>Contact/Hire</li>
+          <li><a href="#solution">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="http://youtube.com" target="_blank">Videos</a></li>
+          <li><a href="#commitment">Contact/Hire</a></li>
         </ul>
       </nav>
     </header>
@@ -37,12 +42,15 @@
       <article>
 
         <div id="curiosity">
-          <h1>Don't Fear The WILD</h1>
-          <h2>Be WILD</h2>
+          <div class="content">
+            <h1>Don't Fear The Wild, Be Wild</h1>
+            <div>Passionate</div>
+            <div>Reliable</div>
+            <div>Personable</div>
+            <button id="switcher-tv">Turn on/off</button>
+          </div>
 
-          <div>Passionate</div>
-          <div>Reliable</div>
-          <div>Personable</div>
+          <div class="static-wrapper crt"></div>
         </div>
 
 
@@ -54,7 +62,7 @@
 
         <section id="solution">
           <h1>About Me</h1>
-          <p>Most businesses are drowning in a sea of conformity. I am a Creative Front End Developer who want's to see your business stand out.</p>
+          <p>Most businesses are drowning in a sea of conformity. I am a Creative Front End Web Developer who want's to see your business stand out.</p>
           <p>Hello World, I'm Josh Lopez - Creative Front End Web Developer</p>
           <button>Read More</button>
         </section>
@@ -81,7 +89,7 @@
         </section>
 
         <section id="commitment">
-
+          <!-- dont forget to put a path here to show what will come -->
         </section>
       </article>
 
@@ -92,10 +100,18 @@
 
     <footer>
 
+      <p>Donec mollis hendrerit risus. Ut a nisl id ante tempus hendrerit. Proin magna. Vestibulum dapibus nunc ac augue. Morbi mollis tellus ac sapien.
+
+        Nunc nec neque. Curabitur suscipit suscipit tellus. Suspendisse feugiat. Phasellus magna. Phasellus accumsan cursus velit.</p>
+
     </footer>
 
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/hmongouachon/mgGlitch/master/src/mgGlitch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+  <script src="./js/scripts.js"></script>
 </body>
 
 </html>
