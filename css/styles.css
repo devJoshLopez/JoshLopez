@@ -66,9 +66,10 @@ header {
 	position: fixed;
 	bottom: 0;
 	right: 0;
+	z-index: 10;
 	width: 100%;
-	height: 150px;
-	padding: 21px;
+	height: auto;
+	padding: 5px 20px;
 	overflow: hidden;
 	background: #111111;
 	color: #ffffff;
@@ -80,24 +81,24 @@ header {
 
 header .lopez-creative-logo {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
 header .lopez-creative-logo svg {
 	fill: #ffffff;
-	width: 100%;
-	height: auto;
+	width: auto;
+	height: 2em;
 	margin-right: 5px;
 }
 
 header .lopez-creative-logo h1 {
 	line-height: 0.85;
-	font-size: 1.8em;
+	font-size: 1.3em;
 	letter-spacing: 0.06em;
 }
 header .lopez-creative-logo h1 span {
 	font-size: 1.2em;
-	margin-left: -0.2em;
 }
 
 header .nav-callout {
@@ -111,10 +112,13 @@ header ul {
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	display: flex;
+	justify-content: space-between;
 }
 
 header ul li {
-	margin-bottom: 15px;
+	margin-bottom: 5px;
+	text-align: center;
 }
 
 header ul li a i {
@@ -123,6 +127,38 @@ header ul li a i {
 }
 header ul li a:hover i {
 	animation: bounce 0.5s;
+}
+
+header ul li a .nav-text {
+	display: none;
+}
+
+header ul li:last-child {
+	display: none;
+}
+
+header ul li a.degree-link {
+	width: 60%;
+	margin: 0 auto;
+}
+
+header ul li svg .seal-outline {
+	fill: #fff;
+}
+header ul li svg .seal-interior {
+	fill: #333333;
+}
+header ul li svg .seal-leaf-cap-interior {
+	fill: #ffdc00;
+}
+header ul li svg .seal-leaf-cap-outlines {
+	fill: #111;
+}
+header ul li svg .seal-text {
+	fill: #fff;
+}
+header ul li svg .seal-cap-glow {
+	fill: #111;
 }
 
 main {
@@ -145,7 +181,7 @@ main {
 	background-position: center;
 	background-size: cover;
 	color: #fff;
-	font-size: 2em;
+	font-size: 1em;
 }
 
 #curiosity .content {
@@ -231,7 +267,7 @@ main {
 #curiosity .fly-in {
 	position: relative;
 	z-index: 1;
-	font-size: 4em;
+	font-size: 2.2em;
 	line-height: 0.8;
 	min-height: 420px;
 	flex-grow: 1;
@@ -367,10 +403,57 @@ footer {
 		right: 0;
 		width: 242px;
 		height: 100%;
+		padding: 21px;
+	}
+
+	header .lopez-creative-logo svg {
+		width: 100%;
+		height: auto;
+	}
+
+	header .lopez-creative-logo h1 {
+		font-size: 1.8em;
+	}
+
+	header .lopez-creative-logo h1 span {
+		margin-left: -0.2em;
 	}
 
 	header .nav-callout {
 		display: block;
+	}
+
+	header ul {
+		display: block;
+	}
+
+	header ul li {
+		text-align: left;
+		margin-bottom: 15px;
+	}
+
+	header ul li:last-child {
+		display: block;
+	}
+
+	header ul li a .nav-text {
+		display: inline-block;
+	}
+
+	header ul li a.degree-link {
+		display: block;
+	}
+
+	header ul li svg {
+		display: inline-block;
+	}
+
+	#curiosity {
+		font-size: 2em;
+	}
+
+	#curiosity .fly-in {
+		font-size: 4em;
 	}
 }
 
