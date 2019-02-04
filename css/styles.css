@@ -275,23 +275,29 @@ main {
 }
 
 #curiosity .fly-in div {
-	position: absolute;
+	/* position: absolute; */
 	opacity: 0;
-	left: 50%;
+	/* left: 50%;
 	top: 50%;
-	transform: translate3d(-50%, -50%, 0px) scale(0.1);
-	padding: 0.1em;
-	white-space: nowrap;
-	overflow: hidden;
-	font-family: "Bangers", cursive;
+	transform: translate3d(-50%, -50%, 0px) scale(0.1); */
+	/* padding: 0.1em; */
+	/* white-space: nowrap; */
+	/* overflow: hidden; */
+	/* font-family: "Bangers", cursive; */
+	/* width: calc(100vw - 42px); */
+}
+
+#curiosity .fly-in div svg {
+	width: 70vw;
+	height: auto;
 }
 
 #curiosity .fly-in span {
-	display: inline;
-	font-family: "Trade Winds", cursive;
-	font-size: 1.2em;
-	text-transform: uppercase;
-	color: #ff4136;
+	/* display: inline; */
+	/* font-family: "Trade Winds", cursive; */
+	/* font-size: 1.2em; */
+	/* text-transform: uppercase; */
+	/* color: #ff4136; */
 }
 
 #curiosity .static-wrapper {
@@ -362,6 +368,10 @@ main {
 }
 
 #enlightenment {
+	background-color: rosybrown;
+}
+
+#enlightenment h1 {
 }
 
 #solution {
@@ -454,6 +464,10 @@ footer {
 
 	#curiosity .fly-in {
 		font-size: 4em;
+	}
+
+	#curiosity .fly-in div svg {
+		width: 42vw;
 	}
 }
 

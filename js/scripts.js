@@ -54,15 +54,17 @@ $(document).ready(function () {
   TweenMax.set(".fly-in", {
     perspective: 400
   });
-
-  // todo fix textshadow to be em based
   TweenMax.set(".fly-in div", {
     rotationY: -10,
     rotationX: 10,
     rotation: 5,
     scale: 0.2,
     opacity: 0,
-    textShadow: "0px -6px 0 #212121, 0px -6px 0 #212121, 0px 6px 0 #212121, 0px 6px 0 #212121, -6px 0px 0 #212121, 6px 0px 0 #212121, -6px 0px 0 #212121, 6px 0px 0 #212121, -6px - 6px 0 #212121, 6px -6px 0 #212121, -6px 6px 0 #212121, 6px 6px 0 #212121, -6px 18px 0 #212121, 0px 18px 0 #212121, 6px 18px 0 #212121, 0 19px 1px #000000"
+    position: "absolute",
+    left: '50%',
+    top: '50%',
+    xPercent: '-50',
+    yPercent: '-50',
   });
 
   // Init timeline
