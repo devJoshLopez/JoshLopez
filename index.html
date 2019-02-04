@@ -8,7 +8,7 @@
   <title>Lopez Creative - Creative Front End Web Development to engage your users</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Bangers|Oswald:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Trade+Winds|Oswald:400,700" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css">
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
@@ -42,16 +42,26 @@
       <article>
 
         <div id="curiosity">
-          <div class="content">
-            <h1>Don't Fear The Wild, Be Wild</h1>
-            <div>Passionate</div>
-            <div>Reliable</div>
-            <div>Personable</div>
-            <button id="switcher-tv">Turn on/off</button>
-          </div>
+          <div class="content flex-columned">
+            <h1 style="display:none">Lopez Creative - Creative Front End Web Development to engage your users</h1>
+            <button id="tv-toggle">
+              <i class="fas fa-power-off"></i>
+              <div class="tooltip-text">Turn Background Off/On</div>
+            </button>
+            <div class="fly-in">
+              <div>Don't Fear <br>The <span>Wild</span></div>
+              <div>Be <span>Wild</span></div>
+            </div>
+            <div class="curiosity-bottom flex-rowed">
+              <div>Passionate</div>
+              <div>Reliable</div>
+              <div>Personable</div>
+            </div>
+          </div> <!-- end content div -->
 
-          <div class="static-wrapper crt"></div>
-        </div>
+          <div class="crt-overlay"></div>
+          <div class="static-wrapper"></div>
+        </div><!-- end curiosity div -->
 
 
         <section id="enlightenment">
