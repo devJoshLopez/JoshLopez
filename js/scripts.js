@@ -54,6 +54,8 @@ $(document).ready(function () {
   TweenMax.set(".fly-in", {
     perspective: 400
   });
+
+  // todo fix textshadow to be em based
   TweenMax.set(".fly-in div", {
     rotationY: -10,
     rotationX: 10,
