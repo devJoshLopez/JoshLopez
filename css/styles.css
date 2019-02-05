@@ -22,6 +22,7 @@ h5,
 h6 {
   font-family: "Bangers", cursive;
   letter-spacing: 0.06em;
+  line-height: 0.9;
 }
 
 a {
@@ -71,6 +72,7 @@ a.social-link i {
   display: flex;
     justify-content: center;
     align-items: stretch;
+    flex-wrap: wrap;
     min-height: 100vh;
 }
 .flex-rowed-section-content div {
@@ -523,6 +525,10 @@ footer {}
 
   header ul li svg {
     display: inline-block;
+  }
+
+  .flex-rowed-section-content {
+      flex-wrap: nowrap;
   }
 
   #curiosity {
