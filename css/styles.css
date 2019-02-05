@@ -51,6 +51,10 @@ a.social-link i {
   margin-left: 6px;
 }
 
+p {
+  margin-top: 0;
+}
+
 .flex-columned {
   display: flex;
   flex-direction: column;
@@ -75,10 +79,21 @@ a.social-link i {
     flex-wrap: wrap;
     min-height: 100vh;
 }
+
 .flex-rowed-section-content div {
   align-self: center;
  padding: 21px; 
  width: 100%;
+}
+
+.flex-rowed-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+}
+.flex-rowed-content div {
+  padding: 0 21px;
 }
 
 .flex-rowed-space-around {
@@ -196,8 +211,6 @@ header ul li svg .seal-cap-glow {
   fill: #111;
 }
 
-main {}
-
 #curiosity,
 #enlightenment,
 #solution,
@@ -205,6 +218,7 @@ main {}
 #testimonials,
 #commitment {
   min-height: 100vh;
+  border-bottom: 3px solid #111;
 }
 
 #curiosity {
@@ -312,29 +326,12 @@ main {}
 }
 
 #curiosity .fly-in div {
-  /* position: absolute; */
   opacity: 0;
-  /* left: 50%;
-	top: 50%;
-	transform: translate3d(-50%, -50%, 0px) scale(0.1); */
-  /* padding: 0.1em; */
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
-  /* font-family: "Bangers", cursive; */
-  /* width: calc(100vw - 42px); */
 }
 
 #curiosity .fly-in div svg {
   width: 70vw;
   height: auto;
-}
-
-#curiosity .fly-in span {
-  /* display: inline; */
-  /* font-family: "Trade Winds", cursive; */
-  /* font-size: 1.2em; */
-  /* text-transform: uppercase; */
-  /* color: #ff4136; */
 }
 
 #curiosity .static-wrapper {
@@ -352,7 +349,6 @@ main {}
   background: -webkit-linear-gradient(to left, #16222a, #3a6073);
   background: linear-gradient(to left, #16222a, #3a6073);
   background-size: cover;
-  /* background-image: url(https://media.giphy.com/media/pyqqSHqdekwVi/giphy.gif); */
   background-image: url(https://cldup.com/gn3s3Fg75t.gif);
   z-index: 0;
 }
@@ -402,9 +398,6 @@ main {}
   pointer-events: none;
 }
 
-#enlightenment {
-  /* background-color: rosybrown; */
-}
 
 #enlightenment .turtle-content {
   background-image: url(../images/turtle-background.svg);
@@ -445,18 +438,39 @@ main {}
 }
 
 
+#solution .bttf-content {
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  align-self: stretch;
+  flex-grow: 1;
+  padding: 42px;
+  overflow: hidden;
+  position: relative;
+}
 
-#enlightenment h1 {}
+#solution .flex-rowed-content {
+  margin-bottom: 21px;
+}
 
-#solution {}
+#solution .josh-lopez {
+  border-radius: 50%;
+  width: 150px;
+  max-width: 100%;
+  max-height: 150px;
+}
 
-#portfolio {}
+#solution .more-content {
+  display: none;
+}
 
-#testimonials {}
+/* #portfolio {} */
 
-#commitment {}
+/* #testimonials {} */
 
-footer {}
+/* #commitment {} */
+
+/* footer {} */
 
 /* Tablet size and above */
 @media only screen and (min-width: 768px) {
