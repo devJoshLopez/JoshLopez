@@ -107,6 +107,68 @@ $(document).ready(function () {
     }, "secondDiv")
     .to(".fly-in div:nth-child(2)", 1, {
       opacity: 0,
-    }, "secondDiv+=3")
+    }, "secondDiv+=3");
+
+
+    var turtlePower = $(".sewer-container");
+    var turtleTimeline = new TimelineMax();
+
+    TweenMax.set(".sewer-cover", {
+      position: "absolute",
+      left: '50%',
+      top: '50%',
+      xPercent: '-50',
+      yPercent: '-50',
+    });
+
+    turtleTimeline
+    .to(".sewer-cover", 1, {scale: 1.03, ease:Power4.easeInOut})
+   .to(".sewer-cover", 1, {left: '40%', top: '50%', ease:Power4.easeInOut}, "-=0.7")
+   .reverse(); //start in reversed state
+  //  .timeScale(4) //speed it up for testing
+
+  turtlePower.hover(function(){
+  //set the reversed state equal to inverse of current reversed state (toggle direction)
+  turtleTimeline.reversed(!turtleTimeline.reversed());
+}); 
+
+
+var pizzaBite = false;
+
+function showPizzaCursor(e) {
+  $(".turtle-content .cursor").css({
+    top : (e.screenY - 150),
+    left: (e.screenX - 10),
+    opacity: 1
+  });
+  $(".sewer-hole").on('click' , bitePizzaCursor);
+};
+
+
+function bitePizzaCursor(e) {
+  if (!pizzaBite) {
+    pizzaBite = true;
+    pizzaSound.play();
+    $(".full-slice").css({
+      display : "none"
+    });
+  };
+};
+
+function hidePizzaCursor(e) {
+  $(".turtle-content .cursor").css({
+    opacity: 0
+  });
+};
+
+$(".turtle-content").on('mousemove' , showPizzaCursor);
+$(".turtle-content").on('mouseout' , hidePizzaCursor);
+
+
+const pizzaSound = new Howl({
+  src: ['../sounds/pizza-time-turtles-in-time.mp3'],
+  volume: 0.6
+});
+
 
 });
