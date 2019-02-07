@@ -455,22 +455,22 @@ header ul li svg .seal-cap-glow {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   min-height: 100%;
 }
 
 #solution .bttf-content .lightning-container {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   padding: 0;
 }
 
 #solution .bttf-content .lightning-streak {
-  /* max-width: 30%;
-  height: auto; */
-  margin-top: -10px;
+  display: block;
+  margin: -10px auto 0 auto;
+  height: 100%;
   stroke-width: 0;
   stroke: #f9f181;
-
 }
 
 #solution .bttf-content .clock-tower-container {

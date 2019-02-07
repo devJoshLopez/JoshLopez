@@ -142,15 +142,20 @@ $(document).ready(function () {
 
   var pizzaBite = false;
 
-  function showPizzaCursor(e) {
+  function trackPizzaCursor(e) {
     $(".turtle-content .cursor").css({
       top: (e.clientY - 80),
-      left: (e.clientX - 20),
-      opacity: 1
+      left: (e.clientX - 20)
     });
     $(".sewer-hole").on('click', bitePizzaCursor);
   }
 
+  function showPizzaCursor(e) {
+    $(".turtle-content .cursor").css({
+      opacity: 1
+    });
+
+  }
 
   function bitePizzaCursor(e) {
     if (!pizzaBite) {
@@ -168,8 +173,10 @@ $(document).ready(function () {
     });
   }
 
-  $(".turtle-content").on('mousemove', showPizzaCursor);
-  $(".turtle-content").on('mouseout', hidePizzaCursor);
+  $(".turtle-content").on('mousemove', trackPizzaCursor);
+  $(".turtle-content").on('mouseenter', showPizzaCursor);
+  $(".turtle-content").on('mouseleave', hidePizzaCursor);
+
 
 
   const pizzaSound = new Howl({
@@ -235,5 +242,6 @@ $(document).ready(function () {
   }
   randomLightning();
 
+  // $(".turtle-content").on('mousemove', showPizzaCursor);
 
 });
