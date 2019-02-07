@@ -437,17 +437,54 @@ header ul li svg .seal-cap-glow {
   fill:#fff;
 }
 
-
 #solution .bttf-content {
   background: #000000;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to top, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0 42px 0 42px;
   align-self: stretch;
   flex-grow: 1;
-  padding: 42px;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
 }
+
+#solution .bttf-content .lightning-container {
+  flex-grow: 1;
+  padding: 0;
+}
+#solution .bttf-content .lightning-streak {
+  /* max-width: 30%;
+  height: auto; */
+  margin-top: -10px;
+  stroke-width: 0;
+  stroke: #f9f181;
+  
+}
+
+#solution .bttf-content .clock-tower-container {
+  padding: 0;
+}
+#solution .bttf-content .clock-tower {
+  max-width: 100%;
+  height: auto;
+}
+
+#solution .bttf-content .delorean-container {
+  padding: 0;
+}
+#solution .bttf-content .delorean {
+  max-width: 30%;
+  height: auto;
+}
+#solution .bttf-content .fire {
+  max-width: 30%;
+  height: auto;
+}
+
 
 #solution .flex-rowed-content {
   margin-bottom: 21px;
