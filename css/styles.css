@@ -51,6 +51,17 @@ a.social-link i {
   margin-left: 6px;
 }
 
+button {
+  background: #fcf04c;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+:focus {
+  outline: none;
+}
+
 p {
   margin-top: 0;
 }
@@ -448,7 +459,7 @@ header ul li svg .seal-cap-glow {
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to top, #434343, #000000);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  padding: 0 42px 0 42px;
+  padding: 0 42px 42px 42px;
   align-self: stretch;
   flex-grow: 1;
   overflow: hidden;
@@ -483,7 +494,9 @@ header ul li svg .seal-cap-glow {
 }
 
 #solution .bttf-content .delorean-container {
+  min-height: 35px;
   padding: 0;
+  position: relative;
 }
 
 #solution .bttf-content .delorean {
@@ -495,7 +508,6 @@ header ul li svg .seal-cap-glow {
   max-width: 30%;
   height: auto;
 }
-
 
 #solution .flex-rowed-content {
   margin-bottom: 21px;
@@ -509,7 +521,15 @@ header ul li svg .seal-cap-glow {
 }
 
 #solution .more-content {
-  display: none;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: height 0.3s ease-in-out, opacity 0.5s ease;
+}
+
+#solution .more-content.show {
+  height: 100%;
+  opacity: 1;
 }
 
 /* #portfolio {} */

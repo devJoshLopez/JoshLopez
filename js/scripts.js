@@ -242,6 +242,76 @@ $(document).ready(function () {
   }
   randomLightning();
 
-  // $(".turtle-content").on('mousemove', showPizzaCursor);
+
+
+
+
+
+
+
+
+
+
+  var deloreanTimeline = new TimelineMax();
+
+  TweenMax.set(".delorean", {
+    position: "absolute",
+    left: '150%',
+    bottom: '0',
+    xPercent: '-50',
+  });
+
+  TweenMax.set(".fire", {
+    position: "absolute",
+    left: '42%',
+    bottom: '0',
+    xPercent: '-50',
+    opacity: '0'
+  });
+
+  function showDelorean(e) {
+    deloreanTimeline
+    .to(".delorean", 1, {
+      left: '50%',
+      ease: Power4.easeInOut
+    });
+  }
+
+  function hideDelorean(e) {
+    deloreanTimeline
+    .to(".delorean", 1, {
+      left: '-150%',
+      ease: Power4.easeInOut
+    })
+
+    .to(".fire", 1, {
+      opacity: '1',
+      ease: Back.easeOut.config(1.4)
+    }, "-=0.65")
+
+    .set(".delorean", {
+      position: "absolute",
+      left: '150%'
+    })
+
+    .to(".fire", 1, {
+      opacity: '0',
+      ease: Power4.easeInOut
+    }, "+=0.9");
+  }
+
+  $(".bttf-content").on('mouseenter', showDelorean);
+  $(".bttf-content").on('mouseleave', hideDelorean);
+
+  $("#lightning-button").on('click', function () {
+    $(".more-content").toggleClass("show");
+    var duration = 0.3,
+        delay = 0.08;
+    TweenMax.to("#lightning-button", duration, {scaleY: 1.6, ease: Expo.easeOut});
+    TweenMax.to("#lightning-button", duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
+    TweenMax.to("#lightning-button", duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
+
+  });
+
 
 });
