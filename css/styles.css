@@ -564,6 +564,13 @@ header ul li svg .seal-cap-glow {
   position: relative;
 }
 
+#portfolio .blockquote-container {
+  margin: 42px auto;
+  width: 420px;
+  text-align: center;
+  font-style: italic;
+}
+
 #portfolio .portfolio-content {
   display: flex;
   flex-wrap: wrap;
@@ -605,6 +612,7 @@ header ul li svg .seal-cap-glow {
 }
 
 #portfolio .card-item h2 {
+  color: #fff;
   position: absolute;
   bottom: 0;
   left: 0;
