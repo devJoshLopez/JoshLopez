@@ -67,6 +67,27 @@ p {
   margin-top: 0;
 }
 
+#mc_embed_signup {
+  background:#fff; 
+  clear:left;
+  max-width: 600px;
+  margin: 0 auto;
+ }
+ #mc_embed_signup p {
+   font-size: 0.8em;
+   color: #888;
+ }
+
+ #mc_embed_signup .button {
+  background: #fcf04c !important;
+  color: #111 !important;
+  font-size: 1em !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 25px !important;
+  height: auto !important;
+ }
+
 .js-tilt {
   position: relative;
   overflow: hidden;
@@ -496,7 +517,7 @@ header ul li svg .seal-cap-glow {
 
 #solution .bttf-content .lightning-streak {
   display: block;
-  margin: -10px auto 0 auto;
+  margin: 0 auto;
   height: 100%;
   stroke-width: 0;
   stroke: #f9f181;
@@ -648,12 +669,132 @@ header ul li svg .seal-cap-glow {
   z-index: 0;
 }
 
+#commitment {
+  padding: 21px;
+}
 
-/* #testimonials {} */
+#commitment .commitment-steps-container {
+  display: flex;
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center;  
+}
 
-/* #commitment {} */
 
-/* footer {} */
+#commitment .commitment-step {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  margin: 21px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center;  
+}
+
+#commitment .commitment-step i {
+font-size: 2em;
+}
+
+
+/* #testimonials {
+
+} */
+
+#testimonials .whovian-content {
+  background-color: #2A2738;
+  padding: 0;
+  align-self: stretch;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+#testimonials .whovian-content .beating-hearts {
+  position: absolute;
+  width: 40%;
+  
+}
+
+#testimonials .whovian-content .beating-hearts .heart-1 {
+  animation: heartbeat 0.35s ease infinite;
+}
+#testimonials .whovian-content .beating-hearts .heart-2 {
+  animation: heartbeat 0.35s ease infinite;
+  animation-delay: 0.25s;
+}
+
+#testimonials .whovian-content .doctor-stripes {
+width: 100%;
+}
+
+#testimonials .whovian-content .suspender {
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  width: 20% !important;
+  padding: 0 !important;
+  /* display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: center; */
+  text-align: center;
+}
+
+#testimonials .whovian-content .suspender-left {
+  left: 21px;
+}
+
+#testimonials .whovian-content .suspender-right {
+  right: 21px;
+}
+
+#testimonials .whovian-content .suspender .strap {
+  /* align-self: stretch;
+  height: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -5%; */
+
+  position: absolute;
+  top: -5%;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+}
+
+#testimonials .whovian-content .suspender .strap-buckle {
+  /* align-self: flex-end;
+  height: 10%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -5%; */
+
+  position: absolute;
+    bottom: -3%;
+    height: 10%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+}
+footer p {
+  padding: 0;
+  margin: 0;
+}
 
 
 
@@ -876,5 +1017,17 @@ header ul li svg .seal-cap-glow {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50%, 67% {
+    transform: scaleY(1.05);
+  }
+  70% {
+    transform: scale(1.05);
   }
 }
