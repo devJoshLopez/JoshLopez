@@ -1,0 +1,65 @@
+#testimonials .whovian-content {
+	background-color: #2A2738;
+	padding: 0;
+	align-self: stretch;
+	flex-grow: 1;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+}
+
+#testimonials .whovian-content .beating-hearts {
+	position: absolute;
+	width: 40%;
+}
+
+#testimonials .whovian-content .beating-hearts .heart-1 {
+	animation: heartbeat 0.35s ease infinite;
+}
+
+#testimonials .whovian-content .beating-hearts .heart-2 {
+	animation: heartbeat 0.35s ease infinite;
+	animation-delay: 0.25s;
+}
+
+#testimonials .whovian-content .doctor-stripes {
+	width: 100%;
+}
+
+#testimonials .whovian-content .suspender {
+	position: absolute;
+	top: 0;
+	min-height: 100%;
+	width: 20% !important;
+	padding: 0 !important;
+	text-align: center;
+}
+
+#testimonials .whovian-content .suspender-left {
+	left: 21px;
+}
+
+#testimonials .whovian-content .suspender-right {
+	right: 21px;
+}
+
+#testimonials .whovian-content .suspender .strap {
+	position: absolute;
+	top: -5%;
+	height: 100%;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: 2;
+}
+
+#testimonials .whovian-content .suspender .strap-buckle {
+	position: absolute;
+	bottom: -3%;
+	height: 10%;
+	left: 50%;
+	transform: translate(-50%);
+}

@@ -1,0 +1,75 @@
+#solution .bttf-content {
+	background: #000000; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	padding: 0 42px 42px 42px;
+	align-self: stretch;
+	flex-grow: 1;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+}
+
+#solution .bttf-content .lightning-container {
+	padding: 0;
+}
+
+#solution .bttf-content .lightning-streak {
+	display: block;
+	margin: 0 auto;
+	height: 100%;
+	stroke-width: 0;
+	stroke: #f9f181;
+}
+
+#solution .bttf-content .clock-tower-container {
+	padding: 0;
+}
+
+#solution .bttf-content .clock-tower {
+	max-width: 100%;
+	height: auto;
+}
+
+#solution .bttf-content .delorean-container {
+	min-height: 35px;
+	padding: 0;
+	position: relative;
+}
+
+#solution .bttf-content .delorean {
+	max-width: 30%;
+	height: auto;
+}
+
+#solution .bttf-content .fire {
+	max-width: 30%;
+	height: auto;
+}
+
+#solution .flex-rowed-content {
+	margin-bottom: 21px;
+}
+
+#solution .josh-lopez {
+	border-radius: 50%;
+	width: 150px;
+	max-width: 100%;
+	max-height: 150px;
+}
+
+#solution .more-content {
+	overflow: hidden;
+	height: 0;
+	opacity: 0;
+	transition: height 0.3s ease-in-out, opacity 0.5s ease;
+}
+
+#solution .more-content.show {
+	height: 100%;
+	opacity: 1;
+}
