@@ -1,19 +1,25 @@
 $(document).ready(function () {
-
 	const turtlePower = $(".sewer-container");
-	const turtleTimeline = new TimelineMax();
+	const turtleContent = $(".turtle-content");
+	var pizzaBite = false;
 
 	const pizzaSound = new Howl({
 		src: ['../sounds/pizza-time-turtles-in-time.mp3'],
 		volume: 0.6
 	});
 
+	// Set tweenmax properties
 	TweenMax.set(".sewer-cover", {
 		position: "absolute",
 		left: '50%',
 		top: '50%',
 		xPercent: '-50',
 		yPercent: '-50',
+	});
+
+	// Init timeline
+	const turtleTimeline = new TimelineMax({
+		paused: true
 	});
 
 	turtleTimeline
@@ -27,15 +33,6 @@ $(document).ready(function () {
 			ease: Power4.easeInOut
 		}, "-=0.7")
 		.reverse(); //start in reversed state
-	//  .timeScale(4) //speed it up for testing
-
-	turtlePower.hover(function () {
-		//set the reversed state equal to inverse of current reversed state (toggle direction)
-		turtleTimeline.reversed(!turtleTimeline.reversed());
-	});
-
-
-	var pizzaBite = false;
 
 	function trackPizzaCursor(e) {
 		$(".turtle-content .cursor").css({
@@ -49,7 +46,6 @@ $(document).ready(function () {
 		$(".turtle-content .cursor").css({
 			opacity: 1
 		});
-
 	}
 
 	function bitePizzaCursor(e) {
@@ -68,8 +64,14 @@ $(document).ready(function () {
 		});
 	}
 
-	$(".turtle-content").on('mousemove', trackPizzaCursor);
-	$(".turtle-content").on('mouseenter', showPizzaCursor);
-	$(".turtle-content").on('mouseleave', hidePizzaCursor);
+	// Bindings
+	turtlePower.hover(function () {
+		//set the reversed state equal to inverse of current reversed state (toggle direction)
+		turtleTimeline.reversed(!turtleTimeline.reversed());
+	});
+
+	turtleContent.on('mousemove', trackPizzaCursor);
+	turtleContent.on('mouseenter', showPizzaCursor);
+	turtleContent.on('mouseleave', hidePizzaCursor);
 
 });

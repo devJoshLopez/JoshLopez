@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
-	var portfolioCardItem = $('.card-item');
+	const portfolioCardItem = $('.card-item');
+	const hackersWrapper = $('.hackers-wrapper');
+	const gibsonCanvas = $('#gibson');
 
 	// show portfolio cards when scrolling using scroll reveal
 	ScrollReveal({
@@ -29,8 +31,6 @@ $(document).ready(function () {
 	});
 
 	// use threejs for the background animation
-	var hackersWrapper = $('.hackers-wrapper');
-
 	var scene = new THREE.Scene();
 	scene.fog = new THREE.FogExp2(0x111111, 0.13); // distance background color
 	
@@ -42,15 +42,15 @@ $(document).ready(function () {
 
 	renderer.setClearColor(0x111111); // background color
 	renderer.setSize(hackersWrapper.innerWidth(), hackersWrapper.innerHeight());
+	renderer.domElement.id = 'gibson';
 	hackersWrapper.append(renderer.domElement);
-
-	$(window).resize(onWindowResize);
 
 	function onWindowResize() {
 		camera.aspect = hackersWrapper.innerWidth() / hackersWrapper.innerHeight();
 		camera.updateProjectionMatrix();
 		renderer.setSize(hackersWrapper.innerWidth(), hackersWrapper.innerHeight());
 	}
+	$(window).resize(onWindowResize);
 
 	//Floor
 	var floorG = new THREE.BoxGeometry(20, 0.10, 20);
@@ -91,7 +91,6 @@ $(document).ready(function () {
 	scene.add(light2);
 	light2.position.set(-1.5, 2, 1);
 
-
 	var distance = 0;
 	var floorRotation = 1;
 	var cameraPosition = 1;
@@ -112,12 +111,12 @@ $(document).ready(function () {
 	}
 	render();
 
-	//mouse movement
-	$('canvas').on('mousemove.control', function (e) {
+	// binding
+	gibsonCanvas.on('mousemove', function (e) {
 		var rotateDamper = 600;
 		var cameraDamper = 70;
 
-		floorRotation = -((e.clientX - $('canvas').width()) / rotateDamper);
+		floorRotation = -((e.clientX - gibsonCanvas.width()) / rotateDamper);
 		cameraPosition = ((e.clientY) / cameraDamper);
 	});
 

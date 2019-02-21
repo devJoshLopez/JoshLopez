@@ -1,56 +1,13 @@
 $(document).ready(function () {
-
-  var staticWrapper = $('.static-wrapper');
-  var tvToggleButton = $('#tv-toggle');
+  const staticWrapper = $('.static-wrapper');
+  const tvToggleButton = $('#tv-toggle');
   var isTurnedOn = true;
-  var timeline;
 
-  function buildTimeline() {
-    timeline = new TimelineMax({
-      paused: true
-    });
-
-    timeline
-      .to(staticWrapper, 0.2, {
-        width: '100%',
-        height: '2px',
-        background: '#ffffff',
-        ease: Power2.easeOut
-      })
-      .to(staticWrapper, 0.2, {
-        width: '0',
-        height: '0',
-        background: '#ffffff'
-      });
-  }
-
-  function toggleTV() {
-    if (isTurnedOn) {
-      timeline.restart();
-    }
-
-    if (!isTurnedOn) {
-      timeline.reverse();
-    }
-
-    isTurnedOn = !isTurnedOn;
-  }
-
-  // Initialize
-  $(document).ready(buildTimeline);
-
-  // Bindings
-  tvToggleButton.on('click', function () {
-    tvToggleButton.toggleClass("off");
-    toggleTV();
-  });
-
-
-
-  // Set properties
+  // Set tweenmax properties
   TweenMax.set(".fly-in", {
     perspective: 400
   });
+
   TweenMax.set(".fly-in div", {
     rotationY: -10,
     rotationX: 10,
@@ -65,12 +22,47 @@ $(document).ready(function () {
   });
 
   // Init timeline
-  var tl = new TimelineMax({
+  const tvTimeline = new TimelineMax({
+    paused: true
+  });
+
+  tvTimeline
+    .to(staticWrapper, 0.2, {
+      width: '100%',
+      height: '2px',
+      background: '#ffffff',
+      ease: Power2.easeOut
+    })
+    .to(staticWrapper, 0.2, {
+      width: '0',
+      height: '0',
+      background: '#ffffff'
+    });
+
+  function toggleTV() {
+    if (isTurnedOn) {
+      tvTimeline.restart();
+    }
+    if (!isTurnedOn) {
+      tvTimeline.reverse();
+    }
+    isTurnedOn = !isTurnedOn;
+  }
+
+  // Bindings
+  tvToggleButton.on('click', function () {
+    tvToggleButton.toggleClass("off");
+    toggleTV();
+  });
+
+  // Init timeline
+  const flyInTimeline = new TimelineMax({
     repeat: -1,
     repeatDelay: 2
   });
 
-  tl.to(".fly-in div:nth-child(1)", 1, {
+  flyInTimeline
+    .to(".fly-in div:nth-child(1)", 1, {
       scale: 1.1,
       ease: Power4.easeIn
     }, "firstDiv")
@@ -87,7 +79,6 @@ $(document).ready(function () {
     .to(".fly-in div:nth-child(1)", 1, {
       opacity: 0,
     }, "firstDiv+=3")
-
     .to(".fly-in div:nth-child(2)", 1, {
       scale: 1.1,
       ease: Power4.easeIn

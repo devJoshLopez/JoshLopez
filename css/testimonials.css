@@ -15,13 +15,19 @@
 #testimonials .whovian-content .beating-hearts {
 	position: absolute;
 	width: 40%;
+	opacity: 0;
+	transition: opacity 0.3s;
 }
 
-#testimonials .whovian-content .beating-hearts .heart-1 {
+#testimonials .whovian-content:hover .beating-hearts {
+	opacity: 1;
+}
+
+#testimonials .whovian-content:hover .beating-hearts .heart-1 {
 	animation: heartbeat 0.35s ease infinite;
 }
 
-#testimonials .whovian-content .beating-hearts .heart-2 {
+#testimonials .whovian-content:hover .beating-hearts .heart-2 {
 	animation: heartbeat 0.35s ease infinite;
 	animation-delay: 0.25s;
 }
@@ -62,4 +68,11 @@
 	height: 10%;
 	left: 50%;
 	transform: translate(-50%);
+}
+
+#testimonials .testimonials-content {
+	background-image: url(../images/be-the-change.jpg);
+    background-size: 73%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
