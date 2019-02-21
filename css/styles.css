@@ -235,6 +235,10 @@ footer.page-footer p {
   #curiosity .fly-in div svg {
     width: 42vw;
   }
+
+  #enlightenment .turtle-content .cursor {
+    display: block !important;
+  }
 }
 
 @keyframes flicker {

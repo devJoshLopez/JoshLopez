@@ -72,6 +72,6 @@ $(document).ready(function () {
 
 	turtleContent.on('mousemove', trackPizzaCursor);
 	turtleContent.on('mouseenter', showPizzaCursor);
-	turtleContent.on('mouseleave touchend', hidePizzaCursor);
+	turtleContent.on('mouseleave', hidePizzaCursor);
 
 });
