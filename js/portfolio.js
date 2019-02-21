@@ -2,7 +2,8 @@ $(document).ready(function () {
 
 	const portfolioCardItem = $('.card-item');
 	const hackersWrapper = $('.hackers-wrapper');
-	const gibsonCanvas = $('#gibson');
+	const rotateDamper = 600;
+	const cameraDamper = 70;
 
 	// show portfolio cards when scrolling using scroll reveal
 	ScrollReveal({
@@ -31,12 +32,10 @@ $(document).ready(function () {
 	});
 
 	// use threejs for the background animation
-	var scene = new THREE.Scene();
+	const scene = new THREE.Scene();
 	scene.fog = new THREE.FogExp2(0x111111, 0.13); // distance background color
-	
-	var camera = new THREE.PerspectiveCamera(42, hackersWrapper.innerWidth() / hackersWrapper.innerHeight(), 0.1, 2000);
-
-	var renderer = new THREE.WebGLRenderer({
+	const camera = new THREE.PerspectiveCamera(42, hackersWrapper.innerWidth() / hackersWrapper.innerHeight(), 0.1, 2000);
+	const renderer = new THREE.WebGLRenderer({
 		antialias: true
 	});
 
@@ -53,11 +52,11 @@ $(document).ready(function () {
 	$(window).resize(onWindowResize);
 
 	//Floor
-	var floorG = new THREE.BoxGeometry(20, 0.10, 20);
-	var floorM = new THREE.MeshLambertMaterial({
+	const floorG = new THREE.BoxGeometry(20, 0.10, 20);
+	const floorM = new THREE.MeshLambertMaterial({
 		color: 0x111111
 	});
-	var floor = new THREE.Mesh(floorG, floorM);
+	const floor = new THREE.Mesh(floorG, floorM);
 	scene.add(floor);
 
 	//Buildings
@@ -83,11 +82,11 @@ $(document).ready(function () {
 	camera.position.set(0, 2, 1);
 
 	//lights
-	var light1 = new THREE.DirectionalLight(0xffffff, 1);
+	const light1 = new THREE.DirectionalLight(0xffffff, 1);
 	scene.add(light1);
 	light1.position.set(1.5, 2, 1);
 
-	var light2 = new THREE.DirectionalLight(0xffffff, 0.5);
+	const light2 = new THREE.DirectionalLight(0xffffff, 0.5);
 	scene.add(light2);
 	light2.position.set(-1.5, 2, 1);
 
@@ -112,11 +111,8 @@ $(document).ready(function () {
 	render();
 
 	// binding
-	gibsonCanvas.on('mousemove', function (e) {
-		var rotateDamper = 600;
-		var cameraDamper = 70;
-
-		floorRotation = -((e.clientX - gibsonCanvas.width()) / rotateDamper);
+	$('canvas').on('mousemove.control', function (e) {
+		floorRotation = -((e.clientX - $('canvas').width()) / rotateDamper);
 		cameraPosition = ((e.clientY) / cameraDamper);
 	});
 
