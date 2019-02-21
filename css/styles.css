@@ -152,6 +152,14 @@ footer.page-footer p {
   header {
     height: 10vh;
   }
+
+  #commitment .commitment-step {
+    margin: 21px;
+    height: 150px;
+    width: 150px;
+    font-size: inherit !important;
+  }
+
 }
 
 /* Desktop size and above */
