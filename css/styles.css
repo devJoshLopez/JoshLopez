@@ -150,7 +150,7 @@ footer.page-footer p {
   }
 
   header {
-    height: 10vh;
+    height: auto;
   }
 
   #commitment .commitment-step {
