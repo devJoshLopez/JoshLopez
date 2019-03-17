@@ -36,7 +36,8 @@ $(document).ready(function () {
 	scene.fog = new THREE.FogExp2(0x111111, 0.13); // distance background color
 	const camera = new THREE.PerspectiveCamera(42, hackersWrapper.innerWidth() / hackersWrapper.innerHeight(), 0.1, 2000);
 	const renderer = new THREE.WebGLRenderer({
-		antialias: true
+		antialias: true,
+		powerPreference = "high-performance"
 	});
 
 	renderer.setClearColor(0x111111); // background color
