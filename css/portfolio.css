@@ -39,6 +39,7 @@
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	min-width: 300px;
 	text-align: left;
+	border: 3px solid #ffdc00;
 }
 
 #portfolio .card-item .card-item-image-wrapper {
