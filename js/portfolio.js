@@ -37,7 +37,7 @@ $(document).ready(function () {
 	const camera = new THREE.PerspectiveCamera(42, hackersWrapper.innerWidth() / hackersWrapper.innerHeight(), 0.1, 2000);
 	const renderer = new THREE.WebGLRenderer({
 		antialias: true,
-		powerPreference = "high-performance"
+		powerPreference: "high-performance"
 	});
 
 	renderer.setClearColor(0x111111); // background color

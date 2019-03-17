@@ -61,11 +61,6 @@ button {
   cursor: pointer;
 }
 
-#mc_embed_signup .button {
-  width: 100% !important;
-  display: block !important;
-}
-
 :focus {
   outline: none;
 }
