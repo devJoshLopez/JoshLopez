@@ -100,7 +100,6 @@ $(document).ready(function () {
 
 	lightningButton.on('click', function () {
 		$(".more-content").toggleClass("show");
-		lightning.restart();
 	});
 
 });
