@@ -140,6 +140,7 @@ footer.page-footer {
   text-align: center;
   padding: 10px;
 }
+
 footer.page-footer p {
   padding: 0;
   margin: 0;
@@ -244,7 +245,7 @@ footer.page-footer p {
   }
 
   .flex-rowed-section-content div {
-    padding: 84px;
+    padding: 120px;
   }
 }
 
@@ -378,12 +379,17 @@ footer.page-footer p {
 }
 
 @keyframes heartbeat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
-  50%, 67% {
+
+  50%,
+  67% {
     transform: scaleY(1.05);
   }
+
   70% {
     transform: scale(1.05);
   }
