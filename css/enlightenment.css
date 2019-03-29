@@ -2,13 +2,14 @@
 	background-image: url(../images/turtle-background.svg);
 	background-position: center;
 	background-repeat: repeat;
-	background-size: 424px;
+	background-size: 100%;
 	align-self: stretch;
 	flex-grow: 1;
-	padding: 42px;
+	padding: 10px 30px;
 	overflow: hidden;
 	position: relative;
 	cursor: none;
+	width: 52%;
 }
 
 #enlightenment .sewer-container {
@@ -38,8 +39,8 @@
 }
 
 #enlightenment .turtle-content .cursor {
-	width: 150px !important;
-	height: 132px !important;
+    width: 100px !important;
+    height: 72px !important;
 	padding: 0 !important;
 	align-self: auto !important;
 	opacity: 0;

@@ -102,7 +102,7 @@ p {
 
 .flex-rowed-section-content div {
   align-self: center;
-  padding: 21px;
+  padding: 20px;
   width: 100%;
 }
 
@@ -195,6 +195,7 @@ footer.page-footer p {
 
   header .nav-callout {
     display: block;
+    margin-top: 20px;
   }
 
   header ul {
@@ -203,7 +204,7 @@ footer.page-footer p {
 
   header ul li {
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   header ul li:last-child {
@@ -240,6 +241,10 @@ footer.page-footer p {
 
   #enlightenment .turtle-content .cursor {
     display: block !important;
+  }
+
+  .flex-rowed-section-content div {
+    padding: 84px;
   }
 }
 
