@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 	const pizzaSound = new Howl({
 		src: ['../sounds/pizza-time-turtles-in-time.mp3'],
-		volume: 0.6
+		volume: 0.4
 	});
 
 	// Set tweenmax properties
