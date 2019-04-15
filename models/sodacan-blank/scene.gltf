@@ -124,12 +124,12 @@
   "buffers": [
     {
       "byteLength": 170448,
-      "uri": "scene.bin"
+      "uri": "https://lopez-creative.com/models/sodacan-blank/scene.bin"
     }
   ],
   "images": [
     {
-      "uri": "textures/initialShadingGroup_metallicRoughness.png"
+      "uri": "https://lopez-creative.com/models/sodacan-blank/textures/initialShadingGroup_metallicRoughness.png"
     }
   ],
   "materials": [
