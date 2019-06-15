@@ -141,3 +141,9 @@ button:hover, .submit:hover {
 .bootstrap-datetimepicker-widget table td.active, .bootstrap-datetimepicker-widget table td.active:hover {
 	background-color: #33a8ff;
 }
+
+@media screen and (max-width: 420px) {
+    h1.page-title {
+        font-size: 30px;
+    }
+}
