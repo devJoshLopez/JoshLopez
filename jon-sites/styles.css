@@ -118,7 +118,7 @@ h3 {
 	overflow: visible;
 	box-shadow: 2px 3.46px 8px 0 rgba(39,44,49,.12), 8px 13.86px 38px 0 rgba(39,44,49,.08);
     margin: 0 0 40px;
-    padding: 40px;
+    padding: 40px !important;
     transition: box-shadow .6s;
     background: #fff;
     border-radius: 10px;
