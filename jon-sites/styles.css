@@ -21,7 +21,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat; */
     background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,250,247,1) 42%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,250,247,1) 60%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -102,6 +102,10 @@ h3 {
     height: 47px;
     line-height: 47px;
     width: 47px;
+}
+
+#run-menu {
+    position: relative !important;
 }
 
 .navigation_container {
