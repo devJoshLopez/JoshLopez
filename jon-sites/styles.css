@@ -35,6 +35,7 @@ h1.page-title {
     padding: 0;
     line-height: 1;
     flex-grow: 1;
+    font-weight: bold;
 }
 
 h3 {
