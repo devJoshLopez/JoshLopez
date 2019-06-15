@@ -78,6 +78,10 @@ h3 {
     background-repeat: no-repeat;
     min-height: auto;
     padding: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-link {
