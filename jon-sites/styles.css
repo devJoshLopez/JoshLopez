@@ -16,11 +16,12 @@ body {
     font-weight: 500;
     line-height: 1.55556;
     font-family: 'Open Sans', sans-serif;
-    background-color: #fbfaf7;
     color: #646464;
-    background-image: url(./images/art-background.jpg);
+    /* background-image: url(./images/art-background.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,250,247,1) 42%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,6 +66,9 @@ h3 {
 
 #program_navigation {
     border-bottom: none;
+    background-image: url(./images/title-bg.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .logo-link {
