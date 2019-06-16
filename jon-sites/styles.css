@@ -36,6 +36,7 @@ h1.page-title {
     line-height: 1;
     flex-grow: 1;
     font-weight: bold;
+    font-size: calc(1vw + 1vh + .7vmin);
 }
 
 h3 {
