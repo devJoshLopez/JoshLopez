@@ -36,7 +36,7 @@ h1.page-title {
     line-height: 1;
     flex-grow: 1;
     font-weight: bold;
-    font-size: calc(1vw + 1vh + .7vmin);
+    font-size: calc(22px + 1vw);
 }
 
 h3 {
@@ -144,7 +144,7 @@ button:hover, .submit:hover {
 }
 
 @media screen and (max-width: 420px) {
-    h1.page-title {
+    /* h1.page-title {
         font-size: 30px;
-    }
+    } */
 }
