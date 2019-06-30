@@ -148,6 +148,10 @@ a.button:hover {
   color: #fff;
 }
 
+.progress .slider__label {
+  visibility: hidden;
+}
+
 
 .video-controls {
   display: none;
