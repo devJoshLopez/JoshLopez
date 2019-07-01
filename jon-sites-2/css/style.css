@@ -238,3 +238,16 @@ a.button.blue:hover {
 }
 
 
+@media (min-width: 1200px) {
+  .mobile-container {
+    width: 375px;
+    height: 667px;
+  }
+  .slider-slide .slide-content {
+    height: 667px;
+  }
+  .bgvid,
+  .eko-video {
+    width: 377px;
+  }
+}
