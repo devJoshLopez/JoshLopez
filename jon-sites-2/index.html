@@ -11,9 +11,9 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<!-- <script src="https://www.guidedtrack.com/assets/interpreter.js"></script>
+	<script src="https://www.guidedtrack.com/assets/interpreter.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
 	<link rel="stylesheet" href="./fonts/gilroy/stylesheet.css" type="text/css" charset="utf-8" />
 	<link rel="stylesheet" href="./css/style.css">
 </head>
@@ -30,8 +30,7 @@
 						<a class="button" onclick="nextSlide()">Begin Learning</a>
 					</div>
 				</div>
-				<video poster="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" class="bgvid" playsinline
-					autoplay muted loop>
+				<video poster="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" class="bgvid" playsinline autoplay muted loop>
 					<!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
 					<source src="./media/waves_without_text.mp4" type="video/mp4">
 				</video>
@@ -48,12 +47,6 @@
 						<a class="button" onclick="nextSlide()">I'm more of a reader</a>
 					</div>
 				</div>
-				<video poster="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" class="bgvid" playsinline
-					autoplay muted loop>
-					<!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
-					<source src="./media/waves_without_text.mp4" type="video/mp4">
-				</video>
-
 			</div>
 
 			<div class="slider-slide video">
@@ -65,8 +58,8 @@
 					<source src="./media/WPM-Sarah-Video01.mp4" type="video/mp4">
 				</video>
 				<div class="video-controls">
-					<a class="button" onclick="restartCurrentVideo()">Restart Video</a>
-					<a class="button" onclick="nextSlide()">Skip Video</a>
+					<a class="button blue" onclick="previousSlide()">Back</a>
+					<a class="button blue" onclick="nextSlide()">Next</a>
 				</div>
 			</div>
 
@@ -77,6 +70,10 @@
 						<a class="button" onclick="showModalVideo('./media/TED_portrait_compressed.mp4')">Watch TED Talk</a>
 						<a class="button" onclick="nextSlide()">Start Experience</a>
 					</div>
+				</div>
+				<div class="video-controls">
+					<a class="button blue" onclick="previousSlide()">Back</a>
+					<a class="button blue" onclick="nextSlide()">Next</a>
 				</div>
 				<video poster="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" class="bgvid" playsinline>
 					<!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
@@ -94,8 +91,8 @@
 					<source src="./media/WPM-Sarah-Video02.mp4" type="video/mp4">
 				</video>
 				<div class="video-controls">
-					<a class="button" onclick="restartCurrentVideo()">Restart Video</a>
-					<a class="button" onclick="nextSlide()">Skip Video</a>
+					<a class="button blue" onclick="previousSlide()">Back</a>
+					<a class="button blue" onclick="nextSlide()">Next</a>
 				</div>
 			</div>
 
@@ -106,17 +103,67 @@
 				<iframe 
 					id="ekoVideo"
 					class="eko-video"
+					width="667" 
+					height="375" 
+					src="https://video.helloeko.com/v/M0QQOK/embed?embedapi=1.0&autoplay=false&publisherID=0fvLeu" 
+					frameborder="0" 
+					style="width: 100%; height: 100%; border: 0;"
+					allowfullscreen>
+				</iframe>
+				
+				<!-- <iframe 
+					id="ekoVideo"
+					class="eko-video"
 					src="https://video.helloeko.com/v/M0QQOK/embed?embedapi=1.0&publisherID=66C10P" 
 					style="width: 100%; height: 100%; border: 0;">
-				</iframe>
+				</iframe> -->
+			</div>
+
+			<div class="slider-slide options">
+				<div class="slide-content 1">
+					<div aria-live='polite' class='guidedtrack program_container col-md-8 col-md-offset-2' data-environment='production' id='nfjzf3f'>
+						<div id='program_navigation'>
+							<div id='back-button'></div>
+							<div class='navigation_container'></div>
+							<div id='run-menu'></div>
+						</div>
+						<div class='points'>
+							<div class='total'></div>
+							<div class='change positive'></div>
+						</div>
+						<div class='maintain'></div>
+						<div class='main'></div>
+					</div>
+				</div>
+
+				<div class="slide-content 2">
+					<div aria-live='polite' class='guidedtrack program_container col-md-8 col-md-offset-2' data-environment='production' id='d2kxeaa'>
+						<div id='program_navigation'>
+							<div id='back-button'></div>
+							<div class='navigation_container'></div>
+							<div id='run-menu'></div>
+						</div>
+						<div class='points'>
+							<div class='total'></div>
+							<div class='change positive'></div>
+						</div>
+						<div class='maintain'></div>
+						<div class='main'></div>
+					</div>
+				</div>
 			</div>
 
 		</div>
 
 		<!-- <div id="sliderDots"></div> -->
-		<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+		<div class="progress slide" role="progressbar" aria-valuemin="0" aria-valuemax="100">
 			<span class="slider__label sr-only">
 		</div>
+
+		<div class="progress video" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+			<span class="video__label sr-only">
+		</div>
+
 
 		<div class="video-modal">
 			<div class="modal-exit">❌</div>
