@@ -62,14 +62,11 @@ $(document).ready(function() {
       if (this.hasAttribute("autonext")) {
         slider.slick("slickNext");
       } else {
-        // show buttons
         $(".button-group").show(300);
       }
       console.log("Video Complete");
     });
   });
-
-
 
   $(".slick-dots li button").on("click", function(e) {
     e.stopPropagation();
