@@ -165,7 +165,7 @@ a.button.blue:hover {
   display: block;
   width: 100%;
   height: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   overflow: hidden;
   background-color: rgba(204,204,204, 0.7);
   background-image: linear-gradient(to right, #33A8FF, #33A8FF);
