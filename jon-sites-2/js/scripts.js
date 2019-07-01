@@ -37,6 +37,7 @@ $(document).ready(function() {
     slideProgressBarLabel.text(calc + "% completed");
 
     $(".button-group").hide(300);
+    $(".slick-slide.slick-current").find(".button.pause").text('Pause');
   });
 
   slider.on("afterChange", function(event, slick, currentSlide) {
@@ -108,15 +109,16 @@ function restartCurrentVideo() {
   }
 }
 
-function pauseCurrentVideo() {
-  var currentVid = $(".slick-slide.slick-current").find("video");
-
-  if (currentVid.length > 0) {
+function pauseCurrentVideo(el) {
+  var currentVid = $(".slick-slide.slick-current").find("video")[0];
+  if (currentVid) {
     $(".slider-container").slick("slickPause");
     if (currentVid.paused == false) {
       currentVid.pause();
+      $(el).text('Play');
     } else {
       currentVid.play();
+      $(el).text('Pause');
     }
   }
 }
@@ -132,5 +134,5 @@ function showModalVideo(videoUrl) {
 function showOption(optionNumber) {
   console.log("Show option " + optionNumber);
   $(".slider-container").slick("slickNext");
-  
+
 }
