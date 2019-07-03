@@ -130,6 +130,10 @@ font-weight: 700;
   background: #fff;
 }
 
+.slider-slide.options .slide-content{
+  pointer-events: auto;
+}
+
 .slider-slide .slide-content {
   /* height: 667px; */
   height: 100vh;
