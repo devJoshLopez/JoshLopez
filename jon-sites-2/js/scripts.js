@@ -17,19 +17,12 @@ $(document).ready(function() {
   var videoProgressBar = $(".progress.video");
   var videoProgressBarLabel = $(".video__label");
 
-  document.getElementById("ekoVideo").contentWindow.postMessage("eko.pause", "*");
-
   slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
     var currentVid = $(".slick-slide.slick-current").find("video")[0];
     if (currentVid && !currentVid.hasAttribute("autoplay")) {
       slider.slick("slickPause");
       currentVid.pause();
       currentVid.removeEventListener('timeupdate', videoProgressUpdate, false);
-    }
-
-    var iframeVid = $(".slick-slide.slick-current").find("iframe")[0];
-    if (iframeVid) {
-      document.getElementById("ekoVideo").contentWindow.postMessage("eko.pause", "*");
     }
 
     var calc = (nextSlide / (slick.slideCount - 1)) * 100;
@@ -68,6 +61,11 @@ $(document).ready(function() {
     });
   });
 
+  var iframeVid = $(".slick-slide.slick-current").find("iframe")[0];
+  if (iframeVid) {
+    document.getElementById("ekoVideo").contentWindow.postMessage("eko.pause", "*");
+  }
+
   $(".slick-dots li button").on("click", function(e) {
     e.stopPropagation();
   });
@@ -84,19 +82,6 @@ $(document).ready(function() {
     videoProgressBarLabel.text(percent + "% completed");
   };
 
-
-  // var iframe = $('#ekoVideo').contents();
-  // iframe.find("#button_high_track_end_6356ce").click(function(){
-  //   console.log("high button clicked");
-  // });
-  // iframe.find("#button_that_s_enough_for_now_e2727b").click(function(){
-  //   console.log("low button clicked");
-  // });
-  // iframe.find("#button_sign_off_ed09d8 .legacyDefaultButton_hit").click(function(){
-  //   console.log("sign off button clicked");
-  // });
-  
-
 });
 
 
@@ -105,6 +90,10 @@ function previousSlide() {
 }
 
 function nextSlide() {
+  var iframeVid = $(".slick-slide.slick-current").find("iframe")[0];
+  if (iframeVid) {
+    document.getElementById("ekoVideo").contentWindow.postMessage("eko.pause", "*");
+  }
   $(".slider-container").slick("slickNext");
 }
 
@@ -149,7 +138,5 @@ function showOption(optionNumber) {
 
 function ekoVideoLoaded() {
   console.log("eko video loaded");
-  // $(".slider-container").slick("slickNext");
-
 }
 

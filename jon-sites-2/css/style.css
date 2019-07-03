@@ -98,6 +98,16 @@ a.button.blue:hover {
   text-align: center;
 }
 
+.slider-slide.regular.purple {
+  text-align: left;
+  background-color: #2f3269;
+  color: #fff;
+}
+.slider-slide.regular.purple p {
+width: 100%;
+font-size: 25px;
+}
+
 .slider-slide .slide-content {
   /* height: 667px; */
   height: 100vh;
