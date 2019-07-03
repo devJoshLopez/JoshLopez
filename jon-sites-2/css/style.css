@@ -19,6 +19,7 @@ h4,
 h5,
 h6 {
   font-family: Gilroy,Helvetica,sans-serif;
+  font-weight:700;
   margin: 0 0 5px 0;
 }
 
@@ -91,7 +92,10 @@ a.button.blue:hover {
 }
 
 .slider-slide.intro {
-  color: #fff;
+  color: #fff !important;
+}
+.slider-slide.intro h1 {
+  color: #fff !important;
 }
 
 .slider-slide.regular {
@@ -102,6 +106,7 @@ a.button.blue:hover {
   text-align: left;
   background-color: #2f3269;
   color: #fff;
+  font-weight: 700;
 }
 .slider-slide.regular.purple p {
 width: 100%;
