@@ -82,7 +82,20 @@ $(document).ready(function() {
     const percent = (currentVid.currentTime / currentVid.duration) * 100;
     videoProgressBar.css("background-size", percent + "% 100%").attr("aria-valuenow", percent);
     videoProgressBarLabel.text(percent + "% completed");
-  }
+  };
+
+
+  // var iframe = $('#ekoVideo').contents();
+  // iframe.find("#button_high_track_end_6356ce").click(function(){
+  //   console.log("high button clicked");
+  // });
+  // iframe.find("#button_that_s_enough_for_now_e2727b").click(function(){
+  //   console.log("low button clicked");
+  // });
+  // iframe.find("#button_sign_off_ed09d8 .legacyDefaultButton_hit").click(function(){
+  //   console.log("sign off button clicked");
+  // });
+  
 
 });
 
@@ -133,3 +146,10 @@ function showOption(optionNumber) {
   $(".slider-container").slick("slickNext");
 
 }
+
+function ekoVideoLoaded() {
+  console.log("eko video loaded");
+  // $(".slider-container").slick("slickNext");
+
+}
+
