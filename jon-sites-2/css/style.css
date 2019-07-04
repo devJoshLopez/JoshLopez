@@ -113,13 +113,20 @@ a.button.blue:hover {
   text-align: center;
 }
 
-.slider-slide.regular.purple {
+.slider-slide.regular.gif {
   text-align: left;
-  background-color: #2f3269;
-  color: #fff;
+  background-color: #fcfaf8;
+  color: #4a4a4a;
   font-weight: 700;
+  background-image: url(../media/04_Cat-Jam.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 90%;
 }
-.slider-slide.regular.purple p {
+.slider-slide.regular.gif .slide-content {
+  justify-content: end;
+}
+.slider-slide.regular.gif p {
 width: 100%;
 font-size: 25px;
 font-family: Gilroy,Helvetica,sans-serif;
@@ -130,7 +137,7 @@ font-weight: 700;
   background: #fff;
 }
 
-.slider-slide.options .slide-content{
+.slider-slide.options .slide-content {
   pointer-events: auto;
 }
 

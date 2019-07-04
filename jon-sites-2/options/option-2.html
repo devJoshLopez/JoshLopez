@@ -9,12 +9,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Khula|Open+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+	<script src="https://www.guidedtrack.com/assets/jquery_gt.js"></script>
 	<script src="https://www.guidedtrack.com/assets/interpreter.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
-	<link rel="stylesheet" href="../fonts/gilroy/stylesheet.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="../css/guided-track-styles.css">
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -22,11 +23,11 @@
 	<div class="mobile-container">
 		<div class="slider-container">
 
-			<div class="slider-slide guided-track">
-				<div class="slide-content">
-					<div aria-live='polite' class='guidedtrack program_container col-md-8 col-md-offset-2' data-environment='production' id='nfjzf3f'>
+			<div class="slider-slide options">
+				<div class="slide-content 1">
+					<!-- <div aria-live='polite' class='guidedtrack program_container col-md-8 col-md-offset-2' data-environment='production' id='nfjzf3f'> -->
+					<div aria-live='polite' class='guidedtrack program_container' data-environment='production' id='d2kxeaa'>
 						<div id='program_navigation'>
-							<h1 class="page-title">Self-Management in Difficult Conversations</h1>
 							<div id='back-button'></div>
 							<div class='navigation_container'></div>
 							<div id='run-menu'></div>
@@ -41,25 +42,15 @@
 				</div>
 			</div>
 
-			<div class="slider-slide video">
-				<div class="slide-content">
-					<!-- <h1>First swimmer video</h1> -->
-				</div>
-				<video poster="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" class="bgvid" playsinline>
-					<!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
-					<source src="../media/sme_checkin.mp4" type="video/mp4">
-				</video>
-				<div class="video-controls">
-					<a class="button" onclick="restartCurrentVideo()">Restart Video</a>
-					<a class="button" onclick="nextSlide()">Skip Video</a>
-				</div>
-			</div>
-
 		</div>
 
 		<!-- <div id="sliderDots"></div> -->
-		<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+		<div class="progress slide" role="progressbar" aria-valuemin="0" aria-valuemax="100">
 			<span class="slider__label sr-only">
+		</div>
+
+		<div class="progress video" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+			<span class="video__label sr-only">
 		</div>
 
 		<div class="video-modal">
@@ -69,9 +60,8 @@
 				<source type="video/mp4">
 			</video>
 		</div>
+
 	</div>
-
-
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
 	<script src="../js/scripts.js"></script>
