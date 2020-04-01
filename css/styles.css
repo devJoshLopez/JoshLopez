@@ -860,9 +860,12 @@ span.asterisk {
   position: absolute;
   top: 30px;
   right: 30px;
-  z-index: 20;
+  z-index: 9999;
   width: 25px;
   cursor: pointer;
+  background: #65B2CD;
+  padding: 10px;
+  display: flex;
 }
 
 .cards-section--grid {
