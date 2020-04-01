@@ -787,15 +787,19 @@ a {
   max-width: 420px;
 }
 
+.wufoo-form-container {
+  font-family: Montserrat, sans-serif;
+}
+
 .contact-modal--title,
-.Wufoo.form h2 {
+.wufoo-form-container .info h2 {
   margin-bottom: 30px;
   font-size: 30px;
   line-height: 32px;
   font-family: 'Nova Square', sans-serif;
 }
 
-.contact-modal--sub-title {
+.wufoo-form-container .info div{
   font-size: 12px;
 }
 
