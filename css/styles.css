@@ -791,27 +791,28 @@ a {
   font-family: Montserrat, sans-serif;
 }
 
-.wufoo-form-container .info h2 {
+.wufoo .info h2 {
   margin-bottom: 30px;
   font-size: 30px;
   line-height: 32px;
   font-family: 'Nova Square', sans-serif !important;
 }
 
-.wufoo-form-container .info div {
+.wufoo .info div {
   font-size: 12px;
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, sans-serif !important;
 }
 
 .mc-field-group {
   margin-top: 10px;
 }
 
-.mc-field-group label {
+.wufoo label.desc {
   display: block;
+  font-family: Montserrat, sans-serif !important;
 }
 
-.mc-field-group input {
+.wufoo input.text {
   height: 45px;
   padding-left: 15px;
   border-radius: 3px;
@@ -823,6 +824,11 @@ a {
 
 span.asterisk {
   color: #DA6099;
+}
+
+.wufoo li span.cents,
+.wufoo li span.symbol.radix {
+  display: none;
 }
 
 .btTxt.submit {
