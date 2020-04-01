@@ -245,17 +245,17 @@ addGameEventListeners();
 function addGameEventListeners() {
 	window.addEventListener("keydown", keydown);
 	window.addEventListener("keyup", keyup);
-	window.addEventListener("touchstart", touchStart, false);
-	window.addEventListener("touchend", touchEnd, false);
-	window.addEventListener("touchmove", touchMove, false);
+	canvas.addEventListener("touchstart", touchStart, false);
+	canvas.addEventListener("touchend", touchEnd, false);
+	canvas.addEventListener("touchmove", touchMove, false);
 	gameListeners = true;
 };
 
 function removeGameEventListners() {
 	window.removeEventListener("keydown", keydown);
 	window.removeEventListener("keyup", keyup);
-	window.removeEventListener("touchstart", touchStart);
-	window.removeEventListener("touchend", touchEnd);
-	window.removeEventListener("touchmove", touchMove);
+	canvas.removeEventListener("touchstart", touchStart);
+	canvas.removeEventListener("touchend", touchEnd);
+	canvas.removeEventListener("touchmove", touchMove);
 	gameListeners = false;
 };
