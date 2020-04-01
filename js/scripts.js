@@ -251,7 +251,7 @@ function addGameEventListeners() {
 	gameListeners = true;
 };
 
-function removeGameEventListners() {
+function removeGameEventListeners() {
 	window.removeEventListener("keydown", keydown);
 	window.removeEventListener("keyup", keyup);
 	canvas.removeEventListener("touchstart", touchStart);
