@@ -791,16 +791,16 @@ a {
   font-family: Montserrat, sans-serif;
 }
 
-.contact-modal--title,
 .wufoo-form-container .info h2 {
   margin-bottom: 30px;
   font-size: 30px;
   line-height: 32px;
-  font-family: 'Nova Square', sans-serif;
+  font-family: 'Nova Square', sans-serif !important;
 }
 
-.wufoo-form-container .info div{
+.wufoo-form-container .info div {
   font-size: 12px;
+  font-family: Montserrat, sans-serif;
 }
 
 .mc-field-group {
@@ -825,7 +825,7 @@ span.asterisk {
   color: #DA6099;
 }
 
-#mc-embedded-subscribe {
+.btTxt.submit {
   margin-top: 10.5px;
   border: 3px solid #ffce00;
   padding: 10.5px 21px;
