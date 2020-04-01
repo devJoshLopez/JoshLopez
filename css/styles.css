@@ -784,6 +784,7 @@ a {
   backface-visibility: hidden;
   transform: scale(.7), rotateX(-60deg);
   transform-style: preserve-3d;
+  width: 100%;
   max-width: 420px;
 }
 
