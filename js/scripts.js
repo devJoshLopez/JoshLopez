@@ -61,7 +61,7 @@ contactModalShowAnimation
 		autoAlpha: 1
       });
 
-let gameListners = false;
+let gameListeners = false;
 
 function toggleContactModalAnimation(event) {
 	event.stopPropagation();
@@ -70,7 +70,7 @@ function toggleContactModalAnimation(event) {
 	// contactModalEmail.value = "";
 	// contactModalMessage.value = "";
 	contactModalShowAnimation.reversed() ? contactModalShowAnimation.play() : contactModalShowAnimation.reverse();
-	gameListners ? removeGameEventListners() : addGameEventListners();
+	gameListeners ? removeGameEventListeners() : addGameEventListeners();
 }
 
 contactModalCloseBtn.addEventListener("click", toggleContactModalAnimation);
@@ -228,16 +228,34 @@ function keyup(e) {
 	game.keyUp(keycode);
 };
 
-addGameEventListners();
+function touchStart(e) {
+	game.touchstart(e);
+};
 
-function addGameEventListners() {
+function touchEnd(e) {
+	game.touchend(e);
+};
+
+function touchMove(e) {
+	game.touchmove(e);
+};
+
+addGameEventListeners();
+
+function addGameEventListeners() {
 	window.addEventListener("keydown", keydown);
 	window.addEventListener("keyup", keyup);
-	gameListners = true;
+	window.addEventListener("touchstart", touchStart, false);
+	window.addEventListener('touchend', touchEnd, false);
+	window.addEventListener('touchmove', touchMove, false);
+	gameListeners = true;
 };
 
 function removeGameEventListners() {
 	window.removeEventListener("keydown", keydown);
 	window.removeEventListener("keyup", keyup);
-	gameListners = false;
+	window.removeEventListener("touchstart", touchStart);
+	window.removeEventListener('touchend', touchEnd);
+	window.removeEventListener('touchmove', touchMove);
+	gameListeners = false;
 };
