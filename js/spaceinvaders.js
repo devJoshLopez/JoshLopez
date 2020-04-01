@@ -278,8 +278,8 @@ WelcomeState.prototype.draw = function (game, dt, ctx) {
     ctx.font = "16px Montserrat";
 
     ctx.fillText("Press 'Spacebar'or touch to start.", game.width / 2, game.height / 2);
-    ctx.font = "12px Montserrat";
-    ctx.fillText("'Left arrow' = move left, 'Right arrow' = move right, 'Spacebar' = fire", game.width / 2, game.height / 2 + 40);
+    // ctx.font = "12px Montserrat";
+    // ctx.fillText("'Left arrow' = move left, 'Right arrow' = move right, 'Spacebar' = fire", game.width / 2, game.height / 2 + 40);
 };
 
 WelcomeState.prototype.keyDown = function (game, keyCode) {
