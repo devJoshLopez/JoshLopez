@@ -2,9 +2,9 @@ import * as universal from '../entries/pages/_layout.js';
 
 export const index = 0;
 let component_cache;
-export const component = async () => component_cache ??= (await import('../entries/fallbacks/layout.svelte.js')).default;
+export const component = async () => component_cache ??= (await import('../entries/pages/_layout.svelte.js')).default;
 export { universal };
 export const universal_id = "src/routes/+layout.js";
-export const imports = ["_app/immutable/nodes/0.VcpWm_ZT.js","_app/immutable/chunks/scheduler.BvLojk_z.js","_app/immutable/chunks/index.CFUezsYx.js"];
-export const stylesheets = [];
+export const imports = ["_app/immutable/nodes/0.GZ64B72E.js","_app/immutable/chunks/scheduler.CtbWrGNo.js","_app/immutable/chunks/index.DRXGOTEa.js"];
+export const stylesheets = ["_app/immutable/assets/0.wiWvkJhw.css"];
 export const fonts = [];
