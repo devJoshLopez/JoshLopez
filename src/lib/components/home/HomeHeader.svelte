@@ -3,6 +3,7 @@
   import imageUrl from "$lib/images/josh-lopez.webp";
 
   const fullImageUrl = `${base}${imageUrl}`;
+  console.log(fullImageUrl);
 </script>
 
 <section
