@@ -5,7 +5,8 @@
     "src": ".svelte-kit/generated/server/internal.js",
     "isEntry": true,
     "imports": [
-      "_internal.js"
+      "_internal.js",
+      "_paths.js"
     ]
   },
   "_exports.js": {
@@ -16,8 +17,13 @@
     "file": "chunks/internal.js",
     "name": "internal",
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_paths.js"
     ]
+  },
+  "_paths.js": {
+    "file": "chunks/paths.js",
+    "name": "paths"
   },
   "_ssr.js": {
     "file": "chunks/ssr.js",
@@ -39,9 +45,10 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
-      "_internal.js",
+      "_paths.js",
       "_exports.js",
-      "_ssr.js"
+      "_ssr.js",
+      "_internal.js"
     ]
   },
   "src/lib/images/josh-lopez.webp": {
@@ -60,7 +67,8 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_paths.js"
     ],
     "css": [
       "_app/immutable/assets/_layout.BxKuiuCx.css"
@@ -79,6 +87,42 @@
     ],
     "assets": [
       "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp"
+    ]
+  },
+  "src/routes/connect/+page.svelte": {
+    "file": "entries/pages/connect/_page.svelte.js",
+    "name": "entries/pages/connect/_page.svelte",
+    "src": "src/routes/connect/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/projects/+page.svelte": {
+    "file": "entries/pages/projects/_page.svelte.js",
+    "name": "entries/pages/projects/_page.svelte",
+    "src": "src/routes/projects/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/videos/+page.svelte": {
+    "file": "entries/pages/videos/_page.svelte.js",
+    "name": "entries/pages/videos/_page.svelte",
+    "src": "src/routes/videos/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/writings/+page.svelte": {
+    "file": "entries/pages/writings/_page.svelte.js",
+    "name": "entries/pages/writings/_page.svelte",
+    "src": "src/routes/writings/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
     ]
   }
 }

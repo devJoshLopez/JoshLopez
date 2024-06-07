@@ -2,5 +2,17 @@
 	"/": [
 		"src/routes/+layout.js",
 		"src/routes/+layout.js"
+	],
+	"/connect": [
+		"src/routes/+layout.js"
+	],
+	"/projects": [
+		"src/routes/+layout.js"
+	],
+	"/videos": [
+		"src/routes/+layout.js"
+	],
+	"/writings": [
+		"src/routes/+layout.js"
 	]
 }
