@@ -80,7 +80,8 @@
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_paths.js"
     ],
     "css": [
       "_app/immutable/assets/_page.BstnU2TH.css"

@@ -1,5 +1,8 @@
 <script>
+  import { base } from "$app/paths";
   import imageUrl from "$lib/images/josh-lopez.webp";
+
+  const fullImageUrl = `${base}${imageUrl}`;
 </script>
 
 <section
@@ -22,7 +25,7 @@
         </clipPath>
       </defs>
       <image
-        href={imageUrl}
+        href="{fullImageUrl}"
         width="200"
         height="200"
         clip-path="url(#circleClip)"
