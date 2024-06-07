@@ -44,6 +44,10 @@
       "_ssr.js"
     ]
   },
+  "src/lib/images/josh-lopez.webp": {
+    "file": "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp",
+    "src": "src/lib/images/josh-lopez.webp"
+  },
   "src/routes/+layout.js": {
     "file": "entries/pages/_layout.js",
     "name": "entries/pages/_layout",
@@ -59,7 +63,7 @@
       "_ssr.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.wiWvkJhw.css"
+      "_app/immutable/assets/_layout.BxKuiuCx.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -69,6 +73,12 @@
     "isEntry": true,
     "imports": [
       "_ssr.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BstnU2TH.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp"
     ]
   }
 }

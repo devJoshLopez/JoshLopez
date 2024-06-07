@@ -104,10 +104,15 @@ function create_ssr_component(fn) {
     $$render
   };
 }
+function add_attribute(name, value, boolean) {
+  const assignment = `="${escape(value, true)}"`;
+  return ` ${name}${assignment}`;
+}
 export {
   setContext as a,
   subscribe as b,
   create_ssr_component as c,
+  add_attribute as d,
   escape as e,
   getContext as g,
   missing_component as m,
