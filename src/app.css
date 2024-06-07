@@ -1,3 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"); /* 80s arcade-style font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+80s+Fade&family=Rubik+Glitch&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-font {
+  font-family: "Press Start 2P", monospace;
+}
+
+body {
+  margin: 0;
+  overflow: auto; /* Allow scrolling */
+  background: linear-gradient(135deg, #2b1055, #7597de);
+  background-size: 200% 200%;
+  animation: gradient-animation 15s ease infinite;
+  color: #e0e0e0;
+}
+
+.grid-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-item {
+  border: 1px solid rgba(233, 69, 96, 0.2);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.highlight {
+  background-color: rgba(233, 69, 96, 0.3141);
+  box-shadow: 0 0 42px #e94560;
+}
+
+.glow-on-hover:hover {
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow:
+      0 0 5px #e94560,
+      0 0 10px #e94560,
+      0 0 20px #e94560,
+      0 0 40px #e94560,
+      0 0 80px #e94560,
+      0 0 90px #e94560,
+      0 0 100px #e94560,
+      0 0 150px #e94560;
+  }
+  100% {
+    text-shadow:
+      0 0 10px #03fcf0,
+      0 0 20px #03fcf0,
+      0 0 30px #03fcf0,
+      0 0 40px #03fcf0,
+      0 0 50px #03fcf0,
+      0 0 60px #03fcf0,
+      0 0 70px #03fcf0,
+      0 0 80px #03fcf0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #03fcf0;
+  font-family: "Rubik 80s Fade", system-ui;
+}
+
+a {
+  color: #e94560;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #03fcf0;
+  text-shadow:
+    0 0 1px #03fcf0,
+    0 0 3px #03fcf0;
+}
+
+@keyframes header-glow {
+  0% {
+    text-shadow:
+      0 0 1px #03fcf0,
+      0 0 3px #03fcf0;
+  }
+  100% {
+    text-shadow:
+      0 0 3px #03fcf0,
+      0 0 5px #03fcf0;
+  }
+}
+
+.section-divider {
+  border-bottom: 2px solid #e94560;
+  margin: 20px 0;
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #03fcf0;
+  animation: divider-glow 2s infinite alternate;
+}
+
+@keyframes divider-glow {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 50%;
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glow-text {
+  animation: glow 2s infinite alternate;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Adding a background for better readability */
+  padding: 5px;
+  border-radius: 5px;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow:
+      0 0 1px #e94560,
+      0 0 3px #e94560;
+  }
+  100% {
+    text-shadow:
+      0 0 3px #e94560,
+      0 0 5px #e94560;
+  }
+}
+
+
+
+
+
+
