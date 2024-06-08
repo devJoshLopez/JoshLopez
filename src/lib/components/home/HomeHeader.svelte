@@ -19,7 +19,7 @@
     <svg width="100%" height="100%" viewBox="0 0 200 200" class="shape shape0">
       <defs>
         <clipPath id="circleClip">
-          <circle cx="100" cy="100" r="100" />
+          <circle cx="100" cy="100" r="100" /> 
         </clipPath>
       </defs>
       <image
