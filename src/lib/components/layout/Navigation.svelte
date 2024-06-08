@@ -8,7 +8,7 @@
 >
   <h1 class="text-4xl">Josh Lopez</h1>
   <nav class="mt-4">
-    <a href="{base}/" class="text-pink-600 hover:text-teal-400 mx-4 glow-on-hover"
+    <a href="/" class="text-pink-600 hover:text-teal-400 mx-4 glow-on-hover"
       >Home</a
     >
     <a
