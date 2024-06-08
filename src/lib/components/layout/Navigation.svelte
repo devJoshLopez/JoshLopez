@@ -12,19 +12,19 @@
       >Home</a
     >
     <a
-      href="{base}/videos"
+      href="/videos"
       class="text-pink-600 hover:text-teal-400 mx-4 glow-on-hover">Videos</a
     >
     <a
-      href="{base}/writings"
+      href="/writings"
       class="text-pink-600 hover:text-teal-400 mx-4 glow-on-hover">Writings</a
     >
     <a
-      href="{base}/projects"
+      href="/projects"
       class="text-pink-600 hover:text-teal-400 mx-4 glow-on-hover">Projects</a
     >
     <a
-      href="{base}/connect"
+      href="/connect"
       class="text-pink-600 hover:text-teal-400 mx-4 glow-on-hover">Connect</a
     >
   </nav>

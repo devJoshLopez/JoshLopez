@@ -5,8 +5,7 @@
     "src": ".svelte-kit/generated/server/internal.js",
     "isEntry": true,
     "imports": [
-      "_internal.js",
-      "_paths.js"
+      "_internal.js"
     ]
   },
   "_exports.js": {
@@ -17,13 +16,8 @@
     "file": "chunks/internal.js",
     "name": "internal",
     "imports": [
-      "_ssr.js",
-      "_paths.js"
+      "_ssr.js"
     ]
-  },
-  "_paths.js": {
-    "file": "chunks/paths.js",
-    "name": "paths"
   },
   "_ssr.js": {
     "file": "chunks/ssr.js",
@@ -45,10 +39,9 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
-      "_paths.js",
+      "_internal.js",
       "_exports.js",
-      "_ssr.js",
-      "_internal.js"
+      "_ssr.js"
     ]
   },
   "src/lib/images/josh-lopez.webp": {
@@ -67,8 +60,7 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
-      "_paths.js"
+      "_ssr.js"
     ],
     "css": [
       "_app/immutable/assets/_layout.BxKuiuCx.css"
