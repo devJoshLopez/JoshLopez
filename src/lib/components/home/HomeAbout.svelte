@@ -5,61 +5,100 @@
   <p class="mb-4">👋 Hey there, digital ally!</p>
 
   <p class="mb-4">
-    That's me up there, sporting a tee and hoodie because why get fancy when
-    you're wrangling JavaScript and decoding user enigmas? 👕💻
+    That's me up there, sporting a hoodie because why get fancy when you're
+    wrangling JavaScript and decoding user enigmas?
   </p>
 
-  <p class="mb-4">
-    I'm Josh, and I'm rewiring the internet to feel less like SkyNet and more
-    like your neighborhood arcade. 🕹️🌟
-  </p>
-
-  <p class="mb-4">
-    At Memberstack, I'm a digital Swiss Army knife. One moment, I'm crafting
-    modals that guide users like friendly game tutorials. The next, I'm leveling
-    up our AI, Rey, to offer wisdom as reliable as a GameShark. Between quests,
-    I'm scribing help docs that turn "Game Over" screens into "New High Score!"
-    moments. 🚀📚🔧
-  </p>
-
-  <p class="mb-4">
-    But my favorite power-up? Leading our Guild of Support Heroes. We don't just
-    troubleshoot; we turn rage-quits into standing ovations. Every ticket is a
-    boss battle, and we don't rest until our users are dancing like they just
-    saved Princess Toadstool. 🍄🎉
-  </p>
-
-  <p class="mb-4">
-    Off the clock, you'll find me in Big Sky Country (Montana), my own personal
-    Hoth base, plotting benevolent world-changes from my local cinema throne.
-    The 80s and 90s aren't just history; they're my OS. 🌄🎬
-  </p>
-
-  <p class="mb-4">
-    This site? It's my DeLorean, my phone booth that's bigger on the inside, my hot tub time machine. Here,
-    I share:
-  </p>
-
-  <ul class="mb-4">
-    <li class="mb-2">💡 Code sagas & customer success fables</li>
-    <li class="mb-2">🎨 Projects proving beautiful code isn't a myth</li>
-    <li class="mb-2">🎬 Essays on why "Hackers" is the WOPR of movies</li>
-    <li class="mb-2">🦸‍♂️ How Peter Parker's web-slinging rivals Sveltekit</li>
+  <p class="mb-4">Welcome to my digital dojo, where:</p>
+  <ul class="list-disc list-inside ml-6 mt-2">
+    <li class="mb-2">
+      I share tales from the tech trenches and customer success frontlines
+    </li>
+    <li class="mb-2">
+      Ponder life's great mysteries and the magic of everyday moments
+    </li>
+    <li class="mb-2">
+      Showcase cutting-edge projects like Rey, my AI compadre
+    </li>
+    <li class="mb-2">
+      Dive deep into the movies, music, and comics that shape my soul
+    </li>
   </ul>
 
   <p class="mb-4">
-    I believe the best tech is like Miyazaki's magic—it feels warm, looks beautiful, and puts humans first. Every function, every tutorial, every popcorn-fueled analogy here is a brushstroke in that masterpiece.
+    At Memberstack, I'm a jack-of-all-trades. I forge pre-built modals that make
+    signing up, logging in, and managing memberships a breeze. I also level up
+    our AI sidekick, Rey, to dispense wisdom like a sage Game Genie. And when
+    I'm not crafting code, I'm penning help guides that turn "Game Over" into
+    "Extra Life!"
   </p>
 
   <p class="mb-4">
-    So, whether you're untangling spaghetti code, reciting "Short Circuit" for
-    the 256th time (binary humor!), or hunting for tech that sparks joy, grab a
-    beanbag. Shell is optional, but rad is mandatory.
+    But my true calling? Leading our merry band of support heroes. Together, we
+    don't just fix issues; we give every user their "You're All That and a Bag
+    of Chips" moment.
   </p>
 
   <p class="mb-4">
-    Together, let's npm-install a future that's as epic as our mixtapes. 💾🎶
+    In all things, I strive to be like the heroes who guided my youth:
   </p>
 
-  <p class="mb-4">Press ⬆️⬆️⬇️⬇️⬅️➡️⬅️➡️🅱️🅰️ to initiate launch sequence...</p>
+  <ul class="list-disc list-inside ml-6 mt-2">
+    <li class="mb-2">
+      🌟 Like Marty McFly, I aim to make the future brighter.
+    </li>
+    <li class="mb-2">
+      🐢 Like the Ninja Turtles, I blend unique skills to help others.
+    </li>
+    <li class="mb-2">🕴️ Like Neo, I question reality to find deeper truths.</li>
+    <li class="mb-2">
+      🕷️ Like Spider-Man, I balance power and responsibility.
+    </li>
+  </ul>
+
+  <p class="mb-4">
+    Off the clock, you'll find me in Big Sky Country (Montana), my own personal
+    Hoth, plotting benevolent world-changes from my local cinema throne. The 80s
+    and 90s aren't just history; they're my OS.
+  </p>
+
+  <p class="mb-4">
+    I believe great tech, like great stories, speaks to the human heart. That's
+    why I'm on a quest to make the digital realm a little less "Skynet" and a
+    little more "WOPR" - less cold calculations, more warm connections.
+  </p>
+
+  <p class="mb-4">
+    So whether you're here to level up your customer success game, uncover
+    secrets of soulful living, geek out over pop culture, or explore the
+    uncharted lands of AI, know that you've found a fellow adventurer.
+  </p>
+
+  <p class="mb-4">
+    In the immortal words of Ferris Bueller, "Life moves pretty fast. If you
+    don't stop and look around once in a while, you could miss it."
+  </p>
+
+  <p class="mb-4">
+    Join me in making every moment, online and off, a chance for growth,
+    connection, and a little 8-bit magic. Because in the end, we're all just
+    players trying to navigate this great game called life. 🕹️
+  </p>
+
+  <p class="mb-4">
+    Press ⬆️⬆️⬇️⬇️⬅️➡️⬅️➡️🅱️🅰️ to continue this adventure... 🚀
+  </p>
+
+  <p class="mb-4">
+    Incoming transmission... 📡 <br />
+    Son, if you're reading this someday, know that every word, every line of code,
+    every late-night movie analysis was a love letter to you. May my stories and
+    passions inspire you to live boldly, love deeply, and always stay curious. Though
+    time may pass, my love for you is as timeless as a classic NES game.
+  </p>
+
+  <p class="mb-4">
+    [Hidden Easter Egg: Clicking this text plays the "Never Gonna Give You Up"
+    8-bit tune 🎵]
+  </p>
 </section>

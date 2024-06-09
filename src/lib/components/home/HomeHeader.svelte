@@ -9,21 +9,21 @@
   <div class="max-w-lg">
     <h1 class="text-4xl">Hack The Planet</h1>
     <p class="text-lg">
-      Josh Lopez: Code Samurai, Support Sage, Unapologetic Geek.</p>
+      Josh Lopez: Code Samurai, Support Sage, Unapologetic Geek.
+    </p>
     <p>
-      Crafting web wonders, solving human puzzles, and keeping the 80s & 90s
-      alive. Join my quest for tech that feels like a warm hug.
+      Crafting web wonders, solving human puzzles, and keeping the radical vibes alive. Join me in forging a future where tech remains refreshingly human.
     </p>
   </div>
   <div class="relative w-48 h-48">
     <svg width="100%" height="100%" viewBox="0 0 200 200" class="shape shape0">
       <defs>
         <clipPath id="circleClip">
-          <circle cx="100" cy="100" r="100" /> 
+          <circle cx="100" cy="100" r="100" />
         </clipPath>
       </defs>
       <image
-        href="{imageUrl}"
+        href={imageUrl}
         width="200"
         height="200"
         clip-path="url(#circleClip)"
