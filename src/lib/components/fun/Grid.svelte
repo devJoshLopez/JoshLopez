@@ -2,6 +2,7 @@
   // @ts-nocheck
 
   import { onMount } from "svelte";
+  import bgNoise from "$lib/images/bgnoise.webp";
 
   let gridItems = [];
   let cols, rows;
@@ -63,4 +64,7 @@
 </script>
 
 <!-- Grid container for background effect -->
-<div class="grid-container pointer-events-none fixed inset-0 z-0"></div>
+<div
+  class="grid-container pointer-events-none fixed inset-0 z-0"
+  style="background-image: url({bgNoise})"
+></div>

@@ -1,18 +1,139 @@
 <script>
-  import { base } from "$app/paths";
+  import { onMount } from "svelte";
   import imageUrl from "$lib/images/josh-lopez.webp";
+
+  /**
+   * @param {number} min
+   * @param {number} max
+   */
+  function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  /**
+   * @param {number} shape
+   */
+  function createKeyframes(shape) {
+    const randomDuration = getRandom(8, 15); // Slower animation
+    const initialRotation = getRandom(-10, 10);
+    const keyframes = `
+      @keyframes float${shape} {
+        0%, 100% {
+          transform: translate(0, 0) rotate(${initialRotation}deg);
+        }
+        25% {
+          transform: translate(${getRandom(-10, 10)}px, ${getRandom(-10, 10)}px) rotate(${getRandom(-10, 10)}deg);
+        }
+        50% {
+          transform: translate(${getRandom(-10, 10)}px, ${getRandom(-10, 10)}px) rotate(${getRandom(-10, 10)}deg);
+        }
+        75% {
+          transform: translate(${getRandom(-10, 10)}px, ${getRandom(-10, 10)}px) rotate(${getRandom(-10, 10)}deg);
+        }
+      }
+    `;
+    const styleSheet = document.styleSheets[0];
+    styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+
+    return randomDuration;
+  }
+
+  function applyRandomAnimation() {
+    const shapes = document.querySelectorAll(".shape");
+    shapes.forEach((shape, index) => {
+      if (index !== 0) {
+        const duration = createKeyframes(index);
+        // @ts-ignore
+        shape.style.animation = `float${index} ${duration}s ease-in-out infinite`;
+      }
+    });
+  }
+
+  function applyCursorAvoidance() {
+    const shapes = document.querySelectorAll(".shape");
+    const bufferDistance = 160; // Adjust this value as needed
+    let isAnimating = false;
+    let offsets = Array.from({ length: shapes.length }, () => ({ x: 0, y: 0 }));
+
+    /**
+     * @param {{ clientX: any; clientY: any; }} event
+     */
+    function handleMouseMove(event) {
+      if (!isAnimating) {
+        isAnimating = true;
+        requestAnimationFrame(() => {
+          const mouseX = event.clientX;
+          const mouseY = event.clientY;
+
+          shapes.forEach((shape, index) => {
+            if (index !== 0) {
+              const rect = shape.getBoundingClientRect();
+              const shapeX = rect.left + rect.width / 2;
+              const shapeY = rect.top + rect.height / 2;
+              const distance = Math.hypot(shapeX - mouseX, shapeY - mouseY);
+
+              if (distance < bufferDistance) {
+                const angle = Math.atan2(shapeY - mouseY, shapeX - mouseX);
+                const maxOffset = 30;
+                const offsetFactor = 1 - distance / bufferDistance;
+                const offsetX = Math.cos(angle) * maxOffset * offsetFactor;
+                const offsetY = Math.sin(angle) * maxOffset * offsetFactor;
+
+                const easing = 0.1;
+                offsets[index].x += (offsetX - offsets[index].x) * easing;
+                offsets[index].y += (offsetY - offsets[index].y) * easing;
+
+                const maxRotation = 10;
+                const rotationFactor = 1 - distance / bufferDistance;
+                const rotation = getRandom(-maxRotation, maxRotation) * rotationFactor;
+
+                // @ts-ignore
+                shape.style.transition = "transform 0.5s ease-out";
+                // @ts-ignore
+                shape.style.transform = `translate(${offsets[index].x}px, ${offsets[index].y}px) rotate(${rotation}deg)`;
+                shape.classList.add("no-animation");
+              } else {
+                const easing = 0.05;
+                offsets[index].x += (0 - offsets[index].x) * easing;
+                offsets[index].y += (0 - offsets[index].y) * easing;
+
+                // @ts-ignore
+                shape.style.transition = "transform 0.5s ease-out";
+                // @ts-ignore
+                shape.style.transform = `translate(${offsets[index].x}px, ${offsets[index].y}px)`;
+                setTimeout(() => {
+                  shape.classList.remove("no-animation");
+                }, 500);
+              }
+            }
+          });
+
+          isAnimating = false;
+        });
+      }
+    }
+
+    document.addEventListener("mousemove", handleMouseMove);
+  }
+
+
+  onMount(() => {
+    applyRandomAnimation();
+    applyCursorAvoidance();
+  });
 </script>
 
 <section
-  class="flex items-center justify-between bg-gradient-to-b from-gray-900 to-gray-800 text-white p-8"
+  class="relative flex items-center justify-between text-white p-8 rounded-md section-glass mt-3"
 >
-  <div class="max-w-lg">
-    <h1 class="text-4xl">Hack The Planet</h1>
-    <p class="text-lg">
+  <div class="max-w-xl">
+    <h1 class="text-7xl">Hack The Planet</h1>
+    <p class="text-lg mb-4">
       Josh Lopez: Code Samurai, Support Sage, Unapologetic Geek.
     </p>
     <p>
-      Crafting web wonders, solving human puzzles, and keeping the radical vibes alive. Join me in forging a future where tech remains refreshingly human.
+      Crafting digital delights, cracking human codes, and preserving the 80s
+      spirit. Join me in forging a future where tech remains refreshingly human.
     </p>
   </div>
   <div class="relative w-48 h-48">
@@ -55,6 +176,10 @@
 <style>
   .shape {
     position: absolute;
+    transition: transform 0.5s ease-out; /* Smoother transition for avoidance */
+  }
+  :global(.shape.no-animation) {
+    animation: none !important;
   }
   .shape0 {
     z-index: 1;
