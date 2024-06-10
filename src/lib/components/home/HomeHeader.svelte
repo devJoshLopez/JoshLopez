@@ -124,9 +124,9 @@
 </script>
 
 <section
-  class="relative flex items-center justify-between text-white p-8 rounded-md section-glass mt-3"
+  class="relative flex items-center justify-between max-sm:flex-col-reverse max-sm:items-start text-white p-8 rounded-md section-glass mt-3"
 >
-  <div class="max-w-xl">
+  <div class="max-w-xl max-sm:w-full">
     <h1 class="text-6xl">Hack The Planet</h1>
     <p class="text-lg mb-4 font-bold">
       Josh Lopez: Code Samurai, Support Sage, Unapologetic Geek.
@@ -136,7 +136,7 @@
       spirit. Join me in forging a future where tech remains refreshingly human.
     </p>
   </div>
-  <div class="relative w-48 h-48">
+  <div class="relative w-48 h-48 max-sm:self-center max-sm:mb-6">
     <svg width="100%" height="100%" viewBox="0 0 200 200" class="shape shape0">
       <defs>
         <clipPath id="circleClip">
