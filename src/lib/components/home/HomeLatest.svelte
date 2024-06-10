@@ -8,7 +8,7 @@
 </script>
 
 <section class="relative text-white p-8 rounded-md section-glass mt-12">
-    <h2 class="text-4xl mb-4">"Number 5 is Alive!"</h2>
+    <h2 class="text-3xl mb-4">"Number 5 is Alive!"</h2>
     <div class="latest-content">
       [Insert latest piece of content here]
     </div>

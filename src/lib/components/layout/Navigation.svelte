@@ -31,17 +31,28 @@
     role="navigation"
     aria-label="Main Navigation"
   >
-    <a href="/" class="text-pink-600 hover:text-teal-400 glow-on-hover">Home</a>
-    <a href="/videos" class="text-pink-600 hover:text-teal-400 glow-on-hover"
+    <a
+      href="/"
+      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover">Home</a
+    >
+    <a
+      href="/videos"
+      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover"
       >Videos</a
     >
-    <a href="/writings" class="text-pink-600 hover:text-teal-400 glow-on-hover"
+    <a
+      href="/writings"
+      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover"
       >Writings</a
     >
-    <a href="/projects" class="text-pink-600 hover:text-teal-400 glow-on-hover"
+    <a
+      href="/projects"
+      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover"
       >Projects</a
     >
-    <a href="/connect" class="text-pink-600 hover:text-teal-400 glow-on-hover"
+    <a
+      href="/connect"
+      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover"
       >Connect</a
     >
   </nav>

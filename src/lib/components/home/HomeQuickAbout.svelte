@@ -3,7 +3,7 @@
 </script>
 
 <section class="relative text-white p-8 rounded-md section-glass mt-12">
-  <h2 class="text-4xl mb-4">
+  <h2 class="text-3xl mb-4">
     “With Great Power Comes Great Responsibility”
   </h2>
 

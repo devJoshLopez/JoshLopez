@@ -1,6 +1,6 @@
 <section class="relative text-white p-8 rounded-md section-glass mt-12 mb-12">
-  <h2 class="text-4xl mb-4">
-    "Greetings, Starfighter. You Have Been Recruited"
+  <h2 class="text-3xl mb-4">
+    "Greetings, Starfighter. <br />You Have Been Recruited"
   </h2>
   <p class="mb-4">👋 Hey there, digital ally!</p>
 

@@ -127,8 +127,8 @@
   class="relative flex items-center justify-between text-white p-8 rounded-md section-glass mt-3"
 >
   <div class="max-w-xl">
-    <h1 class="text-7xl">Hack The Planet</h1>
-    <p class="text-lg mb-4">
+    <h1 class="text-6xl">Hack The Planet</h1>
+    <p class="text-lg mb-4 font-bold">
       Josh Lopez: Code Samurai, Support Sage, Unapologetic Geek.
     </p>
     <p>

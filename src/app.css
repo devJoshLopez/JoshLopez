@@ -113,14 +113,17 @@ h6 {
   /* font-family: "Roboto Slab", serif; */
   /* font-family: "Newake", sans-serif; */
   font-family: "Dujitsu", sans-serif;
-  font-weight: bold;
   letter-spacing: 2px;
   color: #fff951;
+  text-transform: uppercase;
+  filter: drop-shadow(3px 6px 0 #000000);
 }
 
 a {
   color: #e94560;
+  font-weight: bold;
   transition: color 0.3s ease;
+  filter: drop-shadow(1px 2px 0 #000000);
 }
 
 a:hover {
