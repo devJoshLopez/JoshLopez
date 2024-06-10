@@ -8,28 +8,28 @@
 /* Custom Fonts */
 @font-face {
   font-family: "Teenage Dreams Regular";
-  src: url("../indieground-teenagedreams/TeenageDreamsFont-Demo-Regular.ttf") format("truetype");
+  src: url("./indieground-teenagedreams/TeenageDreamsFont-Demo-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Teenage Dreams Bold";
-  src: url("../indieground-teenagedreams/TeenageDreamsFont-Demo-Bold.ttf") format("truetype");
+  src: url("./indieground-teenagedreams/TeenageDreamsFont-Demo-Bold.ttf") format("truetype");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Teenage Dreams Alternative1";
-  src: url("../indieground-teenagedreams/TeenageDreamsFont-Demo-Alternative1.ttf") format("truetype");
+  src: url("./indieground-teenagedreams/TeenageDreamsFont-Demo-Alternative1.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Teenage Dreams Alternative2";
-  src: url("../indieground-teenagedreams/TeenageDreamsFont-Demo-Alternative2.ttf") format("truetype");
+  src: url("./indieground-teenagedreams/TeenageDreamsFont-Demo-Alternative2.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Dujitsu";
-  src: url("../indieground-dujitsu/DujitsuFont-Demo.otf") format("opentype");
+  src: url("./indieground-dujitsu/DujitsuFont-Demo.otf") format("opentype");
 }
 
 .custom-font {
