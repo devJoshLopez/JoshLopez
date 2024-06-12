@@ -1,4 +1,4 @@
-import { c as create_ssr_component, e as escape, f as add_attribute, v as validate_component } from "../../chunks/ssr.js";
+import { c as create_ssr_component, e as escape, f as add_attribute, v as validate_component, h as each } from "../../chunks/ssr.js";
 const joshImage = "/_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp";
 const hackersFloppy = "data:image/png;base64,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";
 const css$5 = {
@@ -59,11 +59,23 @@ const HomeQuickAbout = create_ssr_component(($$result, $$props, $$bindings, slot
 const johnny5 = "/_app/immutable/assets/johnny_5_short_circuit.CoqYENSI.png";
 const css$2 = {
   code: ".johnny5-floaty{position:absolute;z-index:-1;top:-25px;left:-50px;width:84px}",
-  map: '{"version":3,"file":"HomeLatest.svelte","sources":["HomeLatest.svelte"],"sourcesContent":["<script>\\n  import Floaty from \\"../fun/Floaty.svelte\\";\\n  import johnny5 from \\"$lib/images/johnny_5_short_circuit.png\\";\\n\\n<\/script>\\n\\n<section class=\\"relative text-white p-8 rounded-md section-glass mt-32\\">\\n    <h2 class=\\"text-3xl mb-4\\">\\"Number 5 is Alive!\\"</h2>\\n    <div class=\\"latest-content\\">\\n      [Insert latest piece of content here]\\n    </div>\\n\\n    <Floaty className=\\"johnny5-floaty\\">\\n      <img src={johnny5} alt=\\"Johnny 5 from Short Circuit\\" />\\n    </Floaty>\\n</section>\\n\\n<style>\\n  :global(.johnny5-floaty) {\\n    position: absolute;\\n    z-index: -1;\\n    top: -25px;\\n    left: -50px;\\n    width: 84px;\\n  }\\n</style>"],"names":[],"mappings":"AAkBU,eAAiB,CACvB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,GAAG,CAAE,KAAK,CACV,IAAI,CAAE,KAAK,CACX,KAAK,CAAE,IACT"}'
+  map: '{"version":3,"file":"HomeLatest.svelte","sources":["HomeLatest.svelte"],"sourcesContent":["<script>\\n  import Floaty from \\"../fun/Floaty.svelte\\";\\n  import johnny5 from \\"$lib/images/johnny_5_short_circuit.png\\";\\n\\n  export let latestPost;\\n\\n  /**\\n   * @param {string | number | Date} date\\n   */\\n  function dateToLocaleString(date) {\\n    return new Date(date).toLocaleDateString(\\"en-US\\", {\\n      year: \\"numeric\\",\\n      month: \\"long\\",\\n      day: \\"numeric\\",\\n    });\\n  }\\n<\/script>\\n\\n<section class=\\"relative text-white p-8 rounded-md section-glass mt-32\\">\\n  <h2 class=\\"text-3xl mb-4\\">\\"Number 5 is Alive!\\"</h2>\\n  <div class=\\"latest-content\\">\\n    <h3 class=\\"text-2xl mt-4\\">{latestPost.title}</h3>\\n    <p class=\\"text-sm\\">{dateToLocaleString(latestPost.date)}</p>\\n    {#each latestPost.categories as category}\\n      <span class=\\"text-sm bg-gray-800 px-2 py-1 rounded-md mr-2\\"\\n        >{category}</span\\n      >\\n    {/each}\\n    <p class=\\"mt-4\\">{latestPost.description}</p>\\n\\n    <div class=\\"mt-4\\">\\n      <a href=\\"/writings/{latestPost.slug}\\" class=\\"btn btn-primary\\">Read More</a\\n      >\\n    </div>\\n  </div>\\n\\n  <Floaty className=\\"johnny5-floaty\\">\\n    <img src={johnny5} alt=\\"Johnny 5 from Short Circuit\\" />\\n  </Floaty>\\n</section>\\n\\n<style>\\n  :global(.johnny5-floaty) {\\n    position: absolute;\\n    z-index: -1;\\n    top: -25px;\\n    left: -50px;\\n    width: 84px;\\n  }\\n</style>\\n"],"names":[],"mappings":"AA0CU,eAAiB,CACvB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,GAAG,CAAE,KAAK,CACV,IAAI,CAAE,KAAK,CACX,KAAK,CAAE,IACT"}'
 };
+function dateToLocaleString(date) {
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+}
 const HomeLatest = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { latestPost } = $$props;
+  if ($$props.latestPost === void 0 && $$bindings.latestPost && latestPost !== void 0)
+    $$bindings.latestPost(latestPost);
   $$result.css.add(css$2);
-  return `<section class="relative text-white p-8 rounded-md section-glass mt-32"><h2 class="text-3xl mb-4" data-svelte-h="svelte-opcgz8">&quot;Number 5 is Alive!&quot;</h2> <div class="latest-content" data-svelte-h="svelte-vjwcts">[Insert latest piece of content here]</div> ${validate_component(Floaty, "Floaty").$$render($$result, { className: "johnny5-floaty" }, {}, {
+  return `<section class="relative text-white p-8 rounded-md section-glass mt-32"><h2 class="text-3xl mb-4" data-svelte-h="svelte-opcgz8">&quot;Number 5 is Alive!&quot;</h2> <div class="latest-content"><h3 class="text-2xl mt-4">${escape(latestPost.title)}</h3> <p class="text-sm">${escape(dateToLocaleString(latestPost.date))}</p> ${each(latestPost.categories, (category) => {
+    return `<span class="text-sm bg-gray-800 px-2 py-1 rounded-md mr-2">${escape(category)}</span>`;
+  })} <p class="mt-4">${escape(latestPost.description)}</p> <div class="mt-4"><a href="${"/writings/" + escape(latestPost.slug, true)}" class="btn btn-primary">Read More</a></div></div> ${validate_component(Floaty, "Floaty").$$render($$result, { className: "johnny5-floaty" }, {}, {
     default: () => {
       return `<img${add_attribute("src", johnny5, 0)} alt="Johnny 5 from Short Circuit">`;
     }
@@ -72,11 +84,18 @@ const HomeLatest = create_ssr_component(($$result, $$props, $$bindings, slots) =
 const delorean = "/_app/immutable/assets/delorean.DABPZUWp.png";
 const css$1 = {
   code: ".delorean-floaty{position:absolute;z-index:-1;top:-25px;right:-50px;width:120px}",
-  map: `{"version":3,"file":"HomeContent.svelte","sources":["HomeContent.svelte"],"sourcesContent":["<script>\\n   import delorean from \\"$lib/images/delorean.png\\";\\n    import Floaty from \\"$lib/components/fun/Floaty.svelte\\";\\n<\/script>\\n\\n<section class=\\"relative text-white p-8 rounded-md section-glass mt-32\\">\\n    <h2 class=\\"text-3xl mb-4\\">\\"Roads? Where We're Going, We Don't Need Roads.\\"</h2>\\n    <div class=\\"more-content\\">\\n      [Insert list of more content to watch or read here]\\n    </div>\\n\\n    <Floaty className=\\"delorean-floaty\\">\\n      <img src={delorean} alt=\\"Delorean from Back to the Future\\" />\\n    </Floaty>\\n</section>\\n\\n<style>\\n  :global(.delorean-floaty) {\\n    position: absolute;\\n    z-index: -1;\\n    top: -25px;\\n    right: -50px;\\n    width: 120px;\\n  }\\n</style>"],"names":[],"mappings":"AAiBU,gBAAkB,CACxB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,GAAG,CAAE,KAAK,CACV,KAAK,CAAE,KAAK,CACZ,KAAK,CAAE,KACT"}`
+  map: `{"version":3,"file":"HomeContent.svelte","sources":["HomeContent.svelte"],"sourcesContent":["<script>\\n  import delorean from \\"$lib/images/delorean.png\\";\\n  import Floaty from \\"$lib/components/fun/Floaty.svelte\\";\\n\\n  export let recentPosts;\\n<\/script>\\n\\n<section class=\\"relative text-white p-8 rounded-md section-glass mt-32\\">\\n  <h2 class=\\"text-3xl mb-4\\">\\n    \\"Roads? Where We're Going, We Don't Need Roads.\\"\\n  </h2>\\n  <div class=\\"more-content\\">\\n    {#each recentPosts as post}\\n      <h3 class=\\"text-2xl mt-4\\">{post.title}</h3>\\n      <p class=\\"text-sm\\">{post.date}</p>\\n      {#each post.categories as category}\\n        <span class=\\"text-sm bg-gray-800 px-2 py-1 rounded-md mr-2\\">{category}</span>\\n      {/each}\\n      <p class=\\"mt-4\\">{post.description}</p>\\n      <div class=\\"mt-4\\">\\n        <a href=\\"/writings/{post.slug}\\" class=\\"btn btn-primary\\">Read More</a>\\n      </div>\\n    {/each}\\n  </div>\\n\\n  <Floaty className=\\"delorean-floaty\\">\\n    <img src={delorean} alt=\\"Delorean from Back to the Future\\" />\\n  </Floaty>\\n</section>\\n\\n<style>\\n  :global(.delorean-floaty) {\\n    position: absolute;\\n    z-index: -1;\\n    top: -25px;\\n    right: -50px;\\n    width: 120px;\\n  }\\n</style>\\n"],"names":[],"mappings":"AA+BU,gBAAkB,CACxB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,GAAG,CAAE,KAAK,CACV,KAAK,CAAE,KAAK,CACZ,KAAK,CAAE,KACT"}`
 };
 const HomeContent = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { recentPosts } = $$props;
+  if ($$props.recentPosts === void 0 && $$bindings.recentPosts && recentPosts !== void 0)
+    $$bindings.recentPosts(recentPosts);
   $$result.css.add(css$1);
-  return `<section class="relative text-white p-8 rounded-md section-glass mt-32"><h2 class="text-3xl mb-4" data-svelte-h="svelte-11z59dq">&quot;Roads? Where We&#39;re Going, We Don&#39;t Need Roads.&quot;</h2> <div class="more-content" data-svelte-h="svelte-178fkb1">[Insert list of more content to watch or read here]</div> ${validate_component(Floaty, "Floaty").$$render($$result, { className: "delorean-floaty" }, {}, {
+  return `<section class="relative text-white p-8 rounded-md section-glass mt-32"><h2 class="text-3xl mb-4" data-svelte-h="svelte-1ksvg42">&quot;Roads? Where We&#39;re Going, We Don&#39;t Need Roads.&quot;</h2> <div class="more-content">${each(recentPosts, (post) => {
+    return `<h3 class="text-2xl mt-4">${escape(post.title)}</h3> <p class="text-sm">${escape(post.date)}</p> ${each(post.categories, (category) => {
+      return `<span class="text-sm bg-gray-800 px-2 py-1 rounded-md mr-2">${escape(category)}</span>`;
+    })} <p class="mt-4">${escape(post.description)}</p> <div class="mt-4"><a href="${"/writings/" + escape(post.slug, true)}" class="btn btn-primary">Read More</a> </div>`;
+  })}</div> ${validate_component(Floaty, "Floaty").$$render($$result, { className: "delorean-floaty" }, {}, {
     default: () => {
       return `<img${add_attribute("src", delorean, 0)} alt="Delorean from Back to the Future">`;
     }
@@ -118,9 +137,16 @@ const HomeAbout = create_ssr_component(($$result, $$props, $$bindings, slots) =>
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { data } = $$props;
+  const publishedPosts = data.posts.filter(
+    /** @type {{ published: any; }} */
+    (post) => post.published
+  );
+  const sortedPosts = publishedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const latestPost = sortedPosts[0];
+  const recentPosts = sortedPosts.slice(1, 5);
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
-  return `<div class="max-w-4xl mx-auto px-4">${validate_component(HomeHeader, "HomeHeader").$$render($$result, {}, {}, {})} <pre>${escape(JSON.stringify(data, null, 2))}</pre> ${validate_component(HomeQuickAbout, "HomeQuickAbout").$$render($$result, {}, {}, {})} ${validate_component(HomeLatest, "HomeLatest").$$render($$result, {}, {}, {})} ${validate_component(HomeContent, "HomeContent").$$render($$result, {}, {}, {})} ${validate_component(HomeAbout, "HomeAbout").$$render($$result, {}, {}, {})}</div>`;
+  return `<div class="max-w-4xl mx-auto px-4">${validate_component(HomeHeader, "HomeHeader").$$render($$result, {}, {}, {})} ${validate_component(HomeQuickAbout, "HomeQuickAbout").$$render($$result, {}, {}, {})} ${validate_component(HomeLatest, "HomeLatest").$$render($$result, { latestPost }, {}, {})} ${validate_component(HomeContent, "HomeContent").$$render($$result, { recentPosts }, {}, {})} ${validate_component(HomeAbout, "HomeAbout").$$render($$result, {}, {}, {})}</div>`;
 });
 export {
   Page as default

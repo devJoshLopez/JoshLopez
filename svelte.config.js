@@ -48,8 +48,8 @@ const config = {
     prerender: {
       entries: posts.map((post) => `/writings/${post.slug}`),
       handleHttpError: ({ path, referrer, message }) => {
-        // Ignore errors related to /api/posts and /rss.xml
-        if (path.startsWith('/api/posts') || path === '/rss.xml') {
+        // Ignore errors related to /api/posts
+        if (path.startsWith('/api/posts')) {
           return;
         }
         // Throw an error for all other cases

@@ -4,7 +4,7 @@ const Grid = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return ` <div class="grid-container pointer-events-none fixed inset-0 z-0" style="${"background-image: url(" + escape(bgNoise, true) + ")"}"></div>`;
 });
 const Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<footer class="bg-gray-900 text-white border-t-4 border-pink-600 p-4 text-center fixed bottom-0 w-full z-20" data-svelte-h="svelte-1ksvl2v">© Copyright 1985 Josh Lopez. <a href="/rss.xml" target="_blank">RSS</a></footer>`;
+  return `<footer class="bg-gray-900 text-white border-t-4 border-pink-600 p-4 text-center fixed bottom-0 w-full z-20" data-svelte-h="svelte-1dji289">© Copyright 1985 Josh Lopez.</footer>`;
 });
 const css = {
   code: "@media(max-width: 768px){.nav-menu.svelte-mjmoau.svelte-mjmoau{flex-direction:column;background-color:#1a202c;position:absolute;top:100%;right:16px;width:auto;padding:1rem}.nav-menu.svelte-mjmoau a.svelte-mjmoau{margin-bottom:0.5rem}}",

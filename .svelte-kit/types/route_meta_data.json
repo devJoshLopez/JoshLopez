@@ -13,9 +13,6 @@
 	"/projects": [
 		"src/routes/+layout.js"
 	],
-	"/rss.xml": [
-		"src/routes/rss.xml/+server.js"
-	],
 	"/videos": [
 		"src/routes/+layout.js"
 	],

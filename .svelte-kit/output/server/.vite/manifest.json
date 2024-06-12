@@ -101,7 +101,7 @@
       "_ssr.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.YTYNR0CS.css"
+      "_app/immutable/assets/_layout.DiKQKUHG.css"
     ],
     "assets": [
       "_app/immutable/assets/bgnoise.Bs-ruk1u.webp"
@@ -156,12 +156,6 @@
     "imports": [
       "_ssr.js"
     ]
-  },
-  "src/routes/rss.xml/+server.js": {
-    "file": "entries/endpoints/rss.xml/_server.js",
-    "name": "entries/endpoints/rss.xml/_server",
-    "src": "src/routes/rss.xml/+server.js",
-    "isEntry": true
   },
   "src/routes/videos/+page.svelte": {
     "file": "entries/pages/videos/_page.svelte.js",

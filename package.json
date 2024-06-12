@@ -5,8 +5,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"fetch-posts": "node scripts/fetch-posts.js",
-		"prebuild": "node scripts/generatePostSlugs.js",
-		"build": "npm run fetch-posts && vite build",
+		"generate-slugs": "node scripts/generatePostSlugs.js",
+		"build": "npm run fetch-posts && npm run generate-slugs && vite build",
 		"preview": "vite preview",
 		"deploy": "cp CNAME build/ && npx gh-pages -d build -t true",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",

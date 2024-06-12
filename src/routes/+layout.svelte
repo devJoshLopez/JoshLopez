@@ -10,7 +10,7 @@
 <Navigation />
 
 <main class="text-gray-200 p-8 relative z-10 pt-32">
-  <slot></slot>
+  <slot />
 </main>
 
 <Footer />
