@@ -1,0 +1,26 @@
+import { e as error } from "../../../../chunks/index.js";
+const __variableDynamicImportRuntimeHelper = (glob, path, segs) => {
+  const v = glob[path];
+  if (v) {
+    return typeof v === "function" ? v() : Promise.resolve(v);
+  }
+  return new Promise((_, reject) => {
+    (typeof queueMicrotask === "function" ? queueMicrotask : setTimeout)(reject.bind(null, new Error("Unknown variable dynamic import: " + path + (path.split("/").length !== segs ? ". Note that variables only represent file names one level deep." : ""))));
+  });
+};
+const prerender = true;
+async function load({ params }) {
+  try {
+    const post = await __variableDynamicImportRuntimeHelper(/* @__PURE__ */ Object.assign({ "../../../posts/first-post.md": () => import("../../../../chunks/first-post.js"), "../../../posts/second-post.md": () => import("../../../../chunks/second-post.js") }), `../../../posts/${params.slug}.md`, 5);
+    return {
+      content: post.default,
+      meta: post.metadata
+    };
+  } catch (e) {
+    throw error(404, `Could not find ${params.slug}`);
+  }
+}
+export {
+  load,
+  prerender
+};

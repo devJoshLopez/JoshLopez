@@ -9,7 +9,7 @@
 <header
   class="bg-gray-900 text-white border-b-4 border-pink-600 p-4 fixed top-0 w-full z-20 flex justify-between items-center"
 >
-  <h1 class="text-4xl">Josh Lopez</h1>
+  <a href="/"><h1 class="text-4xl">Josh Lopez</h1></a>
   <button on:click={toggleMenu} class="text-pink-600 md:hidden">
     <svg
       class="w-8 h-8"
@@ -28,13 +28,8 @@
   </button>
   <nav
     class={`nav-menu ${menuOpen ? "" : "hidden"} flex md:flex md:space-x-4 rounded-b-md`}
-    role="navigation"
     aria-label="Main Navigation"
   >
-    <a
-      href="/"
-      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover">Home</a
-    >
     <a
       href="/videos"
       class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover"

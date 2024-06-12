@@ -1,8 +1,10 @@
-
+import * as universal from '../entries/pages/writings/_page.js';
 
 export const index = 6;
 let component_cache;
 export const component = async () => component_cache ??= (await import('../entries/pages/writings/_page.svelte.js')).default;
-export const imports = ["_app/immutable/nodes/6.BAQXJnKg.js","_app/immutable/chunks/scheduler.Bv6yFrMh.js","_app/immutable/chunks/index.DphpNzGg.js"];
+export { universal };
+export const universal_id = "src/routes/writings/+page.js";
+export const imports = ["_app/immutable/nodes/6.Cycd3AOz.js","_app/immutable/chunks/scheduler.CPmbweew.js","_app/immutable/chunks/index.ZRKh8J5S.js"];
 export const stylesheets = [];
 export const fonts = [];

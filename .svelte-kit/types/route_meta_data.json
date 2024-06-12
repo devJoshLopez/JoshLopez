@@ -1,7 +1,11 @@
 {
 	"/": [
+		"src/routes/+page.js",
 		"src/routes/+layout.js",
 		"src/routes/+layout.js"
+	],
+	"/api/posts": [
+		"src/routes/api/posts/+server.js"
 	],
 	"/connect": [
 		"src/routes/+layout.js"
@@ -9,10 +13,18 @@
 	"/projects": [
 		"src/routes/+layout.js"
 	],
+	"/rss.xml": [
+		"src/routes/rss.xml/+server.js"
+	],
 	"/videos": [
 		"src/routes/+layout.js"
 	],
 	"/writings": [
+		"src/routes/writings/+page.js",
+		"src/routes/+layout.js"
+	],
+	"/writings/[slug]": [
+		"src/routes/writings/[slug]/+page.js",
 		"src/routes/+layout.js"
 	]
 }

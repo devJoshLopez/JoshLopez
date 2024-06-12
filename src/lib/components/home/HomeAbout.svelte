@@ -1,4 +1,9 @@
-<section class="relative text-white p-8 rounded-md section-glass mt-12 mb-12">
+<script>
+  import Floaty from "$lib/components/fun/Floaty.svelte";
+  import lastStarfighter from "$lib/images/last-starfighter.png";
+</script>
+
+<section class="relative text-white p-8 rounded-md section-glass mt-32 mb-12">
   <h2 class="text-3xl mb-4">
     "Greetings, Starfighter. <br />You Have Been Recruited"
   </h2>
@@ -101,4 +106,18 @@
     [Hidden Easter Egg: Clicking this text plays the "Never Gonna Give You Up"
     8-bit tune 🎵]
   </p>
+
+  <Floaty className="last-starfighter-floaty">
+    <img src={lastStarfighter} alt="The Last Starfighter" />
+  </Floaty>
 </section>
+
+<style>
+  :global(.last-starfighter-floaty) {
+    position: absolute;
+    z-index: -1;
+    top: -25px;
+    left: -50px;
+    width: 84px;
+  }
+  </style>
