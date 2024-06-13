@@ -12,7 +12,6 @@
   <div class="more-content">
     {#each recentPosts as post}
       <h3 class="text-2xl mt-4">{post.title}</h3>
-      <p class="text-sm">{post.date}</p>
       {#each post.categories as category}
         <span class="text-sm bg-gray-800 px-2 py-1 rounded-md mr-2">{category}</span>
       {/each}

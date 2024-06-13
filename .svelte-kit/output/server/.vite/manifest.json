@@ -55,10 +55,10 @@
     "file": "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp",
     "src": "src/lib/images/josh-lopez.webp"
   },
-  "src/posts/first-post.md": {
-    "file": "chunks/first-post.js",
-    "name": "first-post",
-    "src": "src/posts/first-post.md",
+  "src/posts/radical-support-training.md": {
+    "file": "chunks/radical-support-training.js",
+    "name": "radical-support-training",
+    "src": "src/posts/radical-support-training.md",
     "isDynamicEntry": true,
     "imports": [
       "_ssr.js"
@@ -101,7 +101,7 @@
       "_ssr.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DiKQKUHG.css"
+      "_app/immutable/assets/_layout.D6WYR2dR.css"
     ],
     "assets": [
       "_app/immutable/assets/bgnoise.Bs-ruk1u.webp"
@@ -190,7 +190,7 @@
       "_index.js"
     ],
     "dynamicImports": [
-      "src/posts/first-post.md",
+      "src/posts/radical-support-training.md",
       "src/posts/second-post.md"
     ]
   },
