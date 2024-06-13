@@ -107,16 +107,29 @@ h3,
 h4,
 h5,
 h6 {
-  /* color: #03fcf0; */
-  /* font-family: "Rubik 80s Fade", system-ui; */
-  /* font-family: "Teenage Dreams Bold", sans-serif; */
-  /* font-family: "Roboto Slab", serif; */
-  /* font-family: "Newake", sans-serif; */
   font-family: "Dujitsu", sans-serif;
   letter-spacing: 2px;
   color: #fff951;
   text-transform: uppercase;
   filter: drop-shadow(3px 6px 0 #000000);
+}
+
+/* make the text a moving gradient with #fff951 */
+h1,
+h2 {
+  background: linear-gradient(90deg, 
+    #fff951 0%, #51a8ff 25%, #ff51f9 50%, #51ffa8 75%, #fff951 100%);
+  background-size: 1000% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: background 2000s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+@keyframes background {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 1000% 50%; }
 }
 
 a {

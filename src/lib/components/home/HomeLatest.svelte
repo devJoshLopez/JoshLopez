@@ -9,9 +9,11 @@
   <h2 class="text-3xl mb-4">"Number 5 is Alive!"</h2>
   <div class="latest-content flex flex-col md:flex-row justify-between gap-4">
     <div class="w-full md:w-2/3">
-      <h3 class="text-2xl mt-4">{latestPost.title}</h3>
+      <h3 class="text-4xl">
+        {latestPost.title}
+      </h3>
       {#each latestPost.categories as category}
-        <span class="text-sm bg-gray-800 px-2 py-1 rounded-md mr-2"
+        <span class="text-xs bg-gray-800 px-2 py-1 rounded-md mr-2"
           >{category}</span
         >
       {/each}
@@ -44,5 +46,11 @@
     top: -25px;
     left: -50px;
     width: 84px;
+  }
+
+  h3 {
+    font-family: "Teenage Dreams Bold", sans-serif;
+    text-transform: capitalize;
+    line-height: 1.2;
   }
 </style>
