@@ -1,4 +1,5 @@
 <script>
+  import RetroButton from "../fun/RetroButton.svelte";
   import Floaty from "../fun/Floaty.svelte";
   import johnny5 from "$lib/images/johnny_5_short_circuit.png";
 
@@ -7,7 +8,10 @@
 
 <section class="relative text-white p-8 rounded-md section-glass mt-32">
   <h2 class="text-3xl mb-4">"Number 5 is Alive!"</h2>
-  <div class="latest-content flex flex-col md:flex-row justify-between gap-4">
+
+  <div
+    class="latest-content card flex flex-col md:flex-row justify-between gap-4"
+  >
     <div class="w-full md:w-2/3">
       <h3 class="text-4xl">
         {latestPost.title}
@@ -18,6 +22,20 @@
         >
       {/each}
       <p class="mt-4">{latestPost.description}</p>
+
+      <div class="mt-4">
+        <!-- <a
+          href="/writings/{latestPost.slug}"
+          class="keyboard-button mt-4 inline-block"
+        >
+          Read More
+        </a> -->
+        <RetroButton
+          url="/writings"
+          label="Read More"
+          size="lg"
+         />
+      </div>
     </div>
 
     {#if latestPost.image}
@@ -29,9 +47,6 @@
         />
       </div>
     {/if}
-  </div>
-  <div class="mt-4">
-    <a href="/writings/{latestPost.slug}" class="btn btn-primary">Read More</a>
   </div>
 
   <Floaty className="johnny5-floaty">
