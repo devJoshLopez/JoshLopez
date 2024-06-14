@@ -23,7 +23,7 @@
 <style>
   :global(.spiderman-floaty) {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     bottom: -25px;
     right: -50px;
     width: 50px;

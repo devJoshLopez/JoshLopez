@@ -1,6 +1,22 @@
-##TODO: 
+##TODO:
+
+- fix the way mobile looks
+- fix the scroll on mobile
+- write more blog posts for content
+- fix the mouse avoidance js to stop jittering
+- make the content section on homepage better
+- add a video modal component - possible static for background
+  - add click event to open modal for icons
+- work on writings list page - possible bento box style
+- work on writings page
+- show rickroll when konami code entered
+- create a nes controller component for konami code
+- work on videos page which uses the youtube api to get videos
+- work on projects page
+- work on connect page
 
 #Notes:
+
 - Use `import { base } from "$app/paths"` to get the base path of the app
 - https://www.youtube.com/watch?v=RhScu3uqGd0
 

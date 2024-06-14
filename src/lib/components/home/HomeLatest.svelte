@@ -49,7 +49,7 @@
 <style>
   :global(.johnny5-floaty) {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: -25px;
     left: -50px;
     width: 84px;

@@ -1,8 +1,23 @@
 <script>
+  // @ts-nocheck
+
   import delorean from "$lib/images/delorean.png";
   import Floaty from "$lib/components/fun/Floaty.svelte";
+  import Modal from "../fun/Modal.svelte";
+  import RetroButton from "../fun/RetroButton.svelte";
+  import { writable } from "svelte/store";
 
   export let recentPosts;
+
+  let isOpen = writable(false);
+
+  function openMyModal() {
+    isOpen.set(true);
+  }
+
+  function closeMyModal() {
+    isOpen.set(false);
+  }
 </script>
 
 <section class="section-glass relative mt-32 rounded-md p-8 text-white">
@@ -25,15 +40,33 @@
   </div>
 
   <Floaty className="delorean-floaty">
-    <img src={delorean} alt="Delorean from Back to the Future" />
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <img
+      src={delorean}
+      alt="Delorean from Back to the Future"
+      on:click={openMyModal}
+    />
   </Floaty>
 </section>
+
+{#if $isOpen}
+  <Modal {isOpen} on:close={closeMyModal}>
+    <div>
+      <h2>This is a modal</h2>
+      <p>
+        You can place any content here, including text, videos, and buttons.
+      </p>
+      <RetroButton label="Click Me!" on:click={closeMyModal} />
+    </div>
+  </Modal>
+{/if}
 
 <style>
   :global(.delorean-floaty) {
     position: absolute;
-    z-index: -1;
-    top: -25px;
+    z-index: 0;
+    top: -42px;
     right: -50px;
     width: 120px;
   }

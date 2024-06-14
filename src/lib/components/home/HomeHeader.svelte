@@ -118,7 +118,7 @@
 
   :global(.floppy-disk) {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     width: 84px;
   }
 </style>

@@ -3,8 +3,8 @@
   import lastStarfighter from "$lib/images/last-starfighter.png";
 </script>
 
-<section class="relative text-white p-8 rounded-md section-glass mt-32 mb-12">
-  <h2 class="text-3xl mb-4">
+<section class="section-glass relative mb-12 mt-32 rounded-md p-8 text-white">
+  <h2 class="mb-4 text-3xl">
     "Greetings, Starfighter. <br />You Have Been Recruited"
   </h2>
   <p class="mb-4">👋 Hey there, digital ally!</p>
@@ -15,7 +15,7 @@
   </p>
 
   <p class="mb-4">Welcome to my digital dojo, where:</p>
-  <ul class="list-disc list-inside ml-6 mt-2">
+  <ul class="ml-6 mt-2 list-inside list-disc">
     <li class="mb-2">
       I share tales from the tech trenches and customer success frontlines
     </li>
@@ -48,7 +48,7 @@
     In all things, I strive to be like the heroes who guided my youth:
   </p>
 
-  <ul class="list-disc list-inside ml-6 mt-2">
+  <ul class="ml-6 mt-2 list-inside list-disc">
     <li class="mb-2">
       🌟 Like Marty McFly, I aim to make the future brighter.
     </li>
@@ -115,9 +115,9 @@
 <style>
   :global(.last-starfighter-floaty) {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: -25px;
     left: -50px;
     width: 84px;
   }
-  </style>
+</style>

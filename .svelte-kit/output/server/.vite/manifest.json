@@ -16,6 +16,13 @@
     "file": "chunks/index.js",
     "name": "index"
   },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
   "_internal.js": {
     "file": "chunks/internal.js",
     "name": "internal",
@@ -36,7 +43,7 @@
       "_internal.js",
       "_index.js",
       "_exports.js",
-      "_ssr.js"
+      "_index2.js"
     ]
   },
   "src/lib/images/bgnoise.webp": {
@@ -101,7 +108,7 @@
       "_ssr.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.UD7pkRKG.css"
+      "_app/immutable/assets/_layout.BnW25UQV.css"
     ],
     "assets": [
       "_app/immutable/assets/bgnoise.Bs-ruk1u.webp"
@@ -119,10 +126,11 @@
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.BguONZaQ.css"
+      "_app/immutable/assets/_page.CRlwBSC7.css"
     ],
     "assets": [
       "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp",
