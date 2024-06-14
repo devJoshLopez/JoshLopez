@@ -24,16 +24,10 @@
       <p class="mt-4">{latestPost.description}</p>
 
       <div class="mt-4">
-        <!-- <a
-          href="/writings/{latestPost.slug}"
-          class="keyboard-button mt-4 inline-block"
-        >
-          Read More
-        </a> -->
         <RetroButton
-          url="/writings"
+          url="/writings/{latestPost.slug}"
           label="Read More"
-          size="lg"
+          size="200px"
          />
       </div>
     </div>

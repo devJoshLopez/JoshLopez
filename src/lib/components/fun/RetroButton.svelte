@@ -3,7 +3,7 @@
 
   export let url = "#";
   export let label = "Click Me";
-  export let size = "md";
+  export let size = "200px";
 
   onMount(() => {
     document.querySelectorAll(".butn").forEach((button) => {
@@ -51,7 +51,7 @@
 <div class="retro-wrapper">
   <div role="button" class="retro-butn">
     <!-- svelte-ignore a11y-missing-attribute -->
-    <a class="butn">
+    <a class="butn" href={url} style="width: {size}">
       <span class="butn-inner">
         <span class="butn-content-wrapper">
           <span class="butn-content">
