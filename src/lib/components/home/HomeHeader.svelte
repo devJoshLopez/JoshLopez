@@ -5,11 +5,11 @@
 </script>
 
 <section
-  class="relative flex items-center justify-between max-sm:flex-col-reverse max-sm:items-start text-white p-8 rounded-md section-glass mt-3"
+  class="section-glass relative mt-3 flex items-center justify-between rounded-md p-8 text-white max-sm:flex-col-reverse max-sm:items-start"
 >
   <div class="max-w-xl max-sm:w-full">
     <h1 class="text-6xl">Hack The Planet</h1>
-    <p class="text-lg mb-4 font-bold">
+    <p class="mb-4 text-lg font-bold">
       Josh Lopez: Code Samurai, Support Sage, Unapologetic Geek.
     </p>
     <p>
@@ -17,7 +17,7 @@
       spirit. Join me in forging a future where tech remains refreshingly human.
     </p>
   </div>
-  <div class="relative w-48 h-48 max-sm:self-center max-sm:mb-6">
+  <div class="relative h-48 w-48 max-sm:mb-6 max-sm:self-center">
     <svg width="100%" height="100%" viewBox="0 0 200 200" class="circle-josh">
       <defs>
         <clipPath id="circleClip">
@@ -70,7 +70,7 @@
     </Floaty>
   </div>
 
-  <div class="absolute w-48 h-48 -bottom-32 -left-10 -rotate-12 -z-10">
+  <div class="absolute -bottom-32 -left-10 -z-10 h-48 w-48 -rotate-12">
     <Floaty className="floppy-disk">
       <img src={hackersFloppy} alt="Hackers floppy disk" />
     </Floaty>

@@ -5,15 +5,17 @@
   export let recentPosts;
 </script>
 
-<section class="relative text-white p-8 rounded-md section-glass mt-32">
-  <h2 class="text-3xl mb-4">
+<section class="section-glass relative mt-32 rounded-md p-8 text-white">
+  <h2 class="mb-4 text-3xl">
     "Roads? Where We're Going, We Don't Need Roads."
   </h2>
   <div class="more-content">
     {#each recentPosts as post}
-      <h3 class="text-2xl mt-4">{post.title}</h3>
+      <h3 class="mt-4 text-2xl">{post.title}</h3>
       {#each post.categories as category}
-        <span class="text-sm bg-gray-800 px-2 py-1 rounded-md mr-2">{category}</span>
+        <span class="mr-2 rounded-md bg-gray-800 px-2 py-1 text-sm"
+          >{category}</span
+        >
       {/each}
       <p class="mt-4">{post.description}</p>
       <div class="mt-4">

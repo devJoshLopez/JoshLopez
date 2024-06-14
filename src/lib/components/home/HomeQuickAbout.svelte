@@ -3,18 +3,16 @@
   import Floaty from "$lib/components/fun/Floaty.svelte";
 </script>
 
-<section class="relative text-white p-8 rounded-md section-glass mt-32">
-  <h2 class="text-3xl mb-4">
-    “With Great Power Comes Great Responsibility”
-  </h2>
+<section class="section-glass relative mt-32 rounded-md p-8 text-white">
+  <h2 class="mb-4 text-3xl">“With Great Power Comes Great Responsibility”</h2>
 
   <p class="mb-4">
     By day, I craft intuitive tools at <a
       href="https://www.memberstack.com"
       target="_blank">Memberstack</a
-    > and lead a squad of support heroes. By night, I'm immersed in movies, music, comics,
-    and tech. From my Montana basecamp, I balance coding quests with being a devoted
-    dad and husband.
+    > and lead a squad of support heroes. By night, I'm immersed in movies, music,
+    comics, and tech. From my Montana basecamp, I balance coding quests with being
+    a devoted dad and husband.
   </p>
 
   <Floaty className="spiderman-floaty">

@@ -9,10 +9,10 @@
     document.querySelectorAll(".butn").forEach((button) => {
       // Click events
       button.addEventListener("mousedown", () =>
-        button.classList.add("butn-active")
+        button.classList.add("butn-active"),
       );
       button.addEventListener("mouseup", () =>
-        button.classList.remove("butn-active")
+        button.classList.remove("butn-active"),
       );
 
       // Hover events
@@ -21,7 +21,7 @@
           "butn-center",
           "butn-right",
           "butn-left",
-          "butn-active"
+          "butn-active",
         );
       });
 
@@ -144,7 +144,7 @@
       background 0.12s ease-out,
       -webkit-transform 0.12s ease-out;
   }
-  .retro-butn .butn.butn-left:before {
+  :global(.retro-butn .butn.butn-left:before) {
     -webkit-transform: skewY(1deg) translate3d(0, -0.5px, 0);
     transform: skewY(1deg) translate3d(0, -0.5px, 0);
   }
@@ -152,7 +152,7 @@
     -webkit-transform: skewY(-1deg);
     transform: skewY(-1deg);
   }
-  .retro-butn .butn.butn-right:before {
+  :global(.retro-butn .butn.butn-right:before) {
     -webkit-transform: skewY(-1deg) translate3d(0, -0.5px, 0);
     transform: skewY(-1deg) translate3d(0, -0.5px, 0);
   }
@@ -160,7 +160,7 @@
     -webkit-transform: skewY(1deg);
     transform: skewY(1deg);
   }
-  .retro-butn .butn.butn-center:before {
+  :global(.retro-butn .butn.butn-center:before) {
     -webkit-transform: translate3d(0, -1px, 0);
     transform: translate3d(0, -1px, 0);
   }
@@ -201,7 +201,7 @@
     .butn-content-inner {
     opacity: 0.1;
   }
-  .retro-butn .butn.butn-active:before {
+  :global(.retro-butn .butn.butn-active:before) {
     -webkit-transform: translate3d(0, -3px, 0);
     transform: translate3d(0, -3px, 0);
   }

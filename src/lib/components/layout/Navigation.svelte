@@ -7,12 +7,12 @@
 </script>
 
 <header
-  class="bg-gray-900 text-white border-b-4 border-pink-600 p-4 fixed top-0 w-full z-20 flex justify-between items-center"
+  class="fixed top-0 z-20 flex w-full items-center justify-between border-b-4 border-pink-600 bg-gray-900 p-4 text-white"
 >
   <a href="/"><h1 class="text-4xl">Josh Lopez</h1></a>
   <button on:click={toggleMenu} class="text-pink-600 md:hidden">
     <svg
-      class="w-8 h-8"
+      class="h-8 w-8"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -27,27 +27,27 @@
     </svg>
   </button>
   <nav
-    class={`nav-menu ${menuOpen ? "" : "hidden"} flex md:flex md:space-x-4 rounded-b-md`}
+    class={`nav-menu ${menuOpen ? "" : "hidden"} flex rounded-b-md md:flex md:space-x-4`}
     aria-label="Main Navigation"
   >
     <a
       href="/videos"
-      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover"
+      class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Videos</a
     >
     <a
       href="/writings"
-      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover"
+      class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Writings</a
     >
     <a
       href="/projects"
-      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover"
+      class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Projects</a
     >
     <a
       href="/connect"
-      class="text-pink-600 hover:text-teal-400 font-bold glow-on-hover"
+      class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Connect</a
     >
   </nav>

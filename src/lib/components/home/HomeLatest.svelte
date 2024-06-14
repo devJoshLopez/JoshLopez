@@ -6,18 +6,18 @@
   export let latestPost;
 </script>
 
-<section class="relative text-white p-8 rounded-md section-glass mt-32">
-  <h2 class="text-3xl mb-4">"Number 5 is Alive!"</h2>
+<section class="section-glass relative mt-32 rounded-md p-8 text-white">
+  <h2 class="mb-4 text-3xl">"Number 5 is Alive!"</h2>
 
   <div
-    class="latest-content card flex flex-col-reverse md:flex-row justify-between gap-4"
+    class="mt-16 grid grid-cols-1 items-center gap-0 gap-y-6 rounded-xl border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 lg:grid-cols-4 lg:gap-0 lg:py-12"
   >
-    <div class="w-full md:w-2/3">
+    <div class="col-span-2">
       <h3 class="text-4xl">
         {latestPost.title}
       </h3>
       {#each latestPost.categories as category}
-        <span class="text-xs bg-gray-800 px-2 py-1 rounded-md mr-2"
+        <span class="mr-2 rounded-md bg-gray-800 px-2 py-1 text-xs"
           >{category}</span
         >
       {/each}
@@ -28,18 +28,16 @@
           url="/writings/{latestPost.slug}"
           label="Read More"
           size="200px"
-         />
+        />
       </div>
     </div>
 
     {#if latestPost.image}
-      <div class="w-full md:w-1/3">
-        <img
-          src={latestPost.image}
-          alt={latestPost.title}
-          class="rounded-md mt-4"
-        />
-      </div>
+      <img
+        src={latestPost.image}
+        alt={latestPost.title}
+        class="order-first mx-auto w-full max-w-full rounded-xl opacity-90 shadow-2xl lg:-order-1 lg:col-span-2 lg:translate-x-[-15%] lg:pt-0"
+      />
     {/if}
   </div>
 
