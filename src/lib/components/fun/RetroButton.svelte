@@ -67,7 +67,6 @@
   .retro-wrapper {
     position: relative;
     display: inline-block;
-    margin: 35px auto;
   }
   .retro-butn {
     text-transform: uppercase;
@@ -97,10 +96,10 @@
     transition: opacity 0.1s ease-out;
     z-index: 5;
     -webkit-font-smoothing: antialiased;
-    width: 295px;
-    height: 46px;
-    font-size: 21px;
-    line-height: 24px;
+    width: 200px;
+    height: 42px;
+    font-size: 15px;
+    line-height: 1.5;
     background-color: transparent;
     text-decoration-color: initial;
     border-color: initial;
