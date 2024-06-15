@@ -8,6 +8,7 @@
   export let recentPosts;
 
   const openModal = () => {
+    console.log("Open modal button clicked");
     // @ts-ignore
     showModal(VideoPlayer);
   };

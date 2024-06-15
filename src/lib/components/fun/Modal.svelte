@@ -1,41 +1,50 @@
 <script>
   // @ts-nocheck
-  import { onMount, tick, onDestroy } from "svelte";
+  import { tick, onDestroy } from "svelte";
   import { gsap, Power1, Power2 } from "gsap";
+  import { closeModal } from "$lib/stores/modalStore";
 
   export let show = false;
-  // export let closeModal;
   export let content = null;
   export let props = {};
+
   let isClosing = false;
   let isAnimating = false;
+  let isInitialized = false;
+  let wasShow = false;
+  /**
+   * @type {gsap.core.Timeline}
+   */
+  let timeline;
 
   const SELECTOR_MODAL_ELEMENT = ".modal";
   const SELECTOR_MODAL_CLOSE_BUTTON = ".close-btn";
   const SELECTOR_CONTENT_ELEMENT = ".modal-content";
 
-  let timeline;
-  let timelineInitialized = false;
-
-  $: if (show && !isClosing) {
-    console.log("Show has changed");
-    if (!timelineInitialized) {
-      console.log("Initializing timeline");
-      tick().then(() => {
-        buildTimeline();
-        toggleSwitcherTV();
-      });
-    } else {
-      console.log("Timeline already initialized");
-      toggleSwitcherTV();
-    }
-  } else if (!show && isClosing) {
-    console.log("Modal is closing");
-    toggleSwitcherTV();
+  // Watcher for show changes
+  $: if (show !== wasShow) {
+    wasShow = show;
+    handleShowChange();
   }
 
-  function buildTimeline() {
-    console.log("Building timeline");
+  // Handle show changes
+  function handleShowChange() {
+    if (show && !isAnimating) {
+      if (!isInitialized) {
+        tick().then(() => {
+          initializeTimeline();
+          toggleModalAnimation();
+        });
+      } else {
+        toggleModalAnimation();
+      }
+    } else if (!show && isClosing && !isAnimating) {
+      toggleModalAnimation();
+    }
+  }
+
+  // Initialize GSAP timeline
+  function initializeTimeline() {
     timeline = gsap.timeline({ paused: true });
 
     timeline
@@ -83,43 +92,43 @@
         ease: Power1.easeIn,
       });
 
-    console.log("Timeline built");
-    timelineInitialized = true;
+    isInitialized = true;
   }
 
-  function toggleSwitcherTV() {
-    console.log("Toggling switcher TV");
+  // Toggle modal animation
+  function toggleModalAnimation() {
     if (!timeline) return;
-    console.log("Timeline exists");
+    isAnimating = true;
+
     if (!isClosing) {
-      console.log("Modal opened");
       document.body.style.overflow = "hidden";
-      isClosing = true;
-      isAnimating = true;
       timeline.play().then(() => {
-        isClosing = false;
         isAnimating = false;
       });
     } else {
-      console.log("Modal is closing");
       document.body.style.overflow = "auto";
-      isClosing = true;
       timeline.reverse().then(() => {
-        isClosing = false;
-        isAnimating = false;
-        show = false;
+        resetModalState();
+        closeModal();
       });
     }
   }
 
-  function closeModal() {
-    console.log("Closing modal");
+  // Close modal and toggle animation
+  function toggleClose() {
     isClosing = true;
-    toggleSwitcherTV();
+    toggleModalAnimation();
   }
 
-  onMount(() => {});
+  // Reset modal state
+  function resetModalState() {
+    isClosing = false;
+    isAnimating = false;
+    isInitialized = false;
+    show = false;
+  }
 
+  // Clean up on destroy
   onDestroy(() => {
     if (timeline) {
       timeline.kill();
@@ -128,11 +137,11 @@
 </script>
 
 {#if show}
-  <div class="modal" open={show}>
+  <div class="modal">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="modal-backdrop" on:click={closeModal}></div>
-    <button class="close-btn" on:click={closeModal}> Close </button>
+    <div class="modal-backdrop" on:click={toggleClose}></div>
+    <button class="close-btn" on:click={toggleClose}> Close </button>
     <div class="modal-content">
       {#if content}
         <svelte:component this={content} {...props} />
@@ -195,9 +204,6 @@
     position: relative;
     z-index: 1;
     padding: 20px;
-    /* background-color: #16222a; */
-    /* border-radius: 10px; */
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     color: #e1eef6;
     opacity: 0;
     width: 0;
