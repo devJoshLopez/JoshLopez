@@ -1,7 +1,7 @@
 <script>
   // @ts-nocheck
 
-  import { modalStore, closeModal } from "$lib/stores/modalStore";
+  import { modalStore } from "$lib/stores/modalStore";
   import Grid from "$lib/components/fun/Grid.svelte";
   import Footer from "$lib/components/layout/Footer.svelte";
   import Navigation from "$lib/components/layout/Navigation.svelte";
@@ -59,4 +59,4 @@
 
 <Footer />
 
-<Modal {show} {closeModal} {content} {props} />
+<Modal {show} {content} {props} />

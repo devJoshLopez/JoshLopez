@@ -124,14 +124,14 @@
     padding-left: 2rem;
   }
   .wrapper {
-    max-width: 1000px;
+    max-width: 840px;
     min-width: 300px;
     width: 100%;
     margin: auto;
   }
   .gif-tv {
     position: relative;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
   }
   .gif-tv .viewport {
     position: absolute;

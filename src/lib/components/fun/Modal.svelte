@@ -4,24 +4,35 @@
   import { gsap, Power1, Power2 } from "gsap";
 
   export let show = false;
-  export let closeModal;
+  // export let closeModal;
   export let content = null;
   export let props = {};
   let isClosing = false;
+  let isAnimating = false;
 
   const SELECTOR_MODAL_ELEMENT = ".modal";
+  const SELECTOR_MODAL_CLOSE_BUTTON = ".close-btn";
   const SELECTOR_CONTENT_ELEMENT = ".modal-content";
 
   let timeline;
   let timelineInitialized = false;
 
-  onMount(() => {});
-
-  onDestroy(() => {
-    if (timeline) {
-      timeline.kill();
+  $: if (show && !isClosing) {
+    console.log("Show has changed");
+    if (!timelineInitialized) {
+      console.log("Initializing timeline");
+      tick().then(() => {
+        buildTimeline();
+        toggleSwitcherTV();
+      });
+    } else {
+      console.log("Timeline already initialized");
+      toggleSwitcherTV();
     }
-  });
+  } else if (!show && isClosing) {
+    console.log("Modal is closing");
+    toggleSwitcherTV();
+  }
 
   function buildTimeline() {
     console.log("Building timeline");
@@ -62,9 +73,14 @@
         height: "auto",
       })
       .to(SELECTOR_CONTENT_ELEMENT, {
-        duration: 0.3,
+        duration: 0.4,
         opacity: 1,
-        ease: Power1.easeInOut,
+        ease: Power1.easeIn,
+      })
+      .to(SELECTOR_MODAL_CLOSE_BUTTON, {
+        duration: 0.2,
+        opacity: 1,
+        ease: Power1.easeIn,
       });
 
     console.log("Timeline built");
@@ -76,36 +92,39 @@
     if (!timeline) return;
     console.log("Timeline exists");
     if (!isClosing) {
-      console.log("Modal is opening");
+      console.log("Modal opened");
       document.body.style.overflow = "hidden";
       isClosing = true;
+      isAnimating = true;
       timeline.play().then(() => {
         isClosing = false;
+        isAnimating = false;
       });
     } else {
       console.log("Modal is closing");
       document.body.style.overflow = "auto";
+      isClosing = true;
       timeline.reverse().then(() => {
         isClosing = false;
+        isAnimating = false;
+        show = false;
       });
     }
   }
 
-  $: if (show && !isClosing) {
-    console.log("Modal is open");
-    if (!timelineInitialized) {
-      tick().then(() => {
-        buildTimeline();
-        toggleSwitcherTV();
-      });
-    } else {
-      console.log("Timeline already initialized");
-      toggleSwitcherTV();
-    }
-  } else if (!show && isClosing) {
-    console.log("Modal is closing");
+  function closeModal() {
+    console.log("Closing modal");
+    isClosing = true;
     toggleSwitcherTV();
   }
+
+  onMount(() => {});
+
+  onDestroy(() => {
+    if (timeline) {
+      timeline.kill();
+    }
+  });
 </script>
 
 {#if show}
@@ -113,8 +132,8 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="modal-backdrop" on:click={closeModal}></div>
+    <button class="close-btn" on:click={closeModal}> Close </button>
     <div class="modal-content">
-      <button class="close-btn" on:click={closeModal}> Close </button>
       {#if content}
         <svelte:component this={content} {...props} />
       {/if}
@@ -160,6 +179,18 @@
     height: 100vh;
   }
 
+  .close-btn {
+    position: absolute;
+    top: 42px;
+    right: 42px;
+    background: transparent;
+    border: none;
+    color: #e1eef6;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+  }
+
   .modal-content {
     position: relative;
     z-index: 1;
@@ -170,6 +201,6 @@
     color: #e1eef6;
     opacity: 0;
     width: 0;
-    height: 0;
+    height: 100%;
   }
 </style>
