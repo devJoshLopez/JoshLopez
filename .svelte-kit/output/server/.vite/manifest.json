@@ -105,10 +105,11 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.bXtW7kDs.css"
+      "_app/immutable/assets/_layout.D1I8UwU9.css"
     ],
     "assets": [
       "_app/immutable/assets/bgnoise.Bs-ruk1u.webp"
@@ -126,11 +127,10 @@
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js",
-      "_index2.js"
+      "_ssr.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.Bswxu_4T.css"
+      "_app/immutable/assets/_page.CEb8CIBr.css"
     ],
     "assets": [
       "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp",

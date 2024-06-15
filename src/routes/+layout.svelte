@@ -1,10 +1,31 @@
 <script>
+  // @ts-nocheck
+
+  import { modalStore, closeModal } from "$lib/stores/modalStore";
   import Grid from "$lib/components/fun/Grid.svelte";
   import Footer from "$lib/components/layout/Footer.svelte";
   import Navigation from "$lib/components/layout/Navigation.svelte";
   import "../app.css";
 
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
+  import Modal from "$lib/components/fun/Modal.svelte";
+
+  let show = false;
+  /**
+   * @type {any}
+   */
+  let content = null;
+  let props = {};
+
+  const unsubscribe = modalStore.subscribe((value) => {
+    show = value.show;
+    content = value.content;
+    props = value.props;
+  });
+
+  onDestroy(() => {
+    unsubscribe();
+  });
 
   // Randomize the order of the animations for all h1 and h2 by setting a custom property on each element of --animation-order with a random number
   onMount(() => {
@@ -37,3 +58,5 @@
 </main>
 
 <Footer />
+
+<Modal {show} {closeModal} {content} {props} />

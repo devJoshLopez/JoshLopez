@@ -1,19 +1,30 @@
 <script>
   // @ts-nocheck
-  import { onMount } from "svelte";
+  import { onMount, tick, onDestroy } from "svelte";
   import { gsap, Power1, Power2 } from "gsap";
-  import { createEventDispatcher } from "svelte";
 
-  export let isOpen = false;
-  export let isClosing = false;
-  const dispatch = createEventDispatcher();
+  export let show = false;
+  export let closeModal;
+  export let content = null;
+  export let props = {};
+  let isClosing = false;
 
   const SELECTOR_MODAL_ELEMENT = ".modal";
   const SELECTOR_CONTENT_ELEMENT = ".modal-content";
 
   let timeline;
+  let timelineInitialized = false;
+
+  onMount(() => {});
+
+  onDestroy(() => {
+    if (timeline) {
+      timeline.kill();
+    }
+  });
 
   function buildTimeline() {
+    console.log("Building timeline");
     timeline = gsap.timeline({ paused: true });
 
     timeline
@@ -55,45 +66,61 @@
         opacity: 1,
         ease: Power1.easeInOut,
       });
+
+    console.log("Timeline built");
+    timelineInitialized = true;
   }
 
   function toggleSwitcherTV() {
+    console.log("Toggling switcher TV");
     if (!timeline) return;
-    if (isClosing) {
-      timeline.reverse();
-      // wait for the animation to finish before closing the modal
-      setTimeout(() => {
-        dispatch("close");
-      }, 800);
+    console.log("Timeline exists");
+    if (!isClosing) {
+      console.log("Modal is opening");
+      document.body.style.overflow = "hidden";
+      isClosing = true;
+      timeline.play().then(() => {
+        isClosing = false;
+      });
     } else {
-      timeline.play();
+      console.log("Modal is closing");
+      document.body.style.overflow = "auto";
+      timeline.reverse().then(() => {
+        isClosing = false;
+      });
     }
   }
 
-  function closeModal() {
-    isClosing = true;
-  }
-
-  $: if (isOpen) {
+  $: if (show && !isClosing) {
+    console.log("Modal is open");
+    if (!timelineInitialized) {
+      tick().then(() => {
+        buildTimeline();
+        toggleSwitcherTV();
+      });
+    } else {
+      console.log("Timeline already initialized");
+      toggleSwitcherTV();
+    }
+  } else if (!show && isClosing) {
+    console.log("Modal is closing");
     toggleSwitcherTV();
-  } else if (timeline && !isClosing) {
-    timeline.reverse();
   }
-
-  $: onMount(() => {
-    buildTimeline();
-  });
 </script>
 
-<dialog class="modal" open={isOpen}>
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="modal-backdrop" on:click={closeModal}></div>
-  <div class="modal-content">
-    <button class="close-btn" on:click={closeModal}> Close </button>
-    <slot />
+{#if show}
+  <div class="modal" open={show}>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class="modal-backdrop" on:click={closeModal}></div>
+    <div class="modal-content">
+      <button class="close-btn" on:click={closeModal}> Close </button>
+      {#if content}
+        <svelte:component this={content} {...props} />
+      {/if}
+    </div>
   </div>
-</dialog>
+{/if}
 
 <style>
   .modal {
@@ -137,9 +164,9 @@
     position: relative;
     z-index: 1;
     padding: 20px;
-    background-color: #16222a;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* background-color: #16222a; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     color: #e1eef6;
     opacity: 0;
     width: 0;

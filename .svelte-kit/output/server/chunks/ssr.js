@@ -25,9 +25,6 @@ function subscribe(store, ...callbacks) {
 function null_to_empty(value) {
   return value == null ? "" : value;
 }
-function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
-  return new CustomEvent(type, { detail, bubbles, cancelable });
-}
 let current_component;
 function set_current_component(component) {
   current_component = component;
@@ -37,24 +34,8 @@ function get_current_component() {
     throw new Error("Function called outside component initialization");
   return current_component;
 }
-function createEventDispatcher() {
-  const component = get_current_component();
-  return (type, detail, { cancelable = false } = {}) => {
-    const callbacks = component.$$.callbacks[type];
-    if (callbacks) {
-      const event = custom_event(
-        /** @type {string} */
-        type,
-        detail,
-        { cancelable }
-      );
-      callbacks.slice().forEach((fn) => {
-        fn.call(component, event);
-      });
-      return !event.defaultPrevented;
-    }
-    return true;
-  };
+function onDestroy(fn) {
+  get_current_component().$$.on_destroy.push(fn);
 }
 function setContext(key, context) {
   get_current_component().$$.context.set(key, context);
@@ -147,17 +128,20 @@ function add_attribute(name, value, boolean) {
   return ` ${name}${assignment}`;
 }
 export {
-  subscribe as a,
-  add_attribute as b,
+  set_current_component as a,
+  current_component as b,
   create_ssr_component as c,
-  each as d,
+  noop as d,
   escape as e,
-  createEventDispatcher as f,
+  safe_not_equal as f,
   getContext as g,
-  noop as h,
-  safe_not_equal as i,
+  subscribe as h,
+  add_attribute as i,
+  each as j,
   missing_component as m,
   null_to_empty as n,
+  onDestroy as o,
+  run_all as r,
   setContext as s,
   validate_component as v
 };
