@@ -30,7 +30,9 @@
 
 <Navigation />
 
-<main class="relative z-10 p-8 pt-24 text-gray-200 md:pt-32">
+<main
+  class="relative z-10 w-screen overflow-hidden p-8 pt-24 text-gray-200 md:pt-32"
+>
   <slot />
 </main>
 

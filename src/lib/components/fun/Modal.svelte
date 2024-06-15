@@ -113,6 +113,7 @@
     background: linear-gradient(to left, #16222a, #3a6073);
     background-size: cover !important;
     background-image: url(https://cldup.com/gn3s3Fg75t.gif);
+    background-origin: border-box;
     color: #e1eef6;
     transition:
       width 0.2s,
