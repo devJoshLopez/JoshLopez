@@ -30,16 +30,6 @@
       <h3 class="text-4xl max-md:text-xl">
         {latestPost.title}
       </h3>
-
-      {#if latestPost.categories}
-        <div class="mt-4 flex flex-wrap gap-2">
-          {#each latestPost.categories as category}
-            <span class="rounded-md bg-gray-800 px-2 py-1 text-xs"
-              >{category}</span
-            >
-          {/each}
-        </div>
-      {/if}
       <p class="mt-4">{latestPost.description}</p>
 
       <div class="mt-4">
@@ -52,12 +42,46 @@
     </div>
 
     {#if latestPost.image}
-      <img
-        src={latestPost.image}
-        alt={latestPost.title}
-        class="order-first mx-auto w-full max-w-full rounded-xl opacity-90 shadow-2xl lg:-order-1 lg:col-span-2 lg:translate-x-[-15%] lg:pt-0"
-      />
+      <div
+        class="relative order-first h-64 overflow-hidden rounded-md lg:col-span-2 lg:translate-x-[-15%]"
+      >
+        {#if latestPost.categories}
+          <div class="absolute left-2 top-2 z-10">
+            {#each latestPost.categories as category}
+              <span class="mr-2 rounded-md bg-gray-800 px-2 py-1 text-sm">
+                {category}
+              </span>
+            {/each}
+          </div>
+        {/if}
+        <img
+          src={latestPost.image}
+          alt={latestPost.title}
+          class="h-full w-full object-cover object-top shadow-2xl"
+        />
+      </div>
     {/if}
+
+    <!-- {#if latestPost.image}
+      <div
+        class="relative order-first mx-auto w-full max-w-full overflow-hidden rounded-xl opacity-90 shadow-2xl lg:-order-1 lg:col-span-2 lg:translate-x-[-15%] lg:pt-0"
+      >
+        {#if latestPost.categories}
+          <div class="mt-4 flex flex-wrap gap-2">
+            {#each latestPost.categories as category}
+              <span class="rounded-md bg-gray-800 px-2 py-1 text-xs"
+                >{category}</span
+              >
+            {/each}
+          </div>
+        {/if}
+        <img
+          src={latestPost.image}
+          alt={latestPost.title}
+          class="absolute inset-0 h-full max-w-full object-cover"
+        />
+      </div>
+    {/if} -->
   </div>
 
   <Floaty className="johnny5-floaty">
