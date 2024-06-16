@@ -1,12 +1,10 @@
 ##TODO:
 
 - fix the way mobile looks
-- fix the scroll on mobile
+- add a favicon
 - write more blog posts for content
 - fix the mouse avoidance js to stop jittering
 - make the content section on homepage better
-- add a video modal component - possible static for background
-  - add click event to open modal for icons
 - work on writings list page - possible bento box style
 - work on writings page
 - show rickroll when konami code entered

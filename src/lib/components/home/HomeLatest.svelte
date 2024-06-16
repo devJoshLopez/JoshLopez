@@ -24,17 +24,22 @@
   <h2 class="mb-4 text-3xl">"Number 5 is Alive!"</h2>
 
   <div
-    class="mt-16 grid grid-cols-1 items-center gap-0 gap-y-6 rounded-xl border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 lg:grid-cols-4 lg:gap-0 lg:py-12"
+    class="grid grid-cols-1 items-center gap-0 gap-y-6 rounded-xl border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:border-none max-md:bg-none max-md:p-0 lg:grid-cols-4 lg:gap-0 lg:py-12"
   >
     <div class="col-span-2">
-      <h3 class="text-4xl">
+      <h3 class="text-4xl max-md:text-xl">
         {latestPost.title}
       </h3>
-      {#each latestPost.categories as category}
-        <span class="mr-2 rounded-md bg-gray-800 px-2 py-1 text-xs"
-          >{category}</span
-        >
-      {/each}
+
+      {#if latestPost.categories}
+        <div class="mt-4 flex flex-wrap gap-2">
+          {#each latestPost.categories as category}
+            <span class="rounded-md bg-gray-800 px-2 py-1 text-xs"
+              >{category}</span
+            >
+          {/each}
+        </div>
+      {/if}
       <p class="mt-4">{latestPost.description}</p>
 
       <div class="mt-4">
