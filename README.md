@@ -7,8 +7,6 @@
 - make the content section on homepage better
 - work on writings list page - possible bento box style
 - work on writings page
-- show rickroll when konami code entered
-- create a nes controller component for konami code
 - work on videos page which uses the youtube api to get videos
 - work on projects page
 - work on connect page

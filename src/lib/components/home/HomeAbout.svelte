@@ -104,7 +104,7 @@
     players trying to navigate this great game called life. 🕹️
   </p>
 
-  <p class="mb-4">
+  <p class="mb-4 max-md:hidden">
     Press ⬆️⬆️⬇️⬇️⬅️➡️⬅️➡️🅱️🅰️ to continue this adventure... 🚀
   </p>
 
