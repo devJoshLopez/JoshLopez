@@ -2,8 +2,13 @@
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
 
+  /**
+   * @type {any}
+   */
+  export let urls = [];
+
   const gifTVURLs = [
-    "https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571117878/trippy-square_jqupb3.gif",
+    "https://i.giphy.com/Q2W4hziDOyzu0.webp",
     "https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571117878/space-stallions_zmueag.gif",
     "https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571117882/dancing-bears-small_v4oqvi.gif",
     "https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571117881/trippy-rick_a42hyj.gif",
@@ -20,7 +25,7 @@
   let messageActive = writable(false);
 
   class GifTV {
-    constructor(channels = [gifTVURLs[0]]) {
+    constructor(channels = [urls[0]]) {
       this.channels = channels;
       this.staticGIF =
         "https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571155222/giphy_n0r827.gif";
@@ -63,7 +68,7 @@
 
   onMount(() => {
     gifTV = document.getElementById("gif_tv_video");
-    const gifTVInstance = new GifTV(gifTVURLs);
+    const gifTVInstance = new GifTV(urls.length ? urls : gifTVURLs);
     gifTVInstance.displayChannel();
     // @ts-ignore
     document
@@ -83,15 +88,22 @@
   <div class="wrapper">
     <div class="gif-tv">
       <div id="gif_tv_viewport" class="viewport">
-        <img id="gif_tv_video" class="video" src="/video-url-goes-here/" />
+        <img
+          id="gif_tv_video"
+          class="video"
+          src="/video-url-goes-here/"
+          alt="meowza"
+        />
         <div
           id="gif_tv_pixels"
           class="pixels"
           style="background-image: url('https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571119227/vhs-overlay_zpzs7x.png')"
         ></div>
         <div class="meta-left">
-          <span id="gif_tv_message_channel" class:active={$messageActive}
-            >{$message}</span
+          <span
+            id="gif_tv_message_channel"
+            class:active={$messageActive}
+            class="text-5xl max-md:text-lg">{$message}</span
           >
         </div>
       </div>
@@ -146,9 +158,16 @@
   .gif-tv .viewport .video {
     z-index: 0;
     position: absolute;
-    top: 50%;
+    /* top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .gif-tv .viewport .pixels {
     z-index: 1;
@@ -176,8 +195,9 @@
   }
   .gif-tv .viewport span {
     text-shadow: 0 0 3px #888;
-    font-size: 4rem;
-    font-family: VT323;
+    /* font-size: 4rem; */
+    font-family: "Press Start 2P", system-ui;
+    /* font-family: VT323; */
   }
   .gif-tv .viewport span:not(.active) {
     display: none;

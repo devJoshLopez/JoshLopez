@@ -1,6 +1,20 @@
 <script>
   import Floaty from "$lib/components/fun/Floaty.svelte";
   import lastStarfighter from "$lib/images/last-starfighter.png";
+  import { showModal } from "$lib/stores/modalStore";
+  import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
+
+  const openModal = () => {
+    console.log("Open modal button clicked");
+    // @ts-ignore
+    showModal(VideoPlayer, {
+      urls: [
+        "https://media1.tenor.com/m/_IKIV9nEcwsAAAAC/the-last-starfighter-intro.gif",
+        "https://media1.tenor.com/m/rqHmJAE2O8oAAAAC/the-last-starfighter-last-starfighter.gif",
+        "https://media1.tenor.com/m/hPpK50hO4roAAAAC/last-starfighter-startled.gif",
+      ],
+    });
+  };
 </script>
 
 <section class="section-glass relative mb-12 mt-32 rounded-md p-8 text-white">
@@ -108,7 +122,13 @@
   </p>
 
   <Floaty className="last-starfighter-floaty">
-    <img src={lastStarfighter} alt="The Last Starfighter" />
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <img
+      src={lastStarfighter}
+      alt="The Last Starfighter"
+      on:click={openModal}
+    />
   </Floaty>
 </section>
 

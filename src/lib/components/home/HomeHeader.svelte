@@ -2,6 +2,20 @@
   import joshImage from "$lib/images/josh-lopez.webp";
   import hackersFloppy from "$lib/images/hackers-floppy.png";
   import Floaty from "$lib/components/fun/Floaty.svelte";
+  import { showModal } from "$lib/stores/modalStore";
+  import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
+
+  const openModal = () => {
+    console.log("Open modal button clicked");
+    // @ts-ignore
+    showModal(VideoPlayer, {
+      urls: [
+        "https://i.giphy.com/Q2W4hziDOyzu0.webp",
+        "https://i.giphy.com/FnGJfc18tDDHy.webp",
+        "https://i.giphy.com/B1VDck3WaK6GFgXxW8.webp",
+      ],
+    });
+  };
 </script>
 
 <section
@@ -72,7 +86,9 @@
 
   <div class="absolute -bottom-32 -left-10 -z-10 h-48 w-48 -rotate-12">
     <Floaty className="floppy-disk">
-      <img src={hackersFloppy} alt="Hackers floppy disk" />
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+      <img src={hackersFloppy} alt="Hackers floppy disk" on:click={openModal} />
     </Floaty>
   </div>
 </section>

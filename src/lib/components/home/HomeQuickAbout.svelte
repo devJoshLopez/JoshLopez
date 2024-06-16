@@ -1,6 +1,20 @@
 <script>
   import spidermanFace from "$lib/images/spider-man-face.png";
   import Floaty from "$lib/components/fun/Floaty.svelte";
+  import { showModal } from "$lib/stores/modalStore";
+  import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
+
+  const openModal = () => {
+    console.log("Open modal button clicked");
+    // @ts-ignore
+    showModal(VideoPlayer, {
+      urls: [
+        "https://i.giphy.com/MCZ39lz83o5lC.webp",
+        "https://i.giphy.com/bcrOR2stk6tKIxqPOZ.webp",
+        "https://i.giphy.com/786qVQHXMJhnO.webp",
+      ],
+    });
+  };
 </script>
 
 <section class="section-glass relative mt-32 rounded-md p-8 text-white">
@@ -16,7 +30,9 @@
   </p>
 
   <Floaty className="spiderman-floaty">
-    <img src={spidermanFace} alt="Spider-Man face" />
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <img src={spidermanFace} alt="Spider-Man face" on:click={openModal} />
   </Floaty>
 </section>
 

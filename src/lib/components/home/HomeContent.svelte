@@ -10,7 +10,13 @@
   const openModal = () => {
     console.log("Open modal button clicked");
     // @ts-ignore
-    showModal(VideoPlayer);
+    showModal(VideoPlayer, {
+      urls: [
+        "https://i.giphy.com/AAB8uJshCNsuk.webp",
+        "https://i.giphy.com/WmKrOMrTFFhPW.webp",
+        "https://i.giphy.com/xsF1FSDbjguis.webp",
+      ],
+    });
   };
 </script>
 
