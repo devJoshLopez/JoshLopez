@@ -116,11 +116,6 @@
     time may pass, my love for you is as timeless as a classic NES game.
   </p>
 
-  <p class="mb-4">
-    [Hidden Easter Egg: Clicking this text plays the "Never Gonna Give You Up"
-    8-bit tune 🎵]
-  </p>
-
   <Floaty className="last-starfighter-floaty">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->

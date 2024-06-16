@@ -62,19 +62,19 @@
     "file": "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp",
     "src": "src/lib/images/josh-lopez.webp"
   },
-  "src/posts/radical-support-training.md": {
-    "file": "chunks/radical-support-training.js",
-    "name": "radical-support-training",
-    "src": "src/posts/radical-support-training.md",
+  "src/posts/ai-mirror-to-our-humanity.md": {
+    "file": "chunks/ai-mirror-to-our-humanity.js",
+    "name": "ai-mirror-to-our-humanity",
+    "src": "src/posts/ai-mirror-to-our-humanity.md",
     "isDynamicEntry": true,
     "imports": [
       "_ssr.js"
     ]
   },
-  "src/posts/second-post.md": {
-    "file": "chunks/second-post.js",
-    "name": "second-post",
-    "src": "src/posts/second-post.md",
+  "src/posts/radical-support-training.md": {
+    "file": "chunks/radical-support-training.js",
+    "name": "radical-support-training",
+    "src": "src/posts/radical-support-training.md",
     "isDynamicEntry": true,
     "imports": [
       "_ssr.js"
@@ -198,8 +198,8 @@
       "_index.js"
     ],
     "dynamicImports": [
-      "src/posts/radical-support-training.md",
-      "src/posts/second-post.md"
+      "src/posts/ai-mirror-to-our-humanity.md",
+      "src/posts/radical-support-training.md"
     ]
   },
   "src/routes/writings/[slug]/+page.svelte": {
