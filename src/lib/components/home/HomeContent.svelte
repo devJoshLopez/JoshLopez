@@ -61,6 +61,9 @@
         </div>
       {/each}
     </div>
+    <div class="mt-4 flex items-center justify-center gap-4">
+      <RetroButton url="/writings" label="Read More Posts" size="250px" />
+    </div>
   </div>
 
   <Floaty className="delorean-floaty">
