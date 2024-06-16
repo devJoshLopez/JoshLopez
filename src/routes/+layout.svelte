@@ -6,6 +6,8 @@
   import Footer from "$lib/components/layout/Footer.svelte";
   import Navigation from "$lib/components/layout/Navigation.svelte";
   import "../app.css";
+  import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
+  import { showModal } from "$lib/stores/modalStore";
 
   import { onMount, onDestroy } from "svelte";
   import Modal from "$lib/components/fun/Modal.svelte";
@@ -22,6 +24,21 @@
     content = value.content;
     props = value.props;
   });
+
+  // konami code sequence to rickroll the user
+  const konamiCode = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ];
+  let konamiCodePosition = 0;
 
   onDestroy(() => {
     unsubscribe();
@@ -43,6 +60,26 @@
       el.style.animationDelay = `-${animationDelay}s`;
       // @ts-ignore
       el.style.backgroundPosition = `${backgroundPosition}% 50%`;
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === konamiCode[konamiCodePosition]) {
+        konamiCodePosition++;
+        if (konamiCodePosition === konamiCode.length) {
+          // @ts-ignore
+          showModal(VideoPlayer, {
+            urls: [
+              "https://i.giphy.com/kFgzrTt798d2w.webp",
+              "https://i.giphy.com/lW9XPLjNXyDDO.webp",
+              "https://i.giphy.com/Em78SsD46oFeo.webp",
+              "https://i.giphy.com/Ju7l5y9osyymQ.webp",
+            ],
+          });
+          konamiCodePosition = 0;
+        }
+      } else {
+        konamiCodePosition = 0;
+      }
     });
   });
 </script>
