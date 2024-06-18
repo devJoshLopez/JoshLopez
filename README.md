@@ -1,7 +1,6 @@
 ##TODO:
 
 - fix the way mobile looks
-- add a favicon
 - write more blog posts for content
 - fix the mouse avoidance js to stop jittering
 - make the content section on homepage better
