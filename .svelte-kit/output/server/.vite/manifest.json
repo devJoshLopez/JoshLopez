@@ -50,6 +50,10 @@
       "_index2.js"
     ]
   },
+  "src/lib/images/80s-tv.png": {
+    "file": "_app/immutable/assets/80s-tv.Cws3IB6e.png",
+    "src": "src/lib/images/80s-tv.png"
+  },
   "src/lib/images/bgnoise.webp": {
     "file": "_app/immutable/assets/bgnoise.Bs-ruk1u.webp",
     "src": "src/lib/images/bgnoise.webp"
@@ -65,6 +69,14 @@
   "src/lib/images/josh-lopez.webp": {
     "file": "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp",
     "src": "src/lib/images/josh-lopez.webp"
+  },
+  "src/lib/images/static.gif": {
+    "file": "_app/immutable/assets/static.Y3A3aTQy.gif",
+    "src": "src/lib/images/static.gif"
+  },
+  "src/lib/images/vhs-overlay.png": {
+    "file": "_app/immutable/assets/vhs-overlay.DbwPLnA4.png",
+    "src": "src/lib/images/vhs-overlay.png"
   },
   "src/posts/ai-mirror-to-our-humanity.md": {
     "file": "chunks/ai-mirror-to-our-humanity.js",

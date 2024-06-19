@@ -5,7 +5,8 @@
     "date": "2024-6-18",
     "image": "./writings-images/how-video-games-shaped-my-childhood.webp",
     "categories": [
-      "Stories"
+      "Stories",
+      "Writings"
     ],
     "published": true,
     "slug": "how-video-games-shaped-my-childhood"
@@ -17,7 +18,8 @@
     "image": "./writings-images/ai-mirror-to-our-humanity.webp",
     "categories": [
       "AI",
-      "Thoughts"
+      "Thoughts",
+      "Writings"
     ],
     "published": true,
     "slug": "ai-mirror-to-our-humanity"
@@ -29,7 +31,8 @@
     "image": "./writings-images/radical-training-support.webp",
     "categories": [
       "Customer Support",
-      "Memberstack"
+      "Memberstack",
+      "Writings"
     ],
     "published": true,
     "slug": "radical-support-training"

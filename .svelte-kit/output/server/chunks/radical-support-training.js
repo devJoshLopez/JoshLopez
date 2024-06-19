@@ -4,7 +4,7 @@ const metadata = {
   "description": "Dude, are you ready to transform your customer support team into totally radical heroes? In this first blog post, we'll explore how rad training and prioritizing well-being can help your team crush any customer support quest. It's time to equip your crew with the skills and power-ups they need to emerge victorious!",
   "date": "2024-6-12",
   "image": "./writings-images/radical-training-support.webp",
-  "categories": ["Customer Support", "Memberstack"],
+  "categories": ["Customer Support", "Memberstack", "Writings"],
   "published": true
 };
 const Radical_support_training = create_ssr_component(($$result, $$props, $$bindings, slots) => {

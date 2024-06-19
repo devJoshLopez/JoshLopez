@@ -6,6 +6,7 @@ image: "./writings-images/ai-mirror-to-our-humanity.webp"
 categories:
   - "AI"
   - "Thoughts"
+  - "Writings"
 published: true
 ---
 

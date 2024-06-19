@@ -5,6 +5,7 @@ date: "2024-6-18"
 image: "./writings-images/how-video-games-shaped-my-childhood.webp"
 categories:
   - "Stories"
+  - "Writings"
 published: true
 ---
 

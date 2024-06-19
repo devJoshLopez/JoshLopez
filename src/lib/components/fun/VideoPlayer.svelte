@@ -1,6 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
+  import staticGIF from "$lib/images/static.gif";
+  import vhsOverlay from "$lib/images/vhs-overlay.png";
+  import oldTV from "$lib/images/80s-tv.png";
 
   /**
    * @type {any}
@@ -27,8 +30,7 @@
   class GifTV {
     constructor(channels = [urls[0]]) {
       this.channels = channels;
-      this.staticGIF =
-        "https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571155222/giphy_n0r827.gif";
+      this.staticGIF = staticGIF;
       this.currentChannelURL = this.channels[0];
       this.currentIndex = 0;
     }
@@ -97,7 +99,7 @@
         <div
           id="gif_tv_pixels"
           class="pixels"
-          style="background-image: url('https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571119227/vhs-overlay_zpzs7x.png')"
+          style="background-image: url('{vhsOverlay}')"
         ></div>
         <div class="meta-left">
           <span
@@ -108,10 +110,7 @@
         </div>
       </div>
       <!-- svelte-ignore a11y-missing-attribute -->
-      <img
-        class="tv"
-        src="https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571119227/80s-tv_ekkex2.png"
-      />
+      <img class="tv" src={oldTV} />
       <button
         id="gif_tv_button_channel"
         class="dial"
