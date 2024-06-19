@@ -33,9 +33,13 @@
           {#if post.image}
             <div class="relative h-64 overflow-hidden rounded-md">
               {#if post.categories}
-                <div class="absolute left-2 top-2 z-10">
+                <div
+                  class="absolute left-2 top-2 z-10 flex w-full flex-wrap items-center gap-2"
+                >
                   {#each post.categories as category}
-                    <span class="mr-2 rounded-md bg-gray-800 px-2 py-1 text-sm">
+                    <span
+                      class="whitespace-nowrap rounded-md bg-violet-50/50 px-2 py-1 text-xs text-black"
+                    >
                       {category}
                     </span>
                   {/each}

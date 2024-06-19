@@ -46,9 +46,13 @@
         class="relative order-first h-64 overflow-hidden rounded-md lg:col-span-2 lg:translate-x-[-15%]"
       >
         {#if latestPost.categories}
-          <div class="absolute left-2 top-2 z-10">
+          <div
+            class="absolute left-2 top-2 z-10 flex w-full flex-wrap items-center gap-2"
+          >
             {#each latestPost.categories as category}
-              <span class="mr-2 rounded-md bg-gray-800 px-2 py-1 text-sm">
+              <span
+                class="mr-2 whitespace-nowrap rounded-md bg-violet-50/50 px-2 py-1 text-xs text-black"
+              >
                 {category}
               </span>
             {/each}
