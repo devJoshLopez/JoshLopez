@@ -1,7 +1,7 @@
 import { c as create_ssr_component } from "./ssr.js";
 const metadata = {
   "title": "Radical Training for Support Teams",
-  "description": "Dude, are you ready to transform your customer support team into totally bodacious heroes? In this first blog post, we'll explore how rad training and prioritizing well-being can help your team crush any customer support quest. It's time to equip your crew with the skills and power-ups they need to emerge victorious!",
+  "description": "Dude, are you ready to transform your customer support team into totally radical heroes? In this first blog post, we'll explore how rad training and prioritizing well-being can help your team crush any customer support quest. It's time to equip your crew with the skills and power-ups they need to emerge victorious!",
   "date": "2024-6-12",
   "image": "./writings-images/radical-training-support.webp",
   "categories": ["Customer Support", "Memberstack"],

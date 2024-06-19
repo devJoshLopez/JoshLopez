@@ -11,7 +11,7 @@ const __variableDynamicImportRuntimeHelper = (glob, path, segs) => {
 const prerender = true;
 async function load({ params }) {
   try {
-    const post = await __variableDynamicImportRuntimeHelper(/* @__PURE__ */ Object.assign({ "../../../posts/ai-mirror-to-our-humanity.md": () => import("../../../../chunks/ai-mirror-to-our-humanity.js"), "../../../posts/radical-support-training.md": () => import("../../../../chunks/radical-support-training.js") }), `../../../posts/${params.slug}.md`, 5);
+    const post = await __variableDynamicImportRuntimeHelper(/* @__PURE__ */ Object.assign({ "../../../posts/ai-mirror-to-our-humanity.md": () => import("../../../../chunks/ai-mirror-to-our-humanity.js"), "../../../posts/how-video-games-shaped-my-childhood.md": () => import("../../../../chunks/how-video-games-shaped-my-childhood.js"), "../../../posts/radical-support-training.md": () => import("../../../../chunks/radical-support-training.js") }), `../../../posts/${params.slug}.md`, 5);
     return {
       content: post.default,
       meta: post.metadata

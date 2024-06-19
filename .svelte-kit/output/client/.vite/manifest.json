@@ -1,6 +1,6 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.DHRswceP.js",
+    "file": "_app/immutable/entry/app.CL-ximeK.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
@@ -21,7 +21,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/0.js": {
-    "file": "_app/immutable/nodes/0.DlExujDV.js",
+    "file": "_app/immutable/nodes/0.BfZo0TA1.js",
     "name": "nodes/0",
     "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
     "isEntry": true,
@@ -32,14 +32,14 @@
       "_VideoPlayer.BLM2l8hd.js"
     ],
     "css": [
-      "_app/immutable/assets/0.DxJjwxvw.css"
+      "_app/immutable/assets/0.34L8XZaW.css"
     ],
     "assets": [
       "_app/immutable/assets/bgnoise.Bs-ruk1u.webp"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/1.js": {
-    "file": "_app/immutable/nodes/1.D970fJEj.js",
+    "file": "_app/immutable/nodes/1.DAD8gsu1.js",
     "name": "nodes/1",
     "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
     "isEntry": true,
@@ -47,14 +47,14 @@
     "imports": [
       "_scheduler.CG3d4uC7.js",
       "_index.CB3eX9QC.js",
-      "_entry.a8c-hZt0.js"
+      "_entry.DyUL03z0.js"
     ],
     "css": [
       "_app/immutable/assets/1._Q8vuWQk.css"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/2.js": {
-    "file": "_app/immutable/nodes/2.C92F6jkv.js",
+    "file": "_app/immutable/nodes/2.Bk4Pa3gv.js",
     "name": "nodes/2",
     "src": ".svelte-kit/generated/client-optimized/nodes/2.js",
     "isEntry": true,
@@ -119,7 +119,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/7.js": {
-    "file": "_app/immutable/nodes/7.DhHRczEs.js",
+    "file": "_app/immutable/nodes/7.Cg48GROP.js",
     "name": "nodes/7",
     "src": ".svelte-kit/generated/client-optimized/nodes/7.js",
     "isEntry": true,
@@ -133,15 +133,16 @@
     ],
     "dynamicImports": [
       "src/posts/ai-mirror-to-our-humanity.md",
+      "src/posts/how-video-games-shaped-my-childhood.md",
       "src/posts/radical-support-training.md"
     ],
     "css": [
       "_app/immutable/assets/7.B8k6o8WA.css"
     ]
   },
-  "_VideoPlayer.!~{00k}~.js": {
+  "_VideoPlayer.!~{00l}~.js": {
     "file": "_app/immutable/assets/VideoPlayer.DnFM-b4H.css",
-    "src": "_VideoPlayer.!~{00k}~.js"
+    "src": "_VideoPlayer.!~{00l}~.js"
   },
   "_VideoPlayer.BLM2l8hd.js": {
     "file": "_app/immutable/chunks/VideoPlayer.BLM2l8hd.js",
@@ -163,8 +164,8 @@
     "file": "_app/immutable/chunks/each.D6YF6ztN.js",
     "name": "each"
   },
-  "_entry.a8c-hZt0.js": {
-    "file": "_app/immutable/chunks/entry.a8c-hZt0.js",
+  "_entry.DyUL03z0.js": {
+    "file": "_app/immutable/chunks/entry.DyUL03z0.js",
     "name": "entry",
     "imports": [
       "_scheduler.CG3d4uC7.js",
@@ -195,12 +196,12 @@
     "name": "scheduler"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.CrICJato.js",
+    "file": "_app/immutable/entry/start.BVlXibn4.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
     "imports": [
-      "_entry.a8c-hZt0.js"
+      "_entry.DyUL03z0.js"
     ]
   },
   "src/lib/images/bgnoise.webp": {
@@ -229,8 +230,18 @@
       "_index.CB3eX9QC.js"
     ]
   },
+  "src/posts/how-video-games-shaped-my-childhood.md": {
+    "file": "_app/immutable/chunks/how-video-games-shaped-my-childhood.pgaOTTlY.js",
+    "name": "how-video-games-shaped-my-childhood",
+    "src": "src/posts/how-video-games-shaped-my-childhood.md",
+    "isDynamicEntry": true,
+    "imports": [
+      "_scheduler.CG3d4uC7.js",
+      "_index.CB3eX9QC.js"
+    ]
+  },
   "src/posts/radical-support-training.md": {
-    "file": "_app/immutable/chunks/radical-support-training.DQavCg7z.js",
+    "file": "_app/immutable/chunks/radical-support-training.CvcvRstn.js",
     "name": "radical-support-training",
     "src": "src/posts/radical-support-training.md",
     "isDynamicEntry": true,

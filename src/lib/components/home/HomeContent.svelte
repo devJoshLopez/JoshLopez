@@ -25,10 +25,10 @@
     <h2 class="mb-4 text-3xl">
       "Roads? Where We're Going, We Don't Need Roads."
     </h2>
-    <div class="more-content flex flex-col gap-4">
+    <div class="more-content flex flex-row gap-8 max-md:flex-col">
       {#each recentPosts as post}
         <div
-          class="rounded-xl border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:border-none max-md:bg-none max-md:p-0 lg:grid-cols-4 lg:gap-0 lg:py-12"
+          class="w-1/2 rounded-xl border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:w-full max-md:border-none max-md:bg-none max-md:p-0 lg:grid-cols-4 lg:gap-0 lg:py-12"
         >
           {#if post.image}
             <div class="relative h-64 overflow-hidden rounded-md">
@@ -61,8 +61,8 @@
         </div>
       {/each}
     </div>
-    <div class="mt-4 flex items-center justify-center gap-4">
-      <RetroButton url="/writings" label="Read More Posts" size="250px" />
+    <div class="mt-14 flex items-center justify-center gap-4">
+      <RetroButton url="/writings" label="View All Posts" size="250px" />
     </div>
   </div>
 

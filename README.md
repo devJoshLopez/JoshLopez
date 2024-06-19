@@ -1,9 +1,7 @@
 ##TODO:
 
-- fix the way mobile looks
 - write more blog posts for content
 - fix the mouse avoidance js to stop jittering
-- make the content section on homepage better
 - work on writings list page - possible bento box style
 - work on writings page
 - work on videos page which uses the youtube api to get videos
@@ -13,11 +11,3 @@
 #Notes:
 
 - Use `import { base } from "$app/paths"` to get the base path of the app
-- https://www.youtube.com/watch?v=RhScu3uqGd0
-
-- spider man https://www.youtube.com/watch?v=shu8CTGgTM0
-- hackers https://www.youtube.com/watch?v=y60JwuVVlTk
-- short circuit https://www.youtube.com/watch?v=0xPu59_MHQ0
-- back to the future https://www.youtube.com/watch?v=TkyLnWm1iCs
-- the last starfighter https://www.youtube.com/watch?v=AJRmY9VXf1g
-- rick roll https://www.youtube.com/watch?v=dQw4w9WgXcQ
