@@ -1,6 +1,6 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.CoZR10zO.js",
+    "file": "_app/immutable/entry/app.p_KpCveO.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
@@ -21,7 +21,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/0.js": {
-    "file": "_app/immutable/nodes/0.BLTVaAZs.js",
+    "file": "_app/immutable/nodes/0.CzYIL09K.js",
     "name": "nodes/0",
     "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
     "isEntry": true,
@@ -32,14 +32,15 @@
       "_VideoPlayer.Bsz9-ghZ.js"
     ],
     "css": [
-      "_app/immutable/assets/0.34L8XZaW.css"
+      "_app/immutable/assets/0.D5V-DLjc.css"
     ],
     "assets": [
-      "_app/immutable/assets/bgnoise.Bs-ruk1u.webp"
+      "_app/immutable/assets/bgnoise.Bs-ruk1u.webp",
+      "_app/immutable/assets/color-static.CqWN2tCz.gif"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/1.js": {
-    "file": "_app/immutable/nodes/1.DGUtJYxl.js",
+    "file": "_app/immutable/nodes/1.CsAif9fd.js",
     "name": "nodes/1",
     "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
     "isEntry": true,
@@ -47,7 +48,7 @@
     "imports": [
       "_scheduler.BLvUSRo-.js",
       "_index.Dy_QpUvw.js",
-      "_entry.C-ZLSRbs.js"
+      "_entry.DQ_AhbOq.js"
     ],
     "css": [
       "_app/immutable/assets/1._Q8vuWQk.css"
@@ -169,8 +170,8 @@
     "file": "_app/immutable/chunks/each.D6YF6ztN.js",
     "name": "each"
   },
-  "_entry.C-ZLSRbs.js": {
-    "file": "_app/immutable/chunks/entry.C-ZLSRbs.js",
+  "_entry.DQ_AhbOq.js": {
+    "file": "_app/immutable/chunks/entry.DQ_AhbOq.js",
     "name": "entry",
     "imports": [
       "_scheduler.BLvUSRo-.js",
@@ -201,12 +202,12 @@
     "name": "scheduler"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.BavyF_7A.js",
+    "file": "_app/immutable/entry/start.DoXEvHlu.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
     "imports": [
-      "_entry.C-ZLSRbs.js"
+      "_entry.DQ_AhbOq.js"
     ]
   },
   "src/lib/images/80s-tv.png": {
@@ -216,6 +217,10 @@
   "src/lib/images/bgnoise.webp": {
     "file": "_app/immutable/assets/bgnoise.Bs-ruk1u.webp",
     "src": "src/lib/images/bgnoise.webp"
+  },
+  "src/lib/images/color-static.gif": {
+    "file": "_app/immutable/assets/color-static.CqWN2tCz.gif",
+    "src": "src/lib/images/color-static.gif"
   },
   "src/lib/images/delorean.png": {
     "file": "_app/immutable/assets/delorean.DABPZUWp.png",

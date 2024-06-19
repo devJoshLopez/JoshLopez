@@ -58,6 +58,10 @@
     "file": "_app/immutable/assets/bgnoise.Bs-ruk1u.webp",
     "src": "src/lib/images/bgnoise.webp"
   },
+  "src/lib/images/color-static.gif": {
+    "file": "_app/immutable/assets/color-static.CqWN2tCz.gif",
+    "src": "src/lib/images/color-static.gif"
+  },
   "src/lib/images/delorean.png": {
     "file": "_app/immutable/assets/delorean.DABPZUWp.png",
     "src": "src/lib/images/delorean.png"
@@ -134,11 +138,12 @@
       "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.D7blVtcB.css",
+      "_app/immutable/assets/_layout.hdKMO23l.css",
       "_app/immutable/assets/VideoPlayer.BerU9yNJ.css"
     ],
     "assets": [
-      "_app/immutable/assets/bgnoise.Bs-ruk1u.webp"
+      "_app/immutable/assets/bgnoise.Bs-ruk1u.webp",
+      "_app/immutable/assets/color-static.CqWN2tCz.gif"
     ]
   },
   "src/routes/+page.js": {

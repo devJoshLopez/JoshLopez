@@ -3,6 +3,7 @@
   import { tick, onDestroy } from "svelte";
   import { gsap, Power1, Power2 } from "gsap";
   import { closeModal } from "$lib/stores/modalStore";
+  import colorStatic from "$lib/images/color-static.gif";
 
   export let show = false;
   export let content = null;
@@ -63,7 +64,7 @@
       })
       .to(SELECTOR_MODAL_ELEMENT, {
         duration: 0.2,
-        backgroundImage: "url(https://cldup.com/gn3s3Fg75t.gif)",
+        backgroundImage: `url(${colorStatic})`,
         ease: Power2.easeInOut,
       })
       .to(SELECTOR_MODAL_ELEMENT, {
@@ -167,7 +168,7 @@
     background: -webkit-linear-gradient(to left, #16222a, #3a6073);
     background: linear-gradient(to left, #16222a, #3a6073);
     background-size: cover !important;
-    background-image: url(https://cldup.com/gn3s3Fg75t.gif);
+    background-image: url(${colorStatic});
     background-origin: border-box;
     color: #e1eef6;
     transition:
