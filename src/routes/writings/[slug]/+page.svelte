@@ -37,7 +37,7 @@
       {/if}
 
       <hgroup class="mb-4">
-        <h1 class="text-4xl">
+        <h1 class="text-6xl">
           {data.meta.title}
         </h1>
         <p class="text-gray-600">
@@ -62,13 +62,16 @@
   }
 
   :global(.prose h1) {
-    font-size: 2.25rem;
+    font-size: 3.75rem;
+    line-height: 1;
   }
   :global(.prose h2) {
-    font-size: 1.875rem;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
   :global(.prose h3) {
     font-size: 1.5rem;
+    line-height: 1.75rem;
   }
   :global(.prose h4) {
     font-size: 1.25rem;

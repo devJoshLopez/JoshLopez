@@ -4,7 +4,7 @@ const metadata = {
   "description": "Discover how video games helped me make friends, overcome challenges, and build lifelong skills. From NES adventures to bonding over Doom with my grandpa, join me on a journey of growth and nostalgia.",
   "date": "2024-6-18",
   "image": "./writings-images/how-video-games-shaped-my-childhood.webp",
-  "categories": ["Stories", "Writings"],
+  "categories": ["Stories"],
   "published": true
 };
 const How_video_games_shaped_my_childhood = create_ssr_component(($$result, $$props, $$bindings, slots) => {

@@ -4,7 +4,7 @@ const metadata = {
   "description": "Embark on a mind-bending journey through the world of AI, where science fiction meets reality! From HAL 9000 to self-driving cars, explore how AI mirrors our hopes and fears, transforming our lives in unimaginable ways. Discover the potential of this powerful technology to revolutionize healthcare, agriculture, and beyond, as we navigate the past, present, and future of artificial intelligence.",
   "date": "2024-6-15",
   "image": "./writings-images/ai-mirror-to-our-humanity.webp",
-  "categories": ["AI", "Thoughts", "Writings"],
+  "categories": ["AI", "Thoughts"],
   "published": true
 };
 const Ai_mirror_to_our_humanity = create_ssr_component(($$result, $$props, $$bindings, slots) => {

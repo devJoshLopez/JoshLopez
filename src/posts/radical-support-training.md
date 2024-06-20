@@ -6,7 +6,6 @@ image: "./writings-images/radical-training-support.webp"
 categories:
   - "Customer Support"
   - "Memberstack"
-  - "Writings"
 published: true
 ---
 
