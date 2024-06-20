@@ -14,8 +14,6 @@ published: true
 
 Did you know that exceptional customer support can increase customer loyalty by 33%? Cowabunga, dudes and dudettes! It's your favorite tech enthusiast, Josh, ready to share some wicked insights on how to level up your customer support team. In this first blog post, we'll dive into the secret combo moves of continuous training and employee well-being. These power-ups can transform your team from mere NPCs into the radical heroes of your customer support realm. So, grab your hoverboard and let's embark on this most excellent adventure together! [HubSpot](https://blog.hubspot.com/service/customer-service-training), [Tidio](https://www.tidio.com/blog/customer-service-statistics).
 
----
-
 ## Continuous Training Programs
 
 1. **Stay Updated with Latest Technologies and Trends**:
