@@ -20,99 +20,89 @@
   <h2 class="mb-4 text-3xl">
     "Greetings, Starfighter. <br />You Have Been Recruited"
   </h2>
-  <p class="mb-4">👋 Hey there, digital ally!</p>
+
+  <p class="mb-4">Hey there, digital ally! 👋</p>
 
   <p class="mb-4">
-    That's me up there, sporting a hoodie because why get fancy when you're
-    wrangling JavaScript and decoding user enigmas?
+    I'm Josh Lopez - the hoodie-wearing, JavaScript-wrangling, user-enigma
+    decoder dude writing all this.
   </p>
 
-  <p class="mb-4">Welcome to my digital dojo, where:</p>
-  <ul class="ml-6 mt-2 list-inside list-disc">
-    <li class="mb-2">
-      I share tales from the tech trenches and customer success frontlines
-    </li>
-    <li class="mb-2">
-      Ponder life's great mysteries and the magic of everyday moments
-    </li>
-    <li class="mb-2">
-      Showcase cutting-edge projects like Rey, my AI compadre
-    </li>
-    <li class="mb-2">
-      Dive deep into the movies, music, and comics that shape my soul
-    </li>
+  <h3 class="mb-4 text-2xl">Welcome to my digital dojo</h3>
+
+  <p class="mb-4">Here, I:</p>
+  <ul class="mb-4 ml-6 mt-2 list-inside list-disc">
+    <li>Share tales from the tech trenches and customer success frontlines</li>
+    <li>Ponder life's mysteries and everyday magic</li>
+    <li>Showcase cutting-edge projects (like Rey, my AI sidekick)</li>
+    <li>Dive into movies, music, and comics that shape my soul</li>
+    <li>Write about my personal thoughts and opinions on, well, everything!</li>
+  </ul>
+
+  <h3 class="mb-4 text-2xl">By day...</h3>
+
+  <p class="mb-4">At Memberstack, I'm a jack-of-all-trades:</p>
+  <ul class="mb-4 ml-6 mt-2 list-inside list-disc">
+    <li>Forging pre-built modals for seamless user experiences</li>
+    <li>Leveling up Rey, our AI sage</li>
+    <li>Crafting help guides that turn "Game Over" into "Extra Life!"</li>
   </ul>
 
   <p class="mb-4">
-    At Memberstack, I'm a jack-of-all-trades. I forge pre-built modals that make
-    signing up, logging in, and managing memberships a breeze. I also level up
-    our AI sidekick, Rey, to dispense wisdom like a sage Game Genie. And when
-    I'm not crafting code, I'm penning help guides that turn "Game Over" into
-    "Extra Life!"
+    But my true calling? Leading our merry band of support heroes, giving every
+    user their "You're All That and a Bag of Chips" moment.
   </p>
 
-  <p class="mb-4">
-    But my true calling? Leading our merry band of support heroes. Together, we
-    don't just fix issues; we give every user their "You're All That and a Bag
-    of Chips" moment.
-  </p>
+  <h3 class="mb-4 text-2xl">Inspired by the greats</h3>
 
-  <p class="mb-4">
-    In all things, I strive to be like the heroes who guided my youth:
-  </p>
-
-  <ul class="ml-6 mt-2 list-inside list-disc">
-    <li class="mb-2">
-      🌟 Like Marty McFly, I aim to make the future brighter.
-    </li>
-    <li class="mb-2">
-      🐢 Like the Ninja Turtles, I blend unique skills to help others.
-    </li>
-    <li class="mb-2">🕴️ Like Neo, I question reality to find deeper truths.</li>
-    <li class="mb-2">
-      🕷️ Like Spider-Man, I balance power and responsibility.
-    </li>
+  <p class="mb-4">I channel:</p>
+  <ul class="mb-4 ml-6 mt-2 list-inside list-disc">
+    <li>Marty McFly's drive to brighten the future</li>
+    <li>Ninja Turtles' unique skill blend</li>
+    <li>Neo's quest for deeper truths</li>
+    <li>Spider-Man's balance of power and responsibility</li>
   </ul>
 
+  <h3 class="mb-4 text-2xl">Off the clock</h3>
+
   <p class="mb-4">
-    Off the clock, you'll find me in Big Sky Country (Montana), my own personal
-    Hoth, plotting benevolent world-changes from my local cinema throne. The 80s
-    and 90s aren't just history; they're my OS.
+    Find me in Big Sky Country (Montana), my personal Hoth, plotting benevolent
+    world-changes from the local cinema. The 80s and 90s aren't just history;
+    they're my operating system.
+  </p>
+
+  <h3 class="mb-4 text-2xl">My mission</h3>
+
+  <p class="mb-4">
+    I'm on a quest to make tech more human - less "Skynet", more "WOPR". Whether
+    you're here to level up your customer success game, uncover soulful living
+    secrets, geek out over pop culture, or explore AI's frontiers, you've found
+    a fellow adventurer.
   </p>
 
   <p class="mb-4">
-    I believe great tech, like great stories, speaks to the human heart. That's
-    why I'm on a quest to make the digital realm a little less "Skynet" and a
-    little more "WOPR" - less cold calculations, more warm connections.
+    As Ferris Bueller said, "Life moves pretty fast. If you don't stop and look
+    around once in a while, you could miss it."
   </p>
 
   <p class="mb-4">
-    So whether you're here to level up your customer success game, uncover
-    secrets of soulful living, geek out over pop culture, or explore the
-    uncharted lands of AI, know that you've found a fellow adventurer.
+    Join me in making every moment a chance for growth, connection, and 8-bit
+    magic. We're all just players navigating this great game called life. 🕹️
   </p>
 
   <p class="mb-4">
-    In the immortal words of Ferris Bueller, "Life moves pretty fast. If you
-    don't stop and look around once in a while, you could miss it."
-  </p>
-
-  <p class="mb-4">
-    Join me in making every moment, online and off, a chance for growth,
-    connection, and a little 8-bit magic. Because in the end, we're all just
-    players trying to navigate this great game called life. 🕹️
-  </p>
-
-  <p class="mb-4 max-md:hidden">
     Press ⬆️⬆️⬇️⬇️⬅️➡️⬅️➡️🅱️🅰️ to continue this adventure... 🚀
   </p>
 
-  <p class="mb-4">
-    Incoming transmission... 📡 <br />
-    Son, if you're reading this someday, know that every word, every line of code,
-    every late-night movie analysis was a love letter to you. May my stories and
-    passions inspire you to live boldly, love deeply, and always stay curious. Though
-    time may pass, my love for you is as timeless as a classic NES game.
+  <p class="mt-4">
+    <em class="text-xs"
+      >Incoming transmission... 📡 <br />
+      To my son: Every word, line of code, and late-night movie analysis here is
+      part of our story. As you navigate your life, may these musings inspire you
+      to live boldly, love deeply, and stay forever curious. My love for you is as
+      timeless as a classic NES game – and way more complex than any JavaScript I've
+      ever written.</em
+    >
   </p>
 
   <Floaty className="last-starfighter-floaty">
