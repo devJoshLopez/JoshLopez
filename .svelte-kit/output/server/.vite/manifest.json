@@ -148,7 +148,7 @@
       "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.KHiDZkvj.css",
+      "_app/immutable/assets/_layout.BUbU2GjN.css",
       "_app/immutable/assets/VideoPlayer.BerU9yNJ.css"
     ],
     "assets": [
@@ -214,7 +214,8 @@
     "src": "src/routes/videos/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_RetroButton.js"
     ]
   },
   "src/routes/writings/+page.js": {

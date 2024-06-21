@@ -23,10 +23,10 @@
   <h2 class="mb-4 text-3xl">"Number 5 is Alive!"</h2>
 
   <div
-    class="grid grid-cols-1 items-center gap-0 gap-y-6 rounded-xl border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:border-none max-md:bg-none max-md:p-0 lg:grid-cols-4 lg:gap-0 lg:py-12"
+    class="grid items-center gap-8 rounded-xl border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:border-none max-md:bg-none max-md:p-0 lg:grid-cols-2 lg:gap-8"
   >
     <div class="col-span-2">
-      <h3 class="text-4xl max-md:text-xl">
+      <h3 class="text-3xl max-md:text-xl">
         {latestPost.title}
       </h3>
       <p class="mt-4">{latestPost.description}</p>
@@ -42,7 +42,7 @@
 
     {#if latestPost.image}
       <div
-        class="relative order-first h-64 overflow-hidden rounded-md lg:col-span-2 lg:translate-x-[-15%]"
+        class="relative order-first h-64 overflow-hidden rounded-md lg:col-span-2"
       >
         {#if latestPost.categories}
           <div
