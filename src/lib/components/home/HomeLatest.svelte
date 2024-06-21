@@ -42,7 +42,7 @@
 
     {#if latestPost.image}
       <div
-        class="relative order-first h-64 overflow-hidden rounded-md lg:col-span-2"
+        class="relative order-first col-span-2 h-64 overflow-hidden rounded-md"
       >
         {#if latestPost.categories}
           <div

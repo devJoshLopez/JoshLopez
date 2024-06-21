@@ -10,7 +10,7 @@
   <meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<div class="mx-auto max-w-4xl px-4">
+<div class="mx-auto max-w-4xl">
   <section class="section-glass relative mb-20 mt-3 rounded-md p-8 text-white">
     <article>
       {#if data.meta.image}

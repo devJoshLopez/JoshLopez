@@ -137,4 +137,8 @@
   .floaty-container > * {
     position: absolute;
   }
+
+  :global(.floaty-container img) {
+    cursor: pointer;
+  }
 </style>

@@ -27,7 +27,7 @@
   });
 </script>
 
-<div class="mx-auto max-w-4xl px-4">
+<div class="mx-auto max-w-4xl">
   <section
     class="section-glass relative mb-32 mt-3 gap-4 rounded-md p-8 text-white"
   >

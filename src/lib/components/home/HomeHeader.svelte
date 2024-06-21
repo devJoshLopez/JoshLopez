@@ -83,7 +83,7 @@
     </Floaty>
   </div>
 
-  <div class="absolute -bottom-32 -left-10 -z-10 h-48 w-48 -rotate-12">
+  <div class="absolute -bottom-32 -left-10 h-48 w-48 -rotate-12">
     <Floaty className="floppy-disk">
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->

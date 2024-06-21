@@ -217,13 +217,15 @@
     line-height: 0;
     cursor: pointer;
     transition: all 200ms ease-in-out;
+    animation: dial-pulse 3s infinite;
   }
   .gif-tv button.dial:hover,
   .gif-tv button.dial:focus {
     outline: none;
   }
   .gif-tv button.dial:hover {
-    border-color: #0af;
+    border-color: #0af !important;
+    animation: none;
   }
   .gif-tv button.dial:active {
     border-color: #007fff;
@@ -236,5 +238,18 @@
   }
   .gif-tv button#gif_tv_button_channel {
     top: 56.3%;
+  }
+
+  /* animation that slightly and slowly makes the dial border fade in and out */
+  @keyframes dial-pulse {
+    0% {
+      border-color: #dfddd183;
+    }
+    50% {
+      border-color: rgba(0, 170, 255, 0.646);
+    }
+    100% {
+      border-color: #dfddd183;
+    }
   }
 </style>
