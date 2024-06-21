@@ -5,7 +5,6 @@
   import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
 
   const openModal = () => {
-    console.log("Open modal button clicked");
     // @ts-ignore
     showModal(VideoPlayer, {
       urls: [

@@ -60,12 +60,13 @@
         width: "100vw",
         height: "2px",
         background: "#ffffff",
+        backgroundImage: "none",
         ease: Power2.easeOut,
       })
       .to(SELECTOR_MODAL_ELEMENT, {
-        duration: 0.2,
+        duration: 0.3,
         backgroundImage: `url(${colorStatic})`,
-        ease: Power2.easeInOut,
+        ease: Power2.easeOut,
       })
       .to(SELECTOR_MODAL_ELEMENT, {
         duration: 0.2,
@@ -164,11 +165,7 @@
     transform-origin: center;
     content: " ";
     overflow: hidden;
-    background: #16222a;
-    background: -webkit-linear-gradient(to left, #16222a, #3a6073);
-    background: linear-gradient(to left, #16222a, #3a6073);
     background-size: cover !important;
-    background-image: url(${colorStatic});
     background-origin: border-box;
     color: #e1eef6;
     transition:

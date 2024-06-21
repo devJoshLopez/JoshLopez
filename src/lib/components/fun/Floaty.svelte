@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { gsap } from "gsap";
 
   export let className = "";
 
@@ -12,119 +13,114 @@
   }
 
   /**
-   * @param {number} shape
+   * @param {gsap.TweenTarget} node
    */
-  function createKeyframes(shape) {
-    const randomDuration = getRandom(8, 15); // Slower animation
-    const initialRotation = getRandom(-10, 10);
-    const keyframes = `
-        @keyframes float${shape} {
-          0%, 100% {
-            transform: translate(0, 0) rotate(${initialRotation}deg);
-          }
-          25% {
-            transform: translate(${getRandom(-10, 10)}px, ${getRandom(-10, 10)}px) rotate(${getRandom(-10, 10)}deg);
-          }
-          50% {
-            transform: translate(${getRandom(-10, 10)}px, ${getRandom(-10, 10)}px) rotate(${getRandom(-10, 10)}deg);
-          }
-          75% {
-            transform: translate(${getRandom(-10, 10)}px, ${getRandom(-10, 10)}px) rotate(${getRandom(-10, 10)}deg);
-          }
-        }
-      `;
-    const styleSheet = document.styleSheets[0];
-    styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+  function createFloatingAnimation(node) {
+    const duration = getRandom(8, 15);
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
 
-    return randomDuration;
+    tl.to(node, {
+      x: () => getRandom(-10, 10),
+      y: () => getRandom(-10, 10),
+      rotation: () => getRandom(-10, 10),
+      duration: duration / 2,
+      ease: "sine.inOut",
+    });
+
+    return tl;
   }
 
   /**
-   * @param {Element | null} node
-   */
-  function applyRandomAnimation(node) {
-    const duration = createKeyframes(0); // Assuming one element per HoverComponent
-    // @ts-ignore
-    node.style.animation = `float0 ${duration}s ease-in-out infinite`;
-  }
-
-  /**
-   * @param {Element | null} node
+   * @param {gsap.TweenTarget} node
    */
   function applyCursorAvoidance(node) {
-    const bufferDistance = 160; // Adjust this value as needed
-    let isAnimating = false;
-    let offsetX = 0;
-    let offsetY = 0;
+    const bufferDistance = 160;
+    /**
+     * @type {{ pause: () => void; play: () => void; kill: () => void; }}
+     */
+    let floatingAnimation;
+    let isAvoiding = false;
+
+    const avoidanceTween = gsap.to(node, {
+      x: 0,
+      y: 0,
+      rotation: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      paused: true,
+    });
 
     /**
      * @param {{ clientX: any; clientY: any; }} event
      */
     function handleMouseMove(event) {
-      if (!isAnimating) {
-        isAnimating = true;
-        requestAnimationFrame(() => {
-          const mouseX = event.clientX;
-          const mouseY = event.clientY;
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
 
-          // @ts-ignore
-          const rect = node.getBoundingClientRect();
-          const shapeX = rect.left + rect.width / 2;
-          const shapeY = rect.top + rect.height / 2;
-          const distance = Math.hypot(shapeX - mouseX, shapeY - mouseY);
+      // @ts-ignore
+      const rect = node.getBoundingClientRect();
+      const shapeX = rect.left + rect.width / 2;
+      const shapeY = rect.top + rect.height / 2;
+      const distance = Math.hypot(shapeX - mouseX, shapeY - mouseY);
 
-          if (distance < bufferDistance) {
-            const angle = Math.atan2(shapeY - mouseY, shapeX - mouseX);
-            const maxOffset = 30;
-            const offsetFactor = 1 - distance / bufferDistance;
-            const newOffsetX = Math.cos(angle) * maxOffset * offsetFactor;
-            const newOffsetY = Math.sin(angle) * maxOffset * offsetFactor;
+      if (distance < bufferDistance) {
+        if (!isAvoiding) {
+          isAvoiding = true;
+          if (floatingAnimation) floatingAnimation.pause();
+        }
 
-            const easing = 0.1;
-            offsetX += (newOffsetX - offsetX) * easing;
-            offsetY += (newOffsetY - offsetY) * easing;
+        const angle = Math.atan2(shapeY - mouseY, shapeX - mouseX);
+        const maxOffset = 30;
+        const offsetFactor = Math.max(0, 1 - distance / bufferDistance);
+        const newOffsetX = Math.cos(angle) * maxOffset * offsetFactor;
+        const newOffsetY = Math.sin(angle) * maxOffset * offsetFactor;
 
-            const maxRotation = 10;
-            const rotationFactor = 1 - distance / bufferDistance;
-            const rotation =
-              getRandom(-maxRotation, maxRotation) * rotationFactor;
+        const maxRotation = 10;
+        const rotationFactor = Math.max(0, 1 - distance / bufferDistance);
+        const rotation = getRandom(-maxRotation, maxRotation) * rotationFactor;
 
-            // @ts-ignore
-            node.style.transition = "transform 0.5s ease-out";
-            // @ts-ignore
-            node.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotation}deg)`;
-            // @ts-ignore
-            node.classList.add("no-animation");
-          } else {
-            const easing = 0.05;
-            offsetX += (0 - offsetX) * easing;
-            offsetY += (0 - offsetY) * easing;
-
-            // @ts-ignore
-            node.style.transition = "transform 0.5s ease-out";
-            // @ts-ignore
-            node.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-            setTimeout(() => {
-              // @ts-ignore
-              node.classList.remove("no-animation");
-            }, 500);
-          }
-
-          isAnimating = false;
+        gsap.to(node, {
+          x: newOffsetX,
+          y: newOffsetY,
+          rotation: rotation,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      } else if (isAvoiding) {
+        isAvoiding = false;
+        avoidanceTween.play();
+        avoidanceTween.eventCallback("onComplete", () => {
+          if (floatingAnimation) floatingAnimation.play();
         });
       }
     }
 
     document.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+
+    return {
+      destroy() {
+        document.removeEventListener("mousemove", handleMouseMove);
+        if (floatingAnimation) floatingAnimation.kill();
+        avoidanceTween.kill();
+      },
+      /**
+       * @param {gsap.core.Timeline} animation
+       */
+      setFloatingAnimation(animation) {
+        floatingAnimation = animation;
+      },
     };
   }
 
   onMount(() => {
     const node = document.querySelector(`.${className}`);
-    applyRandomAnimation(node);
-    applyCursorAvoidance(node);
+    const floatingAnimation = createFloatingAnimation(node);
+    const avoidance = applyCursorAvoidance(node);
+    avoidance.setFloatingAnimation(floatingAnimation);
+
+    return () => {
+      avoidance.destroy();
+    };
   });
 </script>
 
@@ -133,10 +129,6 @@
 </div>
 
 <style>
-  :global(.no-animation) {
-    animation: none !important;
-  }
-
   .floaty-container {
     position: absolute;
     display: inline-block;
@@ -144,6 +136,5 @@
 
   .floaty-container > * {
     position: absolute;
-    transition: transform 0.5s ease-out; /* Smoother transition for avoidance */
   }
 </style>

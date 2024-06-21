@@ -1,37 +1,41 @@
 [
   {
-    "title": "How Video Games Shaped My Childhood",
+    "title": "How Video Games Shaped My Childhood: A Journey of Growth and Nostalgia",
     "description": "Discover how video games helped me make friends, overcome challenges, and build lifelong skills. From NES adventures to bonding over Doom with my grandpa, join me on a journey of growth and nostalgia.",
-    "date": "2024-6-18",
+    "date": "2024-6-19",
     "image": "./writings-images/how-video-games-shaped-my-childhood.webp",
     "categories": [
-      "Stories"
+      "Stories",
+      "Personal Growth",
+      "Gaming"
     ],
     "published": true,
     "slug": "how-video-games-shaped-my-childhood"
   },
   {
-    "title": "AI: A Mirror to Our Humanity!",
-    "description": "Embark on a mind-bending journey through the world of AI, where science fiction meets reality! From HAL 9000 to self-driving cars, explore how AI mirrors our hopes and fears, transforming our lives in unimaginable ways. Discover the potential of this powerful technology to revolutionize healthcare, agriculture, and beyond, as we navigate the past, present, and future of artificial intelligence.",
-    "date": "2024-6-15",
+    "title": "AI: A Mirror to Our Humanity",
+    "description": "Explore a personal perspective on why people fear AI, viewing it as a reflection of our own humanity. Discover how our reactions to artificial intelligence reveal our deepest hopes, fears, and the parts of ourselves we're afraid to confront.",
+    "date": "2024-6-5",
     "image": "./writings-images/ai-mirror-to-our-humanity.webp",
     "categories": [
       "AI",
-      "Thoughts"
+      "Philosophy",
+      "Personal Thoughts"
     ],
     "published": true,
     "slug": "ai-mirror-to-our-humanity"
   },
   {
-    "title": "Radical Training for Support Teams",
-    "description": "Dude, are you ready to transform your customer support team into totally radical heroes? In this first blog post, we'll explore how rad training and prioritizing well-being can help your team crush any customer support quest. It's time to equip your crew with the skills and power-ups they need to emerge victorious!",
-    "date": "2024-6-12",
-    "image": "./writings-images/radical-training-support.webp",
+    "title": "Mythological Quests: Leveling Up Support Training",
+    "description": "Join us on an epic journey through my unique approach to customer support training. Discover how mythological themes, hands-on projects, and a dash of creativity are keeping our remote team engaged, empathetic, and always learning. Perfect for support leaders looking to add some excitement to their training programs!",
+    "date": "2024-6-2",
+    "image": "./writings-images/mythological-quests-support-training.webp",
     "categories": [
       "Customer Support",
-      "Memberstack"
+      "Employee Training",
+      "Remote Team Management"
     ],
     "published": true,
-    "slug": "radical-support-training"
+    "slug": "mythological-quests-support-training"
   }
 ]

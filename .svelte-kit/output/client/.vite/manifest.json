@@ -1,6 +1,6 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.C3pCByyk.js",
+    "file": "_app/immutable/entry/app.DzMPLUxE.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
@@ -21,7 +21,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/0.js": {
-    "file": "_app/immutable/nodes/0.z3JUx-0w.js",
+    "file": "_app/immutable/nodes/0.C6JvsDNl.js",
     "name": "nodes/0",
     "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
     "isEntry": true,
@@ -29,10 +29,10 @@
     "imports": [
       "_scheduler.kLU6lpw6.js",
       "_index.Djk3OmZN.js",
-      "_VideoPlayer.BOeCsEuZ.js"
+      "_index.BI2zJIZs.js"
     ],
     "css": [
-      "_app/immutable/assets/0.C2oJxap1.css"
+      "_app/immutable/assets/0.BSKfamd1.css"
     ],
     "assets": [
       "_app/immutable/assets/bgnoise.Bs-ruk1u.webp",
@@ -40,7 +40,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/1.js": {
-    "file": "_app/immutable/nodes/1.v-GbEs9l.js",
+    "file": "_app/immutable/nodes/1.CshEMLUM.js",
     "name": "nodes/1",
     "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
     "isEntry": true,
@@ -48,14 +48,14 @@
     "imports": [
       "_scheduler.kLU6lpw6.js",
       "_index.Djk3OmZN.js",
-      "_entry.CzAAeUnG.js"
+      "_entry.DFs118rk.js"
     ],
     "css": [
       "_app/immutable/assets/1._Q8vuWQk.css"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/2.js": {
-    "file": "_app/immutable/nodes/2.BmyTMPLX.js",
+    "file": "_app/immutable/nodes/2.C0x79ji8.js",
     "name": "nodes/2",
     "src": ".svelte-kit/generated/client-optimized/nodes/2.js",
     "isEntry": true,
@@ -63,12 +63,11 @@
     "imports": [
       "_scheduler.kLU6lpw6.js",
       "_index.Djk3OmZN.js",
-      "_VideoPlayer.BOeCsEuZ.js",
-      "_each.D6YF6ztN.js",
-      "_RetroButton.C4x639Yv.js"
+      "_index.BI2zJIZs.js",
+      "_RetroButton.DvEY9uQB.js"
     ],
     "css": [
-      "_app/immutable/assets/2.CgtjwWvK.css"
+      "_app/immutable/assets/2.D6yf5UJ4.css"
     ],
     "assets": [
       "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp",
@@ -110,7 +109,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/6.js": {
-    "file": "_app/immutable/nodes/6.CgDal_Vd.js",
+    "file": "_app/immutable/nodes/6.BShSDOdi.js",
     "name": "nodes/6",
     "src": ".svelte-kit/generated/client-optimized/nodes/6.js",
     "isEntry": true,
@@ -118,12 +117,12 @@
     "imports": [
       "_scheduler.kLU6lpw6.js",
       "_index.Djk3OmZN.js",
-      "_each.D6YF6ztN.js",
-      "_RetroButton.C4x639Yv.js"
+      "_RetroButton.DvEY9uQB.js",
+      "_vhs-overlay.CwZ0r_dR.js"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/7.js": {
-    "file": "_app/immutable/nodes/7.B2HlqyOp.js",
+    "file": "_app/immutable/nodes/7.CmDX5Zuc.js",
     "name": "nodes/7",
     "src": ".svelte-kit/generated/client-optimized/nodes/7.js",
     "isEntry": true,
@@ -133,12 +132,12 @@
       "_control.CYgJF_JY.js",
       "_scheduler.kLU6lpw6.js",
       "_index.Djk3OmZN.js",
-      "_each.D6YF6ztN.js"
+      "_RetroButton.DvEY9uQB.js"
     ],
     "dynamicImports": [
       "src/posts/ai-mirror-to-our-humanity.md",
       "src/posts/how-video-games-shaped-my-childhood.md",
-      "src/posts/radical-support-training.md"
+      "src/posts/mythological-quests-support-training.md"
     ],
     "css": [
       "_app/immutable/assets/7.BvRrVI78.css"
@@ -148,8 +147,8 @@
     "file": "_app/immutable/assets/RetroButton.BLvV9hBT.css",
     "src": "_RetroButton.!~{00k}~.js"
   },
-  "_RetroButton.C4x639Yv.js": {
-    "file": "_app/immutable/chunks/RetroButton.C4x639Yv.js",
+  "_RetroButton.DvEY9uQB.js": {
+    "file": "_app/immutable/chunks/RetroButton.DvEY9uQB.js",
     "name": "RetroButton",
     "imports": [
       "_scheduler.kLU6lpw6.js",
@@ -159,42 +158,38 @@
       "_app/immutable/assets/RetroButton.BLvV9hBT.css"
     ]
   },
-  "_VideoPlayer.!~{00m}~.js": {
-    "file": "_app/immutable/assets/VideoPlayer.DnFM-b4H.css",
-    "src": "_VideoPlayer.!~{00m}~.js"
-  },
-  "_VideoPlayer.BOeCsEuZ.js": {
-    "file": "_app/immutable/chunks/VideoPlayer.BOeCsEuZ.js",
-    "name": "VideoPlayer",
-    "imports": [
-      "_index.YqLmEJqg.js",
-      "_scheduler.kLU6lpw6.js",
-      "_index.Djk3OmZN.js"
-    ],
-    "css": [
-      "_app/immutable/assets/VideoPlayer.DnFM-b4H.css"
-    ],
-    "assets": [
-      "_app/immutable/assets/static.Y3A3aTQy.gif",
-      "_app/immutable/assets/vhs-overlay.DbwPLnA4.png",
-      "_app/immutable/assets/80s-tv.Cws3IB6e.png"
-    ]
-  },
   "_control.CYgJF_JY.js": {
     "file": "_app/immutable/chunks/control.CYgJF_JY.js",
     "name": "control"
   },
-  "_each.D6YF6ztN.js": {
-    "file": "_app/immutable/chunks/each.D6YF6ztN.js",
-    "name": "each"
-  },
-  "_entry.CzAAeUnG.js": {
-    "file": "_app/immutable/chunks/entry.CzAAeUnG.js",
+  "_entry.DFs118rk.js": {
+    "file": "_app/immutable/chunks/entry.DFs118rk.js",
     "name": "entry",
     "imports": [
       "_scheduler.kLU6lpw6.js",
       "_index.YqLmEJqg.js",
       "_control.CYgJF_JY.js"
+    ]
+  },
+  "_index.!~{00m}~.js": {
+    "file": "_app/immutable/assets/index.DnFM-b4H.css",
+    "src": "_index.!~{00m}~.js"
+  },
+  "_index.BI2zJIZs.js": {
+    "file": "_app/immutable/chunks/index.BI2zJIZs.js",
+    "name": "index",
+    "imports": [
+      "_index.YqLmEJqg.js",
+      "_scheduler.kLU6lpw6.js",
+      "_index.Djk3OmZN.js",
+      "_vhs-overlay.CwZ0r_dR.js"
+    ],
+    "css": [
+      "_app/immutable/assets/index.DnFM-b4H.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/static.Y3A3aTQy.gif",
+      "_app/immutable/assets/80s-tv.Cws3IB6e.png"
     ]
   },
   "_index.Djk3OmZN.js": {
@@ -219,13 +214,20 @@
     "file": "_app/immutable/chunks/scheduler.kLU6lpw6.js",
     "name": "scheduler"
   },
+  "_vhs-overlay.CwZ0r_dR.js": {
+    "file": "_app/immutable/chunks/vhs-overlay.CwZ0r_dR.js",
+    "name": "vhs-overlay",
+    "assets": [
+      "_app/immutable/assets/vhs-overlay.DbwPLnA4.png"
+    ]
+  },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.CpQsvpZj.js",
+    "file": "_app/immutable/entry/start.DNMGLugz.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
     "imports": [
-      "_entry.CzAAeUnG.js"
+      "_entry.DFs118rk.js"
     ]
   },
   "src/lib/images/80s-tv.png": {
@@ -261,7 +263,7 @@
     "src": "src/lib/images/vhs-overlay.png"
   },
   "src/posts/ai-mirror-to-our-humanity.md": {
-    "file": "_app/immutable/chunks/ai-mirror-to-our-humanity.BU077PM1.js",
+    "file": "_app/immutable/chunks/ai-mirror-to-our-humanity.lDnCkNEN.js",
     "name": "ai-mirror-to-our-humanity",
     "src": "src/posts/ai-mirror-to-our-humanity.md",
     "isDynamicEntry": true,
@@ -271,7 +273,7 @@
     ]
   },
   "src/posts/how-video-games-shaped-my-childhood.md": {
-    "file": "_app/immutable/chunks/how-video-games-shaped-my-childhood.DkO04EmX.js",
+    "file": "_app/immutable/chunks/how-video-games-shaped-my-childhood.S50w_j8E.js",
     "name": "how-video-games-shaped-my-childhood",
     "src": "src/posts/how-video-games-shaped-my-childhood.md",
     "isDynamicEntry": true,
@@ -280,10 +282,10 @@
       "_index.Djk3OmZN.js"
     ]
   },
-  "src/posts/radical-support-training.md": {
-    "file": "_app/immutable/chunks/radical-support-training.BiyJheCk.js",
-    "name": "radical-support-training",
-    "src": "src/posts/radical-support-training.md",
+  "src/posts/mythological-quests-support-training.md": {
+    "file": "_app/immutable/chunks/mythological-quests-support-training.um3OdSsd.js",
+    "name": "mythological-quests-support-training",
+    "src": "src/posts/mythological-quests-support-training.md",
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",

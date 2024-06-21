@@ -110,10 +110,10 @@
       "_ssr.js"
     ]
   },
-  "src/posts/radical-support-training.md": {
-    "file": "chunks/radical-support-training.js",
-    "name": "radical-support-training",
-    "src": "src/posts/radical-support-training.md",
+  "src/posts/mythological-quests-support-training.md": {
+    "file": "chunks/mythological-quests-support-training.js",
+    "name": "mythological-quests-support-training",
+    "src": "src/posts/mythological-quests-support-training.md",
     "isDynamicEntry": true,
     "imports": [
       "_ssr.js"
@@ -148,7 +148,7 @@
       "_index2.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.ZmnEcseu.css",
+      "_app/immutable/assets/_layout.KHiDZkvj.css",
       "_app/immutable/assets/VideoPlayer.BerU9yNJ.css"
     ],
     "assets": [
@@ -172,7 +172,7 @@
       "_RetroButton.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.CgtjwWvK.css",
+      "_app/immutable/assets/_page.D6yf5UJ4.css",
       "_app/immutable/assets/VideoPlayer.BerU9yNJ.css"
     ],
     "assets": [
@@ -231,6 +231,9 @@
     "imports": [
       "_ssr.js",
       "_RetroButton.js"
+    ],
+    "assets": [
+      "_app/immutable/assets/vhs-overlay.DbwPLnA4.png"
     ]
   },
   "src/routes/writings/[slug]/+page.js": {
@@ -244,7 +247,7 @@
     "dynamicImports": [
       "src/posts/ai-mirror-to-our-humanity.md",
       "src/posts/how-video-games-shaped-my-childhood.md",
-      "src/posts/radical-support-training.md"
+      "src/posts/mythological-quests-support-training.md"
     ]
   },
   "src/routes/writings/[slug]/+page.svelte": {
@@ -253,7 +256,8 @@
     "src": "src/routes/writings/[slug]/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_RetroButton.js"
     ],
     "css": [
       "_app/immutable/assets/_page.BvRrVI78.css"

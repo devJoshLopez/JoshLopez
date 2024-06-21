@@ -30,11 +30,11 @@
     class={`nav-menu ${menuOpen ? "" : "hidden"} flex rounded-b-md md:flex md:space-x-4`}
     aria-label="Main Navigation"
   >
-    <a
+    <!-- <a
       href="/videos"
       class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Videos</a
-    >
+    > -->
     <a
       href="/writings"
       class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"

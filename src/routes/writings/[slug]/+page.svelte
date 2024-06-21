@@ -1,4 +1,6 @@
 <script>
+  import RetroButton from "$lib/components/fun/RetroButton.svelte";
+
   export let data;
 </script>
 
@@ -50,6 +52,10 @@
       </div>
     </article>
   </section>
+
+  <div class="mb-20 flex w-full justify-center">
+    <RetroButton url="/writings" label="Back to Writings" size="252px" />
+  </div>
 </div>
 
 <style>
