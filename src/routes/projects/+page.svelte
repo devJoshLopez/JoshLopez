@@ -96,7 +96,9 @@
             class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0"
           >
             <div class="mb-4 flex items-start justify-between gap-3">
-              <h3 class="text-2xl font-bold leading-tight">{project.title}</h3>
+              <h3 class="post-title text-2xl font-bold leading-tight">
+                {project.title}
+              </h3>
               {#if project.icon.type === "svg"}
                 <svg
                   class="h-8 w-8 flex-shrink-0 text-white"
@@ -151,7 +153,9 @@
             class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0"
           >
             <div class="mb-4 flex items-start justify-between gap-3">
-              <h3 class="text-2xl font-bold leading-tight">{project.title}</h3>
+              <h3 class="post-title text-2xl font-bold leading-tight">
+                {project.title}
+              </h3>
               {#if project.icon.type === "svg"}
                 <svg
                   class="h-8 w-8 flex-shrink-0 text-white"
@@ -197,3 +201,12 @@
     </div>
   </section>
 </div>
+
+<style>
+  .post-title {
+    font-family: "Teenage Dreams Bold", sans-serif;
+    line-height: 1.2;
+    text-transform: capitalize;
+    filter: drop-shadow(2px 3px 0 #000000);
+  }
+</style>

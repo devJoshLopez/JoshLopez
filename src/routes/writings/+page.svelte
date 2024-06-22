@@ -74,7 +74,7 @@
           </div>
         {/if}
 
-        <h2 class="mb-2 text-xl font-bold">{post.title}</h2>
+        <h2 class="post-title mb-2 text-2xl font-bold">{post.title}</h2>
         <p class="mb-4 flex-grow">
           {post.description}
         </p>
@@ -87,4 +87,10 @@
 </div>
 
 <style>
+  .post-title {
+    font-family: "Teenage Dreams Bold", sans-serif;
+    line-height: 1.2;
+    text-transform: capitalize;
+    filter: drop-shadow(2px 3px 0 #000000);
+  }
 </style>

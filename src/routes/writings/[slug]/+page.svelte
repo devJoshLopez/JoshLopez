@@ -39,7 +39,7 @@
       {/if}
 
       <hgroup class="mb-4">
-        <h1 class="text-6xl">
+        <h1 class="post-title text-5xl">
           {data.meta.title}
         </h1>
         <p class="text-gray-600">
@@ -59,6 +59,11 @@
 </div>
 
 <style>
+  .post-title {
+    font-family: "Teenage Dreams Bold", sans-serif;
+    line-height: 1.2;
+    text-transform: capitalize;
+  }
   :global(.prose h1),
   :global(.prose h2),
   :global(.prose h3) {
