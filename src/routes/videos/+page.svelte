@@ -32,7 +32,6 @@
     class="section-glass relative mb-32 mt-3 gap-4 rounded-md p-8 text-white"
   >
     <h1 class="mb-6 text-4xl font-bold">Videos</h1>
-    <!-- make the flex box have 4 columns that wrap and max-md: set it to only 1 column -->
     <div
       class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 md:grid-cols-3"
     >
@@ -48,7 +47,6 @@
             />
           </div>
           <h2 class="text-1xl">{video.title}</h2>
-          <!-- force the button to stay on the bottom of the div even when the title is really short -->
           <div class="mt-auto">
             <RetroButton url={video.url} label="Watch Video" size="200px" />
           </div>
