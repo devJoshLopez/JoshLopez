@@ -1,5 +1,83 @@
-<!-- projects +page.svelte -->
 <script>
+  // @ts-nocheck
+  import RetroButton from "$lib/components/fun/RetroButton.svelte";
+  import ReyIcon from "$lib/images/rey-icon-cropped.png";
+
+  const currentProjects = [
+    {
+      title: "Quantum's Curse",
+      status: "In Progress",
+      about:
+        "A high-stakes thriller exploring the ethical dilemmas of a visionary physicist caught between scientific discovery and dangerous ambition.",
+      icon: {
+        type: "svg",
+        path: "M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z",
+      },
+    },
+    {
+      title: "cStar",
+      status: "In Development",
+      about:
+        "A revolutionary customer support tool for small businesses, built with SvelteKit, Prisma ORM, and Neon database.",
+      icon: {
+        type: "svg",
+        path: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+      },
+    },
+    {
+      title: "joshlopez.me - This Site",
+      status: "Ongoing",
+      about:
+        "Personal website built with SvelteKit, running on GitHub Pages. An outlet for self-expression and creativity.",
+      link: "https://joshlopez.me",
+      icon: {
+        type: "svg",
+        path: "M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z M2 12h20 M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z",
+      },
+    },
+    {
+      title: "Rey - AI Customer Support",
+      status: "Active",
+      about:
+        "A conversational AI chatbot for Memberstack, built with GPT-4 API, Vercel's AI SDK, and Pinecone for RAG setup.",
+      link: "https://rey.memberstack.com",
+      icon: { type: "image", url: ReyIcon },
+    },
+  ];
+
+  const futureProjects = [
+    {
+      title: "Personal Robot Assistant",
+      status: "Research Phase",
+      about:
+        "Dream project to build a personal robot assistant inspired by Johnny 5 and R2D2 that can help with physical tasks and daily routines.",
+      icon: {
+        type: "svg",
+        path: "M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z M9 11v2 M15 11v2 M9 15h6",
+      },
+    },
+    {
+      title: "AI Assistant (Jarvis/Friday)",
+      status: "Planning",
+      about:
+        "Developing a personal AI assistant inspired by popular sci-fi AI systems like Jarvis and Friday to help research, coding, and daily tasks.",
+      icon: {
+        type: "svg",
+        path: "M4 4h16v16H4z M9 9h6v6H9z M4 9h2 M4 15h2 M18 9h2 M18 15h2 M9 4v2 M15 4v2 M9 18v2 M15 18v2",
+      },
+    },
+    {
+      title: "YouTube Channel",
+      status: "Content Planning",
+      about:
+        "Creating video content about projects, tutorials, and tech interests.",
+      link: "https://www.youtube.com/channel/UC3ffC775QA3VtYvT",
+      icon: {
+        type: "svg",
+        path: "M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z M9.75 15.02l5.75-3.27-5.75-3.27v6.54z",
+      },
+    },
+  ];
 </script>
 
 <div class="mx-auto max-w-4xl">
@@ -8,43 +86,114 @@
   >
     <h1 class="mb-6 text-4xl font-bold">Projects</h1>
 
-    <!-- Current Projects - title, status, about, link -->
+    <div class="p-6 text-white">
+      <h2 class="text-2x mb-4">Current Projects</h2>
+      <div
+        class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 md:grid-cols-2"
+      >
+        {#each currentProjects as project}
+          <div
+            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0"
+          >
+            <div class="mb-4 flex items-start justify-between gap-3">
+              <h3 class="text-2xl font-bold leading-tight">{project.title}</h3>
+              {#if project.icon.type === "svg"}
+                <svg
+                  class="h-8 w-8 flex-shrink-0 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d={project.icon.path}></path>
+                </svg>
+              {:else if project.icon.type === "image"}
+                <img
+                  src={project.icon.url}
+                  alt={`${project.title} icon`}
+                  class="h-10 w-10 flex-shrink-0 object-contain"
+                />
+              {/if}
+            </div>
 
-    <!-- Quantum's Curse - book -->
-    <!-- Working on this. No link currently. -->
-    <!-- blurb: David Wells is a struggling visionary physicist who has dedicated his life to developing a revolutionary teleportation technology. But when the government and ambitious venture capitalist Reed Adams offer funding in exchange for control over his research, David finds himself caught in a dangerous Faustian bargain.
-Despite escalating ethical concerns, David accepts Reed's deal, hoping to finally validate his unconventional theories. However, Reed has no interest in altruistic applications - he demands David rapidly weaponize the unstable teleportation tech.
-When David resists, Reed turns ruthless, determined to retain dominion over the technology he believes will cement America's global dominance. After David takes drastic measures to prevent Reed's militarization plans, the venture capitalist unleashes his full arsenal of coercion, turning David into a wanted fugitive.
-To redeem his disastrous mistakes and prevent catastrophic misuse, David must evade capture long enough to reveal Reed's web of deceit. With the help of allies, he races against time to expose the truth in a battle against unchecked ambition.
-Quantum's Curse is a high-stakes thriller asking how principles survive in the face of pressures to compromise integrity for influence and control. David's inner journey illuminates dilemmas of balancing ethics and discovery, ambition and conscience. -->
+            <div class="mb-3 flex flex-wrap items-center gap-3">
+              <span
+                class="whitespace-nowrap rounded-md bg-violet-50/50 px-2 py-1 text-xs text-black"
+              >
+                {project.status}
+              </span>
+            </div>
 
-    <!-- cStar - customer support for small businesses -->
-    <!-- Working on this. No link currently -->
-    <!-- cStar: Stellar Support for Small Stars ✨
-Introducing cStar, the supernova in the world of customer support tools! Built with the lightning-fast SvelteKit, powered by the robust Prisma ORM, and running on the cloud-native Neon database, cStar is here to revolutionize how small businesses handle customer interactions.
-Say goodbye to clunky, overpriced solutions and hello to a tool that's as agile and ambitious as you are. With AI-driven insights, real-time chat, and a user-friendly interface, cStar helps you turn customer service from a black hole into your brightest constellation.
-Don't let your small business get lost in the vast universe of customer support. Let cStar guide you to success! 🚀 -->
+            <p class="mb-4 text-gray-300">{project.about}</p>
+            {#if project.link}
+              <div class="mt-auto">
+                <RetroButton
+                  url={project.link}
+                  label="View Project"
+                  size="200px"
+                />
+              </div>
+            {/if}
+          </div>
+        {/each}
+      </div>
+    </div>
 
-    <!-- joshlopez.me - personal website -->
-    <!-- Working on. Link: https://joshlopez.me -->
-    <!-- this website is built with sveltekit and runnoing on github pages. it is an outlet of all the pent up expression from years of trying to fit in and masking -->
+    <div class="p-6 text-white">
+      <h2 class="text-2x mb-4">Future Projects & Ideas</h2>
+      <div
+        class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 md:grid-cols-2"
+      >
+        {#each futureProjects as project}
+          <div
+            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0"
+          >
+            <div class="mb-4 flex items-start justify-between gap-3">
+              <h3 class="text-2xl font-bold leading-tight">{project.title}</h3>
+              {#if project.icon.type === "svg"}
+                <svg
+                  class="h-8 w-8 flex-shrink-0 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d={project.icon.path}></path>
+                </svg>
+              {:else if project.icon.type === "image"}
+                <img
+                  src={project.icon.url}
+                  alt={`${project.title} icon`}
+                  class="h-10 w-10 flex-shrink-0 object-contain"
+                />
+              {/if}
+            </div>
 
-    <!-- Rey customer support chatbot for work -->
-    <!-- Working on. rey.memberstack.com -->
-    <!-- Rey is a customer support chatbot that I built for Memberstack. It is a conversational AI that helps users with their questions and issues. It is built with the GPT-4o API and is designed to be a friendly and helpful assistant. It is using vercels ai sdk with sveltekit and is a rag setup using pinecone  -->
+            <div class="mb-3 flex flex-wrap items-center gap-3">
+              <span
+                class="whitespace-nowrap rounded-md bg-violet-50/50 px-2 py-1 text-xs text-black"
+              >
+                {project.status}
+              </span>
+            </div>
 
-    <!-- Future Projects/Ideas - title, status, about -->
-
-    <!-- Robot -->
-    <!-- Still researching -->
-    <!-- its been dream of mine to build my own robot like johnny 5, or r2d2. The hurdle I have is not creatign something that I wont use so I am currently listing all the needs and wants from a robot to build it later -->
-
-    <!-- AI assistant -->
-    <!-- Still researching -->
-    <!-- I have been wanting to build an AI assistant like jarvis or friday. I am currently researching the best way to build it and what I want it to do. -->
-
-    <!-- youtube channel and videos -->
-    <!-- Working on. Link: https://www.youtube.com/channel/UC3ffC775QA3VtYvT -->
-    <!-- I have a youtube channel where I will be posting videos about my projects, tutorials, and other things that I am interested in. I am currently working on a list of content that I want to create and will be posting videos soon. -->
+            <p class="mb-4 text-gray-300">{project.about}</p>
+            {#if project.link}
+              <div class="mt-auto">
+                <RetroButton
+                  url={project.link}
+                  label="View Project"
+                  size="200px"
+                />
+              </div>
+            {/if}
+          </div>
+        {/each}
+      </div>
+    </div>
   </section>
 </div>

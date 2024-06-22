@@ -1,13 +1,13 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.B261sNCx.js",
+    "file": "_app/immutable/entry/app.eWerIHba.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
     "imports": [
       "_preload-helper.D6kgxu3v.js",
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js"
+      "_index.tKwpkyaA.js"
     ],
     "dynamicImports": [
       ".svelte-kit/generated/client-optimized/nodes/0.js",
@@ -21,18 +21,18 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/0.js": {
-    "file": "_app/immutable/nodes/0.BB9JCt0p.js",
+    "file": "_app/immutable/nodes/0.o6guh3pn.js",
     "name": "nodes/0",
     "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js",
-      "_index.bkSADwua.js"
+      "_index.tKwpkyaA.js",
+      "_index.DSZPzh5N.js"
     ],
     "css": [
-      "_app/immutable/assets/0.7WXZ5Ekq.css"
+      "_app/immutable/assets/0.B2_CAMuC.css"
     ],
     "assets": [
       "_app/immutable/assets/bgnoise.Bs-ruk1u.webp",
@@ -40,31 +40,31 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/1.js": {
-    "file": "_app/immutable/nodes/1.CyeR60-m.js",
+    "file": "_app/immutable/nodes/1.Bw9en3Ig.js",
     "name": "nodes/1",
     "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js",
-      "_entry.D8OCmxN9.js"
+      "_index.tKwpkyaA.js",
+      "_entry.ddg9jg7W.js"
     ],
     "css": [
       "_app/immutable/assets/1._Q8vuWQk.css"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/2.js": {
-    "file": "_app/immutable/nodes/2.B5the3qF.js",
+    "file": "_app/immutable/nodes/2.CgXuoOO9.js",
     "name": "nodes/2",
     "src": ".svelte-kit/generated/client-optimized/nodes/2.js",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js",
-      "_index.bkSADwua.js",
-      "_RetroButton.D_h7RsaD.js"
+      "_index.tKwpkyaA.js",
+      "_index.DSZPzh5N.js",
+      "_RetroButton.h6n5BI52.js"
     ],
     "css": [
       "_app/immutable/assets/2.xkud_nH9.css"
@@ -76,54 +76,58 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/3.js": {
-    "file": "_app/immutable/nodes/3.Bsa_qbzf.js",
+    "file": "_app/immutable/nodes/3.V5cZ-430.js",
     "name": "nodes/3",
     "src": ".svelte-kit/generated/client-optimized/nodes/3.js",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js"
+      "_index.tKwpkyaA.js"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/4.js": {
-    "file": "_app/immutable/nodes/4.Bsa_qbzf.js",
+    "file": "_app/immutable/nodes/4.BY-r0dD7.js",
     "name": "nodes/4",
     "src": ".svelte-kit/generated/client-optimized/nodes/4.js",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js"
+      "_index.tKwpkyaA.js",
+      "_RetroButton.h6n5BI52.js"
+    ],
+    "assets": [
+      "_app/immutable/assets/rey-icon-cropped.BUrEg_JM.png"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/5.js": {
-    "file": "_app/immutable/nodes/5.CHZX2RIX.js",
+    "file": "_app/immutable/nodes/5.Bx08QxVJ.js",
     "name": "nodes/5",
     "src": ".svelte-kit/generated/client-optimized/nodes/5.js",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js",
-      "_RetroButton.D_h7RsaD.js"
+      "_index.tKwpkyaA.js",
+      "_RetroButton.h6n5BI52.js"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/6.js": {
-    "file": "_app/immutable/nodes/6.BzSbKBC-.js",
+    "file": "_app/immutable/nodes/6.Ck_0KfWB.js",
     "name": "nodes/6",
     "src": ".svelte-kit/generated/client-optimized/nodes/6.js",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js",
-      "_RetroButton.D_h7RsaD.js",
+      "_index.tKwpkyaA.js",
+      "_RetroButton.h6n5BI52.js",
       "_vhs-overlay.CwZ0r_dR.js"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/7.js": {
-    "file": "_app/immutable/nodes/7.Czw7jEhs.js",
+    "file": "_app/immutable/nodes/7.h9-W0uqY.js",
     "name": "nodes/7",
     "src": ".svelte-kit/generated/client-optimized/nodes/7.js",
     "isEntry": true,
@@ -132,8 +136,8 @@
       "_preload-helper.D6kgxu3v.js",
       "_control.CYgJF_JY.js",
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js",
-      "_RetroButton.D_h7RsaD.js"
+      "_index.tKwpkyaA.js",
+      "_RetroButton.h6n5BI52.js"
     ],
     "dynamicImports": [
       "src/posts/ai-mirror-to-our-humanity.md",
@@ -148,12 +152,12 @@
     "file": "_app/immutable/assets/RetroButton.BLvV9hBT.css",
     "src": "_RetroButton.!~{00e}~.js"
   },
-  "_RetroButton.D_h7RsaD.js": {
-    "file": "_app/immutable/chunks/RetroButton.D_h7RsaD.js",
+  "_RetroButton.h6n5BI52.js": {
+    "file": "_app/immutable/chunks/RetroButton.h6n5BI52.js",
     "name": "RetroButton",
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js"
+      "_index.tKwpkyaA.js"
     ],
     "css": [
       "_app/immutable/assets/RetroButton.BLvV9hBT.css"
@@ -163,8 +167,8 @@
     "file": "_app/immutable/chunks/control.CYgJF_JY.js",
     "name": "control"
   },
-  "_entry.D8OCmxN9.js": {
-    "file": "_app/immutable/chunks/entry.D8OCmxN9.js",
+  "_entry.ddg9jg7W.js": {
+    "file": "_app/immutable/chunks/entry.ddg9jg7W.js",
     "name": "entry",
     "imports": [
       "_scheduler.kLU6lpw6.js",
@@ -176,11 +180,21 @@
     "file": "_app/immutable/assets/index.BhS5JRwh.css",
     "src": "_index.!~{00m}~.js"
   },
-  "_index.UQYxIaCD.js": {
-    "file": "_app/immutable/chunks/index.UQYxIaCD.js",
+  "_index.DSZPzh5N.js": {
+    "file": "_app/immutable/chunks/index.DSZPzh5N.js",
     "name": "index",
     "imports": [
-      "_scheduler.kLU6lpw6.js"
+      "_index.YqLmEJqg.js",
+      "_scheduler.kLU6lpw6.js",
+      "_index.tKwpkyaA.js",
+      "_vhs-overlay.CwZ0r_dR.js"
+    ],
+    "css": [
+      "_app/immutable/assets/index.BhS5JRwh.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/static.Y3A3aTQy.gif",
+      "_app/immutable/assets/80s-tv.Cws3IB6e.png"
     ]
   },
   "_index.YqLmEJqg.js": {
@@ -190,21 +204,11 @@
       "_scheduler.kLU6lpw6.js"
     ]
   },
-  "_index.bkSADwua.js": {
-    "file": "_app/immutable/chunks/index.bkSADwua.js",
+  "_index.tKwpkyaA.js": {
+    "file": "_app/immutable/chunks/index.tKwpkyaA.js",
     "name": "index",
     "imports": [
-      "_index.YqLmEJqg.js",
-      "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js",
-      "_vhs-overlay.CwZ0r_dR.js"
-    ],
-    "css": [
-      "_app/immutable/assets/index.BhS5JRwh.css"
-    ],
-    "assets": [
-      "_app/immutable/assets/static.Y3A3aTQy.gif",
-      "_app/immutable/assets/80s-tv.Cws3IB6e.png"
+      "_scheduler.kLU6lpw6.js"
     ]
   },
   "_preload-helper.D6kgxu3v.js": {
@@ -223,12 +227,12 @@
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.B9ytrKbB.js",
+    "file": "_app/immutable/entry/start.C7G2Caou.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
     "imports": [
-      "_entry.D8OCmxN9.js"
+      "_entry.ddg9jg7W.js"
     ]
   },
   "src/lib/images/80s-tv.png": {
@@ -255,6 +259,10 @@
     "file": "_app/immutable/assets/josh-lopez.DEFJ6kSQ.webp",
     "src": "src/lib/images/josh-lopez.webp"
   },
+  "src/lib/images/rey-icon-cropped.png": {
+    "file": "_app/immutable/assets/rey-icon-cropped.BUrEg_JM.png",
+    "src": "src/lib/images/rey-icon-cropped.png"
+  },
   "src/lib/images/static.gif": {
     "file": "_app/immutable/assets/static.Y3A3aTQy.gif",
     "src": "src/lib/images/static.gif"
@@ -264,33 +272,33 @@
     "src": "src/lib/images/vhs-overlay.png"
   },
   "src/posts/ai-mirror-to-our-humanity.md": {
-    "file": "_app/immutable/chunks/ai-mirror-to-our-humanity.DBVFlv1y.js",
+    "file": "_app/immutable/chunks/ai-mirror-to-our-humanity.CdGl7smT.js",
     "name": "ai-mirror-to-our-humanity",
     "src": "src/posts/ai-mirror-to-our-humanity.md",
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js"
+      "_index.tKwpkyaA.js"
     ]
   },
   "src/posts/how-video-games-shaped-my-childhood.md": {
-    "file": "_app/immutable/chunks/how-video-games-shaped-my-childhood.Dd0KueZ6.js",
+    "file": "_app/immutable/chunks/how-video-games-shaped-my-childhood.1ldsP8xI.js",
     "name": "how-video-games-shaped-my-childhood",
     "src": "src/posts/how-video-games-shaped-my-childhood.md",
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js"
+      "_index.tKwpkyaA.js"
     ]
   },
   "src/posts/mythological-quests-support-training.md": {
-    "file": "_app/immutable/chunks/mythological-quests-support-training.WAjg8hxo.js",
+    "file": "_app/immutable/chunks/mythological-quests-support-training.OWIKx15Y.js",
     "name": "mythological-quests-support-training",
     "src": "src/posts/mythological-quests-support-training.md",
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",
-      "_index.UQYxIaCD.js"
+      "_index.tKwpkyaA.js"
     ]
   }
 }
