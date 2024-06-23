@@ -1,5 +1,18 @@
 [
   {
+    "title": "Confessions of a Planeteer: My Eco-Worrier Life",
+    "description": "Buckle up, time travelers! Join me on a journey through my personal eco-awakening, from Saturday morning cartoons to the challenges of adult eco-warrior life. It's a mix of nostalgia, humor, and a dash of environmental reality check. Perfect for those who grew up believing they could hack the planet!",
+    "date": "2024-06-22",
+    "image": "./writings-images/confessions-of-a-planeteer-my-eco-worrier-life.webp",
+    "categories": [
+      "Eco-Awareness",
+      "Personal Journey",
+      "Nostalgia"
+    ],
+    "published": true,
+    "slug": "confessions-of-a-planeteer-my-eco-worrier-life"
+  },
+  {
     "title": "How Video Games Shaped My Childhood: A Journey of Growth and Nostalgia",
     "description": "Discover how video games helped me make friends, overcome challenges, and build lifelong skills. From NES adventures to bonding over Doom with my grandpa, join me on a journey of growth and nostalgia.",
     "date": "2024-6-19",

@@ -1,6 +1,6 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
-    "file": "_app/immutable/entry/app.CN-5aj6W.js",
+    "file": "_app/immutable/entry/app.il6PJP2B.js",
     "name": "entry/app",
     "src": ".svelte-kit/generated/client-optimized/app.js",
     "isEntry": true,
@@ -40,7 +40,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/1.js": {
-    "file": "_app/immutable/nodes/1.B8i8fZ27.js",
+    "file": "_app/immutable/nodes/1.CGMEFCUd.js",
     "name": "nodes/1",
     "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
     "isEntry": true,
@@ -48,14 +48,14 @@
     "imports": [
       "_scheduler.kLU6lpw6.js",
       "_index.ZNtmCr2w.js",
-      "_entry.APkES8R4.js"
+      "_entry.XHzKQ5iH.js"
     ],
     "css": [
       "_app/immutable/assets/1._Q8vuWQk.css"
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/2.js": {
-    "file": "_app/immutable/nodes/2.DQc9fd_9.js",
+    "file": "_app/immutable/nodes/2.C-UfD0yc.js",
     "name": "nodes/2",
     "src": ".svelte-kit/generated/client-optimized/nodes/2.js",
     "isEntry": true,
@@ -117,7 +117,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/6.js": {
-    "file": "_app/immutable/nodes/6.Cqe04Kcw.js",
+    "file": "_app/immutable/nodes/6.DMuZy14t.js",
     "name": "nodes/6",
     "src": ".svelte-kit/generated/client-optimized/nodes/6.js",
     "isEntry": true,
@@ -133,7 +133,7 @@
     ]
   },
   ".svelte-kit/generated/client-optimized/nodes/7.js": {
-    "file": "_app/immutable/nodes/7.DHH2GOrA.js",
+    "file": "_app/immutable/nodes/7.mgMetSbb.js",
     "name": "nodes/7",
     "src": ".svelte-kit/generated/client-optimized/nodes/7.js",
     "isEntry": true,
@@ -147,6 +147,7 @@
     ],
     "dynamicImports": [
       "src/posts/ai-mirror-to-our-humanity.md",
+      "src/posts/confessions-of-a-planeteer-my-eco-worrier-life.md",
       "src/posts/how-video-games-shaped-my-childhood.md",
       "src/posts/mythological-quests-support-training.md"
     ],
@@ -173,8 +174,8 @@
     "file": "_app/immutable/chunks/control.CYgJF_JY.js",
     "name": "control"
   },
-  "_entry.APkES8R4.js": {
-    "file": "_app/immutable/chunks/entry.APkES8R4.js",
+  "_entry.XHzKQ5iH.js": {
+    "file": "_app/immutable/chunks/entry.XHzKQ5iH.js",
     "name": "entry",
     "imports": [
       "_scheduler.kLU6lpw6.js",
@@ -182,9 +183,9 @@
       "_control.CYgJF_JY.js"
     ]
   },
-  "_index.!~{00m}~.js": {
+  "_index.!~{00n}~.js": {
     "file": "_app/immutable/assets/index.BhS5JRwh.css",
-    "src": "_index.!~{00m}~.js"
+    "src": "_index.!~{00n}~.js"
   },
   "_index.DHG77uLc.js": {
     "file": "_app/immutable/chunks/index.DHG77uLc.js",
@@ -233,12 +234,12 @@
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
-    "file": "_app/immutable/entry/start.B-W63rg1.js",
+    "file": "_app/immutable/entry/start.D4HNf7Ja.js",
     "name": "entry/start",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
     "isEntry": true,
     "imports": [
-      "_entry.APkES8R4.js"
+      "_entry.XHzKQ5iH.js"
     ]
   },
   "src/lib/images/80s-tv.png": {
@@ -281,6 +282,16 @@
     "file": "_app/immutable/chunks/ai-mirror-to-our-humanity.B5gSIUo7.js",
     "name": "ai-mirror-to-our-humanity",
     "src": "src/posts/ai-mirror-to-our-humanity.md",
+    "isDynamicEntry": true,
+    "imports": [
+      "_scheduler.kLU6lpw6.js",
+      "_index.ZNtmCr2w.js"
+    ]
+  },
+  "src/posts/confessions-of-a-planeteer-my-eco-worrier-life.md": {
+    "file": "_app/immutable/chunks/confessions-of-a-planeteer-my-eco-worrier-life.JGCIJLNe.js",
+    "name": "confessions-of-a-planeteer-my-eco-worrier-life",
+    "src": "src/posts/confessions-of-a-planeteer-my-eco-worrier-life.md",
     "isDynamicEntry": true,
     "imports": [
       "_scheduler.kLU6lpw6.js",

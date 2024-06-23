@@ -3,6 +3,11 @@
   import vhsOverlay from "$lib/images/vhs-overlay.png";
   export let data;
 
+  data.posts = data.posts.sort(
+    // @ts-ignore
+    (a, b) => new Date(b.date) - new Date(a.date),
+  );
+
   /**
    * @param {any[]} posts
    */

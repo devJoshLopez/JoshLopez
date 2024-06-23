@@ -105,6 +105,15 @@
       "_ssr.js"
     ]
   },
+  "src/posts/confessions-of-a-planeteer-my-eco-worrier-life.md": {
+    "file": "chunks/confessions-of-a-planeteer-my-eco-worrier-life.js",
+    "name": "confessions-of-a-planeteer-my-eco-worrier-life",
+    "src": "src/posts/confessions-of-a-planeteer-my-eco-worrier-life.md",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
   "src/posts/how-video-games-shaped-my-childhood.md": {
     "file": "chunks/how-video-games-shaped-my-childhood.js",
     "name": "how-video-games-shaped-my-childhood",
@@ -261,6 +270,7 @@
     ],
     "dynamicImports": [
       "src/posts/ai-mirror-to-our-humanity.md",
+      "src/posts/confessions-of-a-planeteer-my-eco-worrier-life.md",
       "src/posts/how-video-games-shaped-my-childhood.md",
       "src/posts/mythological-quests-support-training.md"
     ]

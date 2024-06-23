@@ -7,6 +7,13 @@
 
   export let recentPosts;
 
+  recentPosts = recentPosts
+    .sort(
+      // @ts-ignore
+      (a, b) => new Date(b.date) - new Date(a.date),
+    )
+    .slice(0, 2);
+
   const openModal = () => {
     // @ts-ignore
     showModal(VideoPlayer, {
