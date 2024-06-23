@@ -1,7 +1,18 @@
 <script>
+  import { onMount } from "svelte";
+  import Giscus from "@giscus/svelte";
   import RetroButton from "$lib/components/fun/RetroButton.svelte";
 
   export let data;
+
+  /**
+   * @type {string}
+   */
+  let pathname;
+
+  onMount(() => {
+    pathname = window.location.pathname;
+  });
 </script>
 
 <svelte:head>
@@ -57,6 +68,34 @@
     <RetroButton url="/writings" label="Back to Writings" size="252px" />
   </div>
 </div>
+
+{#if pathname}
+  <div class="mx-auto max-w-4xl">
+    <section
+      class="section-glass relative mb-32 mt-3 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
+    >
+      <h1 class="col-span-full mb-6 text-4xl font-bold">Comments</h1>
+      <div>
+        <Giscus
+          id="comments"
+          term="pathname"
+          repo="devJoshLopez/JoshLopez"
+          repoId="MDEwOlJlcG9zaXRvcnkxNjg4OTA0MjQ="
+          category="Comments"
+          categoryId="DIC_kwDOChEQOM4CgU6h"
+          mapping="pathname"
+          strict="0"
+          reactionsEnabled="1"
+          emitMetadata="0"
+          inputPosition="bottom"
+          theme="dark"
+          lang="en"
+          loading="lazy"
+        />
+      </div>
+    </section>
+  </div>
+{/if}
 
 <style>
   .post-title {

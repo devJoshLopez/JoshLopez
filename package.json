@@ -39,6 +39,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@giscus/svelte": "^3.0.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.5"
   }

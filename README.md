@@ -3,6 +3,7 @@
 - write more blog posts for content
 - work on connect page
 - maybe add some text like writing to the totle of the pages with a little more context
+- add some github commenting features
 
 #Notes:
 
