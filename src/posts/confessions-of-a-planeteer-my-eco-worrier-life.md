@@ -18,7 +18,7 @@ You know those moments when you suddenly realize you're not a kid anymore? For m
 
 ### The Day Captain Planet Recruited Me (Sort Of)
 
-Picture this: It's the early 90s in Oregon. I'm parked in front of the TV, bowl of sugary cereal in hand, when suddenly – BAM! – Captain Planet bursts onto the screen. This blue dude with a green mullet is telling me I have the power to save the Earth. Me! A kid whose biggest accomplishment so far was not getting lost in Powell's Books!
+Picture this: It's the early 90s in Oregon. I'm parked in front of the TV, bowl of sugary cereal in hand, when suddenly – BAM! – Captain Planet bursts onto the screen. This blue dude with a green mullet is telling me I have the power to save the Earth. Me! A kid whose biggest accomplishment so far was not getting lost in Powell's Books! (Random fact: My first Birthday was when Chernobyl happened, I don't remember it but what are the odds?)
 
 Little did I know, this was the start of my lifelong journey of trying to be an eco-warrior – emphasis on 'trying'. Spoiler alert: It's been a bumpy ride.
 
