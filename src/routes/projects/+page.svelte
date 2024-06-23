@@ -86,14 +86,14 @@
   >
     <h1 class="mb-6 text-4xl font-bold">Projects</h1>
 
-    <div class="p-6 text-white">
+    <div class="p-6 text-white max-md:mb-16 max-md:p-0">
       <h2 class="text-2x mb-4">Current Projects</h2>
       <div
-        class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 md:grid-cols-2"
+        class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 max-md:gap-6 md:grid-cols-2"
       >
         {#each currentProjects as project}
           <div
-            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0"
+            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
           >
             <div class="mb-4 flex items-start justify-between gap-3">
               <h3 class="post-title text-2xl font-bold leading-tight">
@@ -143,14 +143,14 @@
       </div>
     </div>
 
-    <div class="p-6 text-white">
+    <div class="p-6 text-white max-md:p-0">
       <h2 class="text-2x mb-4">Future Projects & Ideas</h2>
       <div
-        class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 md:grid-cols-2"
+        class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 max-md:gap-6 md:grid-cols-2"
       >
         {#each futureProjects as project}
           <div
-            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0"
+            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
           >
             <div class="mb-4 flex items-start justify-between gap-3">
               <h3 class="post-title text-2xl font-bold leading-tight">
