@@ -26,13 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Workaround for an npm optionalDependencies bug: rolldown (used by
-      # Vite 8) ships its native binary as an optional peer of the host
-      # platform, but npm sometimes fails to install the matching binary.
-      # Install the Linux/x64 binding explicitly here.
-      - name: Install rolldown linux binding
-        run: npm install --no-save @rolldown/binding-linux-x64-gnu
-
       - name: Build site
         run: npm run build
 
