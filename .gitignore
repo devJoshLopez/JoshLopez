@@ -1,0 +1,26 @@
+node_modules
+.DS_Store
+
+# SvelteKit / Vite build output
+.svelte-kit
+build
+dist
+.vite
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.idea
+*.swp
+
+# Playwright
+.playwright-mcp
+playwright-report
+test-results
