@@ -23,7 +23,7 @@
   <h2 class="mb-4 text-3xl">"Number 5 is Alive!"</h2>
 
   <div
-    class="grid items-center gap-8 rounded-xl border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:border-none max-md:bg-none max-md:p-0 lg:grid-cols-2 lg:gap-8"
+    class="grid items-center gap-8 rounded-xl border border-violet-50/20 bg-linear-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:border-none max-md:bg-none max-md:p-0 lg:grid-cols-2 lg:gap-8"
   >
     <div class="col-span-2">
       <h3 class="text-3xl max-md:text-xl">

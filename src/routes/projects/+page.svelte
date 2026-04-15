@@ -29,7 +29,7 @@
       >
         {#each currentProjects as project (project.title)}
           <div
-            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
+            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-linear-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
           >
             <div class="mb-4 flex items-start justify-between gap-3">
               <h3 class="post-title text-2xl leading-tight font-bold">
@@ -37,7 +37,7 @@
               </h3>
               {#if project.icon.type === "svg"}
                 <svg
-                  class="h-8 w-8 flex-shrink-0 text-white"
+                  class="h-8 w-8 shrink-0 text-white"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -51,7 +51,7 @@
                 <img
                   src={project.icon.url}
                   alt={`${project.title} icon`}
-                  class="h-10 w-10 flex-shrink-0 object-contain"
+                  class="h-10 w-10 shrink-0 object-contain"
                 />
               {/if}
             </div>
@@ -86,7 +86,7 @@
       >
         {#each futureProjects as project (project.title)}
           <div
-            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
+            class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-linear-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
           >
             <div class="mb-4 flex items-start justify-between gap-3">
               <h3 class="post-title text-2xl leading-tight font-bold">
@@ -94,7 +94,7 @@
               </h3>
               {#if project.icon.type === "svg"}
                 <svg
-                  class="h-8 w-8 flex-shrink-0 text-white"
+                  class="h-8 w-8 shrink-0 text-white"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -108,7 +108,7 @@
                 <img
                   src={project.icon.url}
                   alt={`${project.title} icon`}
-                  class="h-10 w-10 flex-shrink-0 object-contain"
+                  class="h-10 w-10 shrink-0 object-contain"
                 />
               {/if}
             </div>
