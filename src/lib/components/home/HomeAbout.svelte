@@ -1,3 +1,5 @@
+<svelte:options runes />
+
 <script>
   import Floaty from "$lib/components/fun/Floaty.svelte";
   import lastStarfighter from "$lib/images/last-starfighter.png";
@@ -105,8 +107,8 @@
   </p>
 
   <Floaty className="last-starfighter-floaty">
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <img
       src={lastStarfighter}
       alt="The Last Starfighter"

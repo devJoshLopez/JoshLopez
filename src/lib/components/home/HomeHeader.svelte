@@ -1,3 +1,5 @@
+<svelte:options runes />
+
 <script>
   import joshImage from "$lib/images/josh-lopez.webp";
   import hackersFloppy from "$lib/images/hackers-floppy.png";
@@ -85,8 +87,8 @@
 
   <div class="absolute -bottom-32 -left-10 h-48 w-48 -rotate-12">
     <Floaty className="floppy-disk">
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
       <img src={hackersFloppy} alt="Hackers floppy disk" onclick={openModal} />
     </Floaty>
   </div>

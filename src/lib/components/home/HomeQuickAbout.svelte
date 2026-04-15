@@ -1,3 +1,5 @@
+<svelte:options runes />
+
 <script>
   import spidermanFace from "$lib/images/spider-man-face.png";
   import Floaty from "$lib/components/fun/Floaty.svelte";
@@ -29,8 +31,8 @@
   </p>
 
   <Floaty className="spiderman-floaty">
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <img src={spidermanFace} alt="Spider-Man face" onclick={openModal} />
   </Floaty>
 </section>
