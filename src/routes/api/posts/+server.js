@@ -3,15 +3,15 @@ import fs from "fs";
 import path from "path";
 
 async function getPosts() {
-    const filePath = path.resolve('src', 'posts.json');
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    return data;
-  }
-  
-  export async function GET() {
-    const posts = await getPosts();
-    return json(posts);
-  }
+  const filePath = path.resolve("src", "posts.json");
+  const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  return data;
+}
+
+export async function GET() {
+  const posts = await getPosts();
+  return json(posts);
+}
 
 // async function getPosts() {
 //     let posts = []

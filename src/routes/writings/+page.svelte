@@ -38,7 +38,7 @@
 
 <div class="mx-auto max-w-4xl">
   <section
-    class="section-glass relative mb-32 mt-3 grid grid-cols-1 gap-4 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
+    class="section-glass relative mt-3 mb-32 grid grid-cols-1 gap-4 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
   >
     <h1 class="col-span-full mb-6 text-4xl font-bold">Writings</h1>
     {#each data.posts as post, index}
@@ -54,11 +54,11 @@
           >
             {#if post.categories}
               <div
-                class="absolute left-2 top-2 z-10 flex flex-wrap items-center gap-2"
+                class="absolute top-2 left-2 z-10 flex flex-wrap items-center gap-2"
               >
                 {#each post.categories as category}
                   <span
-                    class="whitespace-nowrap rounded-md bg-violet-50/50 px-2 py-1 text-xs text-black"
+                    class="rounded-md bg-violet-50/50 px-2 py-1 text-xs whitespace-nowrap text-black"
                   >
                     {category}
                   </span>
@@ -70,10 +70,10 @@
                 ? post.image.substring(1)
                 : post.image}
               alt={post.title}
-              class="absolute left-0 top-0 h-full w-full rounded-md object-cover"
+              class="absolute top-0 left-0 h-full w-full rounded-md object-cover"
             />
             <div
-              class="pointer-events-none absolute left-0 top-0 h-full w-full rounded-md opacity-30 mix-blend-overlay"
+              class="pointer-events-none absolute top-0 left-0 h-full w-full rounded-md opacity-30 mix-blend-overlay"
               style="background-image: url({vhsOverlay}); background-size: cover;"
             ></div>
           </div>

@@ -14,7 +14,7 @@
 
 <div class="mx-auto max-w-4xl">
   <section
-    class="section-glass relative mb-32 mt-3 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
+    class="section-glass relative mt-3 mb-32 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
   >
     <h1 class="mb-6 text-4xl font-bold">Connect</h1>
     <p class="mb-6 text-sm italic">

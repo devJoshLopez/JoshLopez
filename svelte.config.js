@@ -6,8 +6,8 @@ import { resolve } from "path";
 import fs from "fs";
 import path from "path";
 
-const postsPath = path.resolve('src', 'posts.json');
-const posts = JSON.parse(fs.readFileSync(postsPath, 'utf-8'));
+const postsPath = path.resolve("src", "posts.json");
+const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
 
 /** @type {import("mdsvex").MdsvexOptions} */
 const mdsvexOptions = {
@@ -28,7 +28,7 @@ const mdsvexOptions = {
       });
       await highlighter.loadLanguage("javascript");
       const html = escapeSvelte(
-        highlighter.codeToHtml(code, { lang, theme: "synthwave-84" })
+        highlighter.codeToHtml(code, { lang, theme: "synthwave-84" }),
       );
       return `{@html \`${html}\`}`;
     },
@@ -49,12 +49,12 @@ const config = {
       entries: posts.map((post) => `/writings/${post.slug}`),
       handleHttpError: ({ path, referrer, message }) => {
         // Ignore errors related to /api/posts
-        if (path.startsWith('/api/posts')) {
+        if (path.startsWith("/api/posts")) {
           return;
         }
         // Throw an error for all other cases
         throw new Error(message);
-      }
+      },
     },
   },
   preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],

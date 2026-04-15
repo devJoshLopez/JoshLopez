@@ -40,11 +40,11 @@
             <div class="relative h-64 overflow-hidden rounded-md">
               {#if post.categories}
                 <div
-                  class="absolute left-2 top-2 z-10 flex w-full flex-wrap items-center gap-2"
+                  class="absolute top-2 left-2 z-10 flex w-full flex-wrap items-center gap-2"
                 >
                   {#each post.categories as category}
                     <span
-                      class="whitespace-nowrap rounded-md bg-violet-50/50 px-2 py-1 text-xs text-black"
+                      class="rounded-md bg-violet-50/50 px-2 py-1 text-xs whitespace-nowrap text-black"
                     >
                       {category}
                     </span>

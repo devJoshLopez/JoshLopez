@@ -82,7 +82,7 @@
 
 <div class="mx-auto max-w-4xl">
   <section
-    class="section-glass relative mb-32 mt-3 gap-4 rounded-md p-8 text-white"
+    class="section-glass relative mt-3 mb-32 gap-4 rounded-md p-8 text-white"
   >
     <h1 class="mb-6 text-4xl font-bold">Projects</h1>
 
@@ -96,7 +96,7 @@
             class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
           >
             <div class="mb-4 flex items-start justify-between gap-3">
-              <h3 class="post-title text-2xl font-bold leading-tight">
+              <h3 class="post-title text-2xl leading-tight font-bold">
                 {project.title}
               </h3>
               {#if project.icon.type === "svg"}
@@ -122,7 +122,7 @@
 
             <div class="mb-3 flex flex-wrap items-center gap-3">
               <span
-                class="whitespace-nowrap rounded-md bg-violet-50/50 px-2 py-1 text-xs text-black"
+                class="rounded-md bg-violet-50/50 px-2 py-1 text-xs whitespace-nowrap text-black"
               >
                 {project.status}
               </span>
@@ -153,7 +153,7 @@
             class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
           >
             <div class="mb-4 flex items-start justify-between gap-3">
-              <h3 class="post-title text-2xl font-bold leading-tight">
+              <h3 class="post-title text-2xl leading-tight font-bold">
                 {project.title}
               </h3>
               {#if project.icon.type === "svg"}
@@ -179,7 +179,7 @@
 
             <div class="mb-3 flex flex-wrap items-center gap-3">
               <span
-                class="whitespace-nowrap rounded-md bg-violet-50/50 px-2 py-1 text-xs text-black"
+                class="rounded-md bg-violet-50/50 px-2 py-1 text-xs whitespace-nowrap text-black"
               >
                 {project.status}
               </span>

@@ -16,7 +16,7 @@
   };
 </script>
 
-<section class="section-glass relative mb-12 mt-32 rounded-md p-8 text-white">
+<section class="section-glass relative mt-32 mb-12 rounded-md p-8 text-white">
   <h2 class="mb-4 text-3xl">
     "Greetings, Starfighter. <br />You Have Been Recruited"
   </h2>
@@ -31,7 +31,7 @@
   <h3 class="mb-4 text-2xl">Welcome to my digital dojo</h3>
 
   <p class="mb-4">Here, I:</p>
-  <ul class="mb-4 ml-6 mt-2 list-inside list-disc">
+  <ul class="mt-2 mb-4 ml-6 list-inside list-disc">
     <li>Share tales from the tech trenches and customer success frontlines</li>
     <li>Ponder life's mysteries and everyday magic</li>
     <li>Showcase cutting-edge projects (like Rey, my AI sidekick)</li>
@@ -42,7 +42,7 @@
   <h3 class="mb-4 text-2xl">By day...</h3>
 
   <p class="mb-4">At Memberstack, I'm a jack-of-all-trades:</p>
-  <ul class="mb-4 ml-6 mt-2 list-inside list-disc">
+  <ul class="mt-2 mb-4 ml-6 list-inside list-disc">
     <li>Forging pre-built modals for seamless user experiences</li>
     <li>Leveling up Rey, our AI sage</li>
     <li>Crafting help guides that turn "Game Over" into "Extra Life!"</li>
@@ -56,7 +56,7 @@
   <h3 class="mb-4 text-2xl">Inspired by the greats</h3>
 
   <p class="mb-4">I channel:</p>
-  <ul class="mb-4 ml-6 mt-2 list-inside list-disc">
+  <ul class="mt-2 mb-4 ml-6 list-inside list-disc">
     <li>Marty McFly's drive to brighten the future</li>
     <li>Ninja Turtles' unique skill blend</li>
     <li>Neo's quest for deeper truths</li>
@@ -97,11 +97,10 @@
   <p class="mt-4">
     <em class="text-xs"
       >Incoming transmission... 📡 <br />
-      To my son: Every word, line of code, and late-night movie analysis here is
-      part of our story. As you navigate your life, may these musings inspire you
-      to live boldly, love deeply, and stay forever curious. My love for you is as
-      timeless as a classic NES game – and way more complex than any JavaScript I've
-      ever written.</em
+      To my son: Every word, line of code, and late-night movie analysis here is part
+      of our story. As you navigate your life, may these musings inspire you to live
+      boldly, love deeply, and stay forever curious. My love for you is as timeless
+      as a classic NES game – and way more complex than any JavaScript I've ever written.</em
     >
   </p>
 

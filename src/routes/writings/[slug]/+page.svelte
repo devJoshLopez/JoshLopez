@@ -22,17 +22,17 @@
 </svelte:head>
 
 <div class="mx-auto max-w-4xl">
-  <section class="section-glass relative mb-20 mt-3 rounded-md p-8 text-white">
+  <section class="section-glass relative mt-3 mb-20 rounded-md p-8 text-white">
     <article>
       {#if data.meta.image}
         <div class="relative mb-6 h-80 overflow-hidden rounded-md">
           {#if data.meta.categories}
             <div
-              class="absolute left-2 top-2 z-10 flex w-full flex-wrap items-center gap-2"
+              class="absolute top-2 left-2 z-10 flex w-full flex-wrap items-center gap-2"
             >
               {#each data.meta.categories as category}
                 <span
-                  class="mr-2 whitespace-nowrap rounded-md bg-violet-50/50 px-2 py-1 text-xs text-black"
+                  class="mr-2 rounded-md bg-violet-50/50 px-2 py-1 text-xs whitespace-nowrap text-black"
                 >
                   {category}
                 </span>
@@ -72,7 +72,7 @@
 {#if pathname}
   <div class="mx-auto max-w-4xl">
     <section
-      class="section-glass relative mb-32 mt-3 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
+      class="section-glass relative mt-3 mb-32 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
     >
       <h1 class="col-span-full mb-6 text-4xl font-bold">Comments</h1>
       <div>
