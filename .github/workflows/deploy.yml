@@ -1,0 +1,50 @@
+name: Build & Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Workaround for an npm optionalDependencies bug: rolldown (used by
+      # Vite 8) ships its native binary as an optional peer of the host
+      # platform, but npm sometimes fails to install the matching binary.
+      # Install the Linux/x64 binding explicitly here.
+      - name: Install rolldown linux binding
+        run: npm install --no-save @rolldown/binding-linux-x64-gnu
+
+      - name: Build site
+        run: npm run build
+
+      - name: Copy CNAME into build output
+        run: cp CNAME build/CNAME
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          # An empty .nojekyll file tells Pages not to ignore _-prefixed
+          # files (SvelteKit's _app directory).
+          enable_jekyll: false
