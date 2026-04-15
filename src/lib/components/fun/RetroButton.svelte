@@ -1,9 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  export let url = "#";
-  export let label = "Click Me";
-  export let size = "200px";
+  let { url = "#", label = "Click Me", size = "200px" } = $props();
 
   onMount(() => {
     document.querySelectorAll(".butn").forEach((button) => {
@@ -50,6 +48,9 @@
 
 <div class="retro-wrapper">
   <div role="button" tabindex="-1" class="retro-butn">
+    <!-- url accepts both internal SvelteKit routes and external URLs;
+         callers are expected to resolve() internal paths themselves. -->
+    <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
     <a class="butn" href={url} style="width: {size}" aria-label={label}>
       <span class="butn-inner">
         <span class="butn-content-wrapper">

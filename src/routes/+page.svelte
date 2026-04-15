@@ -5,21 +5,17 @@
   import HomeContent from "$lib/components/home/HomeContent.svelte";
   import HomeAbout from "$lib/components/home/HomeAbout.svelte";
 
-  export let data;
+  let { data } = $props();
 
-  // Get the latest post that is published
-  const publishedPosts = data.posts.filter(
-    (/** @type {{ published: any; }} */ post) => post.published,
+  const sortedPosts = $derived(
+    data.posts
+      .filter((/** @type {{ published: any; }} */ post) => post.published)
+      // @ts-ignore
+      .toSorted((a, b) => new Date(b.date) - new Date(a.date)),
   );
 
-  const sortedPosts = publishedPosts.sort(
-    // @ts-ignore
-    (a, b) => new Date(b.date) - new Date(a.date),
-  );
-
-  const latestPost = sortedPosts[0];
-  // get the last 4 posts minus the latest post
-  const recentPosts = sortedPosts.slice(1, 5);
+  const latestPost = $derived(sortedPosts[0]);
+  const recentPosts = $derived(sortedPosts.slice(1, 5));
 </script>
 
 <div class="mx-auto max-w-4xl">

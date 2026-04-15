@@ -12,12 +12,12 @@
   import { onMount, onDestroy } from "svelte";
   import Modal from "$lib/components/fun/Modal.svelte";
 
-  let show = false;
-  /**
-   * @type {any}
-   */
-  let content = null;
-  let props = {};
+  let { children } = $props();
+
+  let show = $state(false);
+  /** @type {any} */
+  let content = $state(null);
+  let props = $state({});
 
   const unsubscribe = modalStore.subscribe((value) => {
     show = value.show;
@@ -91,7 +91,7 @@
 <main
   class="relative z-10 w-screen overflow-hidden p-8 pt-24 text-gray-200 md:pt-32"
 >
-  <slot />
+  {@render children?.()}
 </main>
 
 <Footer />

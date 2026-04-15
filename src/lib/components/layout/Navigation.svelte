@@ -1,7 +1,7 @@
 <script>
   import { resolve } from "$app/paths";
 
-  let menuOpen = false;
+  let menuOpen = $state(false);
 
   function toggleMenu() {
     menuOpen = !menuOpen;
@@ -13,7 +13,7 @@
 >
   <a href={resolve("/")}><h1 class="text-4xl">Josh Lopez</h1></a>
   <button
-    on:click={toggleMenu}
+    onclick={toggleMenu}
     class="text-pink-600 md:hidden"
     aria-label="Toggle navigation menu"
     aria-expanded={menuOpen}

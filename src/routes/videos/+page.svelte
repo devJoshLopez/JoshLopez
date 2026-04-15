@@ -6,10 +6,8 @@
   const youtubeChannelID = "UCuAXFkgsw1L7xaCfnd5JJOw";
   const youtubeAPIURL = `https://www.googleapis.com/youtube/v3/search?key=${youtubeAPIKey}&channelId=${youtubeChannelID}&part=snippet,id&order=date&maxResults=10`;
 
-  /**
-   * @type {any[]}
-   */
-  let videos = [];
+  /** @type {any[]} */
+  let videos = $state([]);
 
   onMount(async () => {
     const response = await fetch(youtubeAPIURL);

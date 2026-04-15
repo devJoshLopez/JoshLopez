@@ -5,7 +5,7 @@
   import { showModal } from "$lib/stores/modalStore";
   import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
 
-  export let latestPost;
+  let { latestPost } = $props();
 
   const openModal = () => {
     // @ts-ignore
@@ -88,9 +88,9 @@
   </div>
 
   <Floaty className="johnny5-floaty">
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-    <img src={johnny5} alt="Johnny 5 from Short Circuit" on:click={openModal} />
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+    <img src={johnny5} alt="Johnny 5 from Short Circuit" onclick={openModal} />
   </Floaty>
 </section>
 

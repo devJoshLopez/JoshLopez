@@ -1,37 +1,24 @@
 <script>
   // @ts-nocheck
-  /* eslint-disable svelte/infinite-reactive-loop, no-useless-assignment --
-   * The wasShow guard prevents the loop the linter is worried about.
-   * Whole component is on the runes-conversion list and will be rewritten
-   * with $effect, at which point this disable can be removed. */
   import { tick, onDestroy } from "svelte";
   import { gsap, Power1, Power2 } from "gsap";
   import { closeModal } from "$lib/stores/modalStore";
   import colorStatic from "$lib/images/color-static.gif";
 
-  export let show = false;
-  export let content = null;
-  export let props = {};
+  let { show = false, content = null, props = {} } = $props();
 
-  let isClosing = false;
+  let isClosing = $state(false);
   let isAnimating = false;
   let isInitialized = false;
-  let wasShow = false;
-  /**
-   * @type {gsap.core.Timeline}
-   */
+  /** @type {gsap.core.Timeline} */
   let timeline;
 
   const SELECTOR_MODAL_ELEMENT = ".modal";
   const SELECTOR_MODAL_CLOSE_BUTTON = ".close-btn";
   const SELECTOR_CONTENT_ELEMENT = ".modal-content";
 
-  $: if (show !== wasShow) {
-    wasShow = show;
-    handleShowChange();
-  }
-
-  function handleShowChange() {
+  // React to show prop changes from the store-driven parent.
+  $effect(() => {
     if (show && !isAnimating) {
       if (!isInitialized) {
         tick().then(() => {
@@ -44,7 +31,7 @@
     } else if (!show && isClosing && !isAnimating) {
       toggleModalAnimation();
     }
-  }
+  });
 
   // Initialize GSAP timeline
   function initializeTimeline() {
@@ -126,10 +113,11 @@
 
   // Reset modal state
   function resetModalState() {
+    // Note: `show` is owned by the parent's modal store and gets reset via
+    // closeModal(). We don't mutate the prop here.
     isClosing = false;
     isAnimating = false;
     isInitialized = false;
-    show = false;
   }
 
   // Clean up on destroy
@@ -141,14 +129,15 @@
 </script>
 
 {#if show}
+  {@const Content = content}
   <div class="modal">
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="modal-backdrop" on:click={toggleClose}></div>
-    <button class="close-btn" on:click={toggleClose}> Close </button>
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div class="modal-backdrop" onclick={toggleClose}></div>
+    <button class="close-btn" onclick={toggleClose}> Close </button>
     <div class="modal-content">
-      {#if content}
-        <svelte:component this={content} {...props} />
+      {#if Content}
+        <Content {...props} />
       {/if}
     </div>
   </div>

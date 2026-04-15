@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { gsap } from "gsap";
 
-  export let className = "";
+  let { className = "", children } = $props();
 
   /**
    * @param {number} min
@@ -125,7 +125,7 @@
 </script>
 
 <div class="floaty-container {className}">
-  <slot />
+  {@render children?.()}
 </div>
 
 <style>

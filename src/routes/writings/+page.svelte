@@ -1,11 +1,13 @@
 <script>
   import RetroButton from "$lib/components/fun/RetroButton.svelte";
   import vhsOverlay from "$lib/images/vhs-overlay.png";
-  export let data;
 
-  data.posts = data.posts.sort(
-    // @ts-ignore
-    (a, b) => new Date(b.date) - new Date(a.date),
+  let { data } = $props();
+
+  const sortedPosts = $derived(
+    [...data.posts]
+      // @ts-ignore
+      .sort((a, b) => new Date(b.date) - new Date(a.date)),
   );
 
   /**
@@ -33,7 +35,7 @@
     return posts.map((_, index) => basePattern[index % basePattern.length]);
   }
 
-  $: layout = getLayout(data.posts);
+  const layout = $derived(getLayout(sortedPosts));
 </script>
 
 <div class="mx-auto max-w-4xl">
@@ -41,7 +43,7 @@
     class="section-glass relative mt-3 mb-32 grid grid-cols-1 gap-4 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
   >
     <h1 class="col-span-full mb-6 text-4xl font-bold">Writings</h1>
-    {#each data.posts as post, index (post.slug)}
+    {#each sortedPosts as post, index (post.slug)}
       <div
         class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:border-none max-md:bg-none max-md:p-0 {layout[
           index

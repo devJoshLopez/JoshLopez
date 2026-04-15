@@ -110,7 +110,7 @@
     <img
       src={lastStarfighter}
       alt="The Last Starfighter"
-      on:click={openModal}
+      onclick={openModal}
     />
   </Floaty>
 </section>

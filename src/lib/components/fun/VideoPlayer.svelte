@@ -5,10 +5,8 @@
   import vhsOverlay from "$lib/images/vhs-overlay.png";
   import oldTV from "$lib/images/80s-tv.png";
 
-  /**
-   * @type {any}
-   */
-  export let urls = [];
+  /** @type {any} */
+  let { urls = [] } = $props();
 
   const gifTVURLs = [
     "https://i.giphy.com/Q2W4hziDOyzu0.webp",
@@ -109,8 +107,7 @@
           >
         </div>
       </div>
-      <!-- svelte-ignore a11y-missing-attribute -->
-      <img class="tv" src={oldTV} />
+      <img class="tv" src={oldTV} alt="" />
       <button
         id="gif_tv_button_channel"
         class="dial"

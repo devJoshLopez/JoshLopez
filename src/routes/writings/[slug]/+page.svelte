@@ -3,16 +3,16 @@
   import Giscus from "@giscus/svelte";
   import RetroButton from "$lib/components/fun/RetroButton.svelte";
 
-  export let data;
+  let { data } = $props();
 
-  /**
-   * @type {string}
-   */
-  let pathname;
+  /** @type {string | undefined} */
+  let pathname = $state();
 
   onMount(() => {
     pathname = window.location.pathname;
   });
+
+  const PostContent = $derived(data.content);
 </script>
 
 <svelte:head>
@@ -59,7 +59,7 @@
       </hgroup>
 
       <div class="prose">
-        <svelte:component this={data.content} />
+        <PostContent />
       </div>
     </article>
   </section>

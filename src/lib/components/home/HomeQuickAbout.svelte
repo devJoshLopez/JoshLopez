@@ -31,7 +31,7 @@
   <Floaty className="spiderman-floaty">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-    <img src={spidermanFace} alt="Spider-Man face" on:click={openModal} />
+    <img src={spidermanFace} alt="Spider-Man face" onclick={openModal} />
   </Floaty>
 </section>
 

@@ -5,14 +5,14 @@
   import RetroButton from "../fun/RetroButton.svelte";
   import VideoPlayer from "../fun/VideoPlayer.svelte";
 
-  export let recentPosts;
+  let { recentPosts: rawPosts } = $props();
 
-  recentPosts = recentPosts
-    .sort(
+  const recentPosts = $derived(
+    [...rawPosts]
       // @ts-ignore
-      (a, b) => new Date(b.date) - new Date(a.date),
-    )
-    .slice(0, 2);
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 2),
+  );
 
   const openModal = () => {
     // @ts-ignore
@@ -77,12 +77,12 @@
   </div>
 
   <Floaty className="delorean-floaty">
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
     <img
       src={delorean}
       alt="Delorean from Back to the Future"
-      on:click={openModal}
+      onclick={openModal}
     />
   </Floaty>
 </section>
