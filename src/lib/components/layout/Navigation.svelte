@@ -38,11 +38,6 @@
     aria-label="Main Navigation"
   >
     <a
-      href={resolve("/videos")}
-      class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
-      >Videos</a
-    >
-    <a
       href={resolve("/writings")}
       class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Writings</a
