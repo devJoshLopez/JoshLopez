@@ -48,7 +48,7 @@
           <div
             class="absolute top-2 left-2 z-10 flex w-full flex-wrap items-center gap-2"
           >
-            {#each latestPost.categories as category}
+            {#each latestPost.categories as category (category)}
               <span
                 class="mr-2 rounded-md bg-violet-50/50 px-2 py-1 text-xs whitespace-nowrap text-black"
               >
@@ -71,7 +71,7 @@
       >
         {#if latestPost.categories}
           <div class="mt-4 flex flex-wrap gap-2">
-            {#each latestPost.categories as category}
+            {#each latestPost.categories as category (category)}
               <span class="rounded-md bg-gray-800 px-2 py-1 text-xs"
                 >{category}</span
               >

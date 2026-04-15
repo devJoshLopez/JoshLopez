@@ -1,5 +1,9 @@
 <script>
   // @ts-nocheck
+  /* eslint-disable svelte/infinite-reactive-loop, no-useless-assignment --
+   * The wasShow guard prevents the loop the linter is worried about.
+   * Whole component is on the runes-conversion list and will be rewritten
+   * with $effect, at which point this disable can be removed. */
   import { tick, onDestroy } from "svelte";
   import { gsap, Power1, Power2 } from "gsap";
   import { closeModal } from "$lib/stores/modalStore";
@@ -22,13 +26,11 @@
   const SELECTOR_MODAL_CLOSE_BUTTON = ".close-btn";
   const SELECTOR_CONTENT_ELEMENT = ".modal-content";
 
-  // Watcher for show changes
   $: if (show !== wasShow) {
     wasShow = show;
     handleShowChange();
   }
 
-  // Handle show changes
   function handleShowChange() {
     if (show && !isAnimating) {
       if (!isInitialized) {

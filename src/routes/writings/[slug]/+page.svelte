@@ -30,7 +30,7 @@
             <div
               class="absolute top-2 left-2 z-10 flex w-full flex-wrap items-center gap-2"
             >
-              {#each data.meta.categories as category}
+              {#each data.meta.categories as category (category)}
                 <span
                   class="mr-2 rounded-md bg-violet-50/50 px-2 py-1 text-xs whitespace-nowrap text-black"
                 >

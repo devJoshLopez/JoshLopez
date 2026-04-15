@@ -1,4 +1,6 @@
 <script>
+  import { resolve } from "$app/paths";
+
   let menuOpen = false;
 
   function toggleMenu() {
@@ -9,8 +11,13 @@
 <header
   class="fixed top-0 z-20 flex w-full items-center justify-between border-b-4 border-pink-600 bg-gray-900 p-4 text-white"
 >
-  <a href="/"><h1 class="text-4xl">Josh Lopez</h1></a>
-  <button on:click={toggleMenu} class="text-pink-600 md:hidden">
+  <a href={resolve("/")}><h1 class="text-4xl">Josh Lopez</h1></a>
+  <button
+    on:click={toggleMenu}
+    class="text-pink-600 md:hidden"
+    aria-label="Toggle navigation menu"
+    aria-expanded={menuOpen}
+  >
     <svg
       class="h-8 w-8"
       fill="none"
@@ -31,22 +38,22 @@
     aria-label="Main Navigation"
   >
     <a
-      href="/videos"
+      href={resolve("/videos")}
       class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Videos</a
     >
     <a
-      href="/writings"
+      href={resolve("/writings")}
       class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Writings</a
     >
     <a
-      href="/projects"
+      href={resolve("/projects")}
       class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Projects</a
     >
     <a
-      href="/connect"
+      href={resolve("/connect")}
       class="glow-on-hover font-bold text-pink-600 hover:text-teal-400"
       >Connect</a
     >

@@ -134,7 +134,7 @@
     display: inline-block;
   }
 
-  .floaty-container > * {
+  :global(.floaty-container > *) {
     position: absolute;
   }
 

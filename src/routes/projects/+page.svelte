@@ -91,7 +91,7 @@
       <div
         class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 max-md:gap-6 md:grid-cols-2"
       >
-        {#each currentProjects as project}
+        {#each currentProjects as project (project.title)}
           <div
             class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
           >
@@ -148,7 +148,7 @@
       <div
         class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 max-md:gap-6 md:grid-cols-2"
       >
-        {#each futureProjects as project}
+        {#each futureProjects as project (project.title)}
           <div
             class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 shadow-lg transition-all hover:shadow-xl max-md:border-none max-md:bg-none max-md:p-0 max-md:shadow-none max-md:hover:shadow-none"
           >

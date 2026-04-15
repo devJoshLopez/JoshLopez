@@ -31,7 +31,7 @@
         const butnWidth = button.offsetWidth;
         // @ts-ignore
         const myPosX = e.pageX;
-        let newClass = "";
+        let newClass;
 
         if (myPosX < leftOffset + 0.3 * butnWidth) {
           newClass = "butn-left";
@@ -49,13 +49,12 @@
 </script>
 
 <div class="retro-wrapper">
-  <div role="button" class="retro-butn">
-    <!-- svelte-ignore a11y-missing-attribute -->
-    <a class="butn" href={url} style="width: {size}">
+  <div role="button" tabindex="-1" class="retro-butn">
+    <a class="butn" href={url} style="width: {size}" aria-label={label}>
       <span class="butn-inner">
         <span class="butn-content-wrapper">
           <span class="butn-content">
-            <span class="butn-content-inner" data-label={label} />
+            <span class="butn-content-inner" data-label={label}></span>
           </span>
         </span>
       </span>
@@ -148,7 +147,7 @@
     -webkit-transform: skewY(1deg) translate3d(0, -0.5px, 0);
     transform: skewY(1deg) translate3d(0, -0.5px, 0);
   }
-  .retro-butn .butn.butn-left .butn-content {
+  :global(.retro-butn .butn.butn-left .butn-content) {
     -webkit-transform: skewY(-1deg);
     transform: skewY(-1deg);
   }
@@ -156,7 +155,7 @@
     -webkit-transform: skewY(-1deg) translate3d(0, -0.5px, 0);
     transform: skewY(-1deg) translate3d(0, -0.5px, 0);
   }
-  .retro-butn .butn.butn-right .butn-content {
+  :global(.retro-butn .butn.butn-right .butn-content) {
     -webkit-transform: skewY(1deg);
     transform: skewY(1deg);
   }
@@ -164,15 +163,17 @@
     -webkit-transform: translate3d(0, -1px, 0);
     transform: translate3d(0, -1px, 0);
   }
-  .retro-butn .butn.butn-center .butn-content {
+  :global(.retro-butn .butn.butn-center .butn-content) {
     -webkit-transform: translate3d(0, 1px, 0);
     transform: translate3d(0, 1px, 0);
   }
-  .retro-butn
-    .butn.butn-active
-    .butn-inner
-    .butn-content-wrapper
-    .butn-content {
+  :global(
+    .retro-butn
+      .butn.butn-active
+      .butn-inner
+      .butn-content-wrapper
+      .butn-content
+  ) {
     -webkit-transition:
       background 0.12s ease-out,
       color 0.12s ease-out,
@@ -193,12 +194,14 @@
     -webkit-transform: translate3d(0, 2px, 0);
     transform: translate3d(0, 2px, 0);
   }
-  .retro-butn
-    .butn.butn-active
-    .butn-inner
-    .butn-content-wrapper
-    .butn-content
-    .butn-content-inner {
+  :global(
+    .retro-butn
+      .butn.butn-active
+      .butn-inner
+      .butn-content-wrapper
+      .butn-content
+      .butn-content-inner
+  ) {
     opacity: 0.1;
   }
   :global(.retro-butn .butn.butn-active:before) {

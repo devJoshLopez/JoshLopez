@@ -35,7 +35,7 @@
     <div
       class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 md:grid-cols-3"
     >
-      {#each videos as video}
+      {#each videos as video (video.url)}
         <div
           class="relative flex flex-col gap-3 rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:border-none max-md:bg-none max-md:p-0"
         >

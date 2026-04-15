@@ -41,7 +41,7 @@
     class="section-glass relative mt-3 mb-32 grid grid-cols-1 gap-4 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
   >
     <h1 class="col-span-full mb-6 text-4xl font-bold">Writings</h1>
-    {#each data.posts as post, index}
+    {#each data.posts as post, index (post.slug)}
       <div
         class="relative col-span-1 flex flex-col rounded-md border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:border-none max-md:bg-none max-md:p-0 {layout[
           index
@@ -56,7 +56,7 @@
               <div
                 class="absolute top-2 left-2 z-10 flex flex-wrap items-center gap-2"
               >
-                {#each post.categories as category}
+                {#each post.categories as category (category)}
                   <span
                     class="rounded-md bg-violet-50/50 px-2 py-1 text-xs whitespace-nowrap text-black"
                   >

@@ -32,7 +32,7 @@
       "Roads? Where We're Going, We Don't Need Roads."
     </h2>
     <div class="more-content flex flex-row gap-8 max-md:flex-col">
-      {#each recentPosts as post}
+      {#each recentPosts as post (post.slug)}
         <div
           class="w-1/2 rounded-xl border border-violet-50/20 bg-gradient-to-b from-gray-50/15 to-gray-50/5 px-8 py-8 max-md:w-full max-md:border-none max-md:bg-none max-md:p-0 lg:grid-cols-4 lg:gap-0 lg:py-12"
         >
@@ -42,7 +42,7 @@
                 <div
                   class="absolute top-2 left-2 z-10 flex w-full flex-wrap items-center gap-2"
                 >
-                  {#each post.categories as category}
+                  {#each post.categories as category (category)}
                     <span
                       class="rounded-md bg-violet-50/50 px-2 py-1 text-xs whitespace-nowrap text-black"
                     >

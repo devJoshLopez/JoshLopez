@@ -2,7 +2,6 @@ import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { escapeSvelte, mdsvex } from "mdsvex";
 import { createHighlighter } from "shiki";
-import { resolve } from "path";
 import fs from "fs";
 import path from "path";
 
@@ -47,7 +46,7 @@ const config = {
     },
     prerender: {
       entries: posts.map((post) => `/writings/${post.slug}`),
-      handleHttpError: ({ path, referrer, message }) => {
+      handleHttpError: ({ path, message }) => {
         // Ignore errors related to /api/posts
         if (path.startsWith("/api/posts")) {
           return;
