@@ -1,0 +1,1 @@
+import{$ as e}from"./MRC_d77q.js";e();
