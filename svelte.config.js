@@ -2,11 +2,11 @@ import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { escapeSvelte, mdsvex } from "mdsvex";
 import { createHighlighter } from "shiki";
-import fs from "fs";
-import path from "path";
+import { readFileSync } from "fs";
 
-const postsPath = path.resolve("src", "posts.json");
-const posts = JSON.parse(fs.readFileSync(postsPath, "utf-8"));
+const posts = JSON.parse(
+  readFileSync(new URL("./src/posts.json", import.meta.url), "utf-8"),
+);
 
 /** @type {import("mdsvex").MdsvexOptions} */
 const mdsvexOptions = {
@@ -46,14 +46,6 @@ const config = {
     },
     prerender: {
       entries: posts.map((post) => `/writings/${post.slug}`),
-      handleHttpError: ({ path, message }) => {
-        // Ignore errors related to /api/posts
-        if (path.startsWith("/api/posts")) {
-          return;
-        }
-        // Throw an error for all other cases
-        throw new Error(message);
-      },
     },
   },
   preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],

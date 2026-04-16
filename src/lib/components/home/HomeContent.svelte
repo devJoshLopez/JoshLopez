@@ -5,17 +5,16 @@
   import RetroButton from "../fun/RetroButton.svelte";
   import VideoPlayer from "../fun/VideoPlayer.svelte";
 
+  /** @type {{ recentPosts: App.Post[] }} */
   let { recentPosts: rawPosts } = $props();
 
   const recentPosts = $derived(
     [...rawPosts]
-      // @ts-ignore
-      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, 2),
   );
 
   const openModal = () => {
-    // @ts-ignore
     showModal(VideoPlayer, {
       urls: [
         "https://i.giphy.com/AAB8uJshCNsuk.webp",
@@ -54,6 +53,7 @@
               <img
                 src={post.image}
                 alt={post.title}
+                loading="lazy"
                 class="h-full w-full object-cover object-top shadow-2xl"
               />
             </div>
@@ -77,13 +77,14 @@
   </div>
 
   <Floaty className="delorean-floaty">
-    <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-    <img
-      src={delorean}
-      alt="Delorean from Back to the Future"
+    <button
+      type="button"
+      class="floaty-btn"
       onclick={openModal}
-    />
+      aria-label="Play Back to the Future clips"
+    >
+      <img src={delorean} alt="" />
+    </button>
   </Floaty>
 </section>
 

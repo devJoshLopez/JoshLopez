@@ -31,7 +31,6 @@ if (existsSync(`./node_modules/${pkg}/package.json`)) {
 }
 
 console.log(`[rolldown-binding] Installing ${pkg} for ${key}...`);
-execSync(
-  `npm install --no-save --no-fund --no-audit --ignore-scripts ${pkg}`,
-  { stdio: "inherit" },
-);
+execSync(`npm install --no-save --no-fund --no-audit --ignore-scripts ${pkg}`, {
+  stdio: "inherit",
+});

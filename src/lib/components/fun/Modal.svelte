@@ -1,17 +1,19 @@
 <script>
-  // @ts-nocheck
   import { tick, onDestroy } from "svelte";
   import { gsap, Power1, Power2 } from "gsap";
   import { closeModal } from "$lib/stores/modalStore";
   import colorStatic from "$lib/images/color-static.gif";
 
+  /** @type {{ show?: boolean, content?: import("svelte").Component | null, props?: Record<string, any> }} */
   let { show = false, content = null, props = {} } = $props();
 
   let isClosing = $state(false);
   let isAnimating = false;
   let isInitialized = false;
-  /** @type {gsap.core.Timeline} */
+  /** @type {gsap.core.Timeline | undefined} */
   let timeline;
+  /** @type {HTMLButtonElement | undefined} */
+  let closeButton = $state();
 
   const SELECTOR_MODAL_ELEMENT = ".modal";
   const SELECTOR_MODAL_CLOSE_BUTTON = ".close-btn";
@@ -33,7 +35,6 @@
     }
   });
 
-  // Initialize GSAP timeline
   function initializeTimeline() {
     timeline = gsap.timeline({ paused: true });
 
@@ -86,7 +87,6 @@
     isInitialized = true;
   }
 
-  // Toggle modal animation
   function toggleModalAnimation() {
     if (!timeline) return;
     isAnimating = true;
@@ -95,6 +95,7 @@
       document.body.style.overflow = "hidden";
       timeline.play().then(() => {
         isAnimating = false;
+        closeButton?.focus();
       });
     } else {
       document.body.style.overflow = "auto";
@@ -105,36 +106,54 @@
     }
   }
 
-  // Close modal and toggle animation
   function toggleClose() {
     isClosing = true;
     toggleModalAnimation();
   }
 
-  // Reset modal state
   function resetModalState() {
-    // Note: `show` is owned by the parent's modal store and gets reset via
-    // closeModal(). We don't mutate the prop here.
     isClosing = false;
     isAnimating = false;
     isInitialized = false;
   }
 
-  // Clean up on destroy
-  onDestroy(() => {
-    if (timeline) {
-      timeline.kill();
+  /** @param {KeyboardEvent} e */
+  function handleKeydown(e) {
+    if (e.key === "Escape" && show && !isClosing) {
+      toggleClose();
     }
+  }
+
+  onDestroy(() => {
+    timeline?.kill();
   });
 </script>
 
+<svelte:window onkeydown={handleKeydown} />
+
 {#if show}
   {@const Content = content}
-  <div class="modal">
-    <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div class="modal-backdrop" onclick={toggleClose}></div>
-    <button class="close-btn" onclick={toggleClose}> Close </button>
+  <div
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Dialog"
+    tabindex="-1"
+  >
+    <button
+      type="button"
+      class="modal-backdrop"
+      aria-label="Close dialog"
+      onclick={toggleClose}
+    ></button>
+    <button
+      type="button"
+      class="close-btn"
+      onclick={toggleClose}
+      bind:this={closeButton}
+    >
+      Close
+    </button>
     <div class="modal-content">
       {#if Content}
         <Content {...props} />
@@ -175,6 +194,10 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: default;
   }
 
   .close-btn {
@@ -187,6 +210,7 @@
     font-size: 1.5rem;
     cursor: pointer;
     opacity: 0;
+    z-index: 2;
   }
 
   .modal-content {

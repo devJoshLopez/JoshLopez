@@ -1,70 +1,54 @@
 <script>
-  // @ts-nocheck
-
   import { onMount } from "svelte";
   import bgNoise from "$lib/images/bgnoise.webp";
 
-  let gridItems = [];
-  let cols, rows;
-  let lastIndex = null;
+  const ITEM_SIZE = 100;
 
-  // Function to create grid items dynamically
-  function createGrid() {
-    const container = document.querySelector(".grid-container");
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    const itemSize = 100;
-    cols = Math.ceil(width / itemSize);
-    rows = Math.ceil(height / itemSize);
-    const numItems = cols * rows;
+  let cols = $state(0);
+  let rows = $state(0);
+  let hoveredIndex = $state(/** @type {number | null} */ (null));
 
-    container.style.gridTemplateColumns = `repeat(${cols}, ${itemSize}px)`;
-    container.style.gridTemplateRows = `repeat(${rows}, ${itemSize}px)`;
+  const total = $derived(cols * rows);
 
-    for (let i = 0; i < numItems; i++) {
-      const div = document.createElement("div");
-      div.classList.add("grid-item");
-      container.appendChild(div);
-      gridItems.push(div);
-    }
+  function computeSize() {
+    cols = Math.ceil(window.innerWidth / ITEM_SIZE);
+    rows = Math.ceil(window.innerHeight / ITEM_SIZE);
   }
 
-  // Function to highlight the grid item under the mouse
-  function highlightGridItem(event) {
-    const x = event.clientX;
-    const y = event.clientY;
-    const col = Math.floor(x / 100);
-    const row = Math.floor(y / 100);
+  /** @param {MouseEvent} event */
+  function handleMouseMove(event) {
+    const col = Math.floor(event.clientX / ITEM_SIZE);
+    const row = Math.floor(event.clientY / ITEM_SIZE);
     const index = row * cols + col;
-
-    if (index !== lastIndex) {
-      if (lastIndex !== null && gridItems[lastIndex]) {
-        gridItems[lastIndex].classList.remove("highlight");
-      }
-      if (gridItems[index]) {
-        gridItems[index].classList.add("highlight");
-      }
-      lastIndex = index;
-    }
+    if (index !== hoveredIndex) hoveredIndex = index;
   }
 
-  // Run the code on the client side only
   onMount(() => {
-    createGrid();
+    computeSize();
 
-    window.onresize = () => {
-      document.querySelector(".grid-container").innerHTML = "";
-      gridItems = [];
-      lastIndex = null; // Reset lastIndex to prevent accessing an old index
-      createGrid();
+    /** @type {ReturnType<typeof setTimeout> | undefined} */
+    let resizeTimer;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(computeSize, 150);
     };
 
-    window.addEventListener("mousemove", highlightGridItem);
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      clearTimeout(resizeTimer);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   });
 </script>
 
-<!-- Grid container for background effect -->
 <div
   class="grid-container pointer-events-none fixed inset-0 z-0"
-  style="background-image: url({bgNoise})"
-></div>
+  style="background-image: url({bgNoise}); grid-template-columns: repeat({cols}, {ITEM_SIZE}px); grid-template-rows: repeat({rows}, {ITEM_SIZE}px);"
+>
+  {#each Array(total), i (i)}
+    <div class="grid-item" class:highlight={i === hoveredIndex}></div>
+  {/each}
+</div>

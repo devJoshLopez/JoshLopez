@@ -127,11 +127,14 @@ h2 {
     #fff951 100%
   );
   background-size: 1000% 100%;
+  background-position: var(--heading-bg-position, 0% 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: background 2000s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: background var(--heading-anim-duration, 2000s)
+    cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation-delay: var(--heading-anim-delay, 0s);
 }
 
 @keyframes background {

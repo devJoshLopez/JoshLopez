@@ -1,14 +1,12 @@
 <script>
-  import { onMount } from "svelte";
-  import { writable } from "svelte/store";
   import staticGIF from "$lib/images/static.gif";
   import vhsOverlay from "$lib/images/vhs-overlay.png";
   import oldTV from "$lib/images/80s-tv.png";
 
-  /** @type {any} */
-  let { urls = [] } = $props();
+  const STATIC_FLASH_MS = 333;
+  const MESSAGE_VISIBLE_MS = 2000;
 
-  const gifTVURLs = [
+  const fallbackURLs = [
     "https://i.giphy.com/Q2W4hziDOyzu0.webp",
     "https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571117878/space-stallions_zmueag.gif",
     "https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571117882/dancing-bears-small_v4oqvi.gif",
@@ -18,100 +16,71 @@
     "https://res.cloudinary.com/cyborgspaceviking/image/upload/v1571120920/the-regular-show_pwt1gp.gif",
   ];
 
-  /**
-   * @type {HTMLElement | null}
-   */
-  let gifTV;
-  let message = writable("");
-  let messageActive = writable(false);
+  /** @type {{ urls?: string[] }} */
+  let { urls = [] } = $props();
 
-  class GifTV {
-    constructor(channels = [urls[0]]) {
-      this.channels = channels;
-      this.staticGIF = staticGIF;
-      this.currentChannelURL = this.channels[0];
-      this.currentIndex = 0;
-    }
+  const channels = $derived(urls.length ? urls : fallbackURLs);
 
-    displayStatic() {
-      // @ts-ignore
-      gifTV.src = this.staticGIF;
-    }
+  let currentIndex = $state(0);
+  let displaySrc = $derived(channels[currentIndex]);
+  let message = $state("");
+  let messageActive = $state(false);
 
-    displayChannel() {
-      // @ts-ignore
-      gifTV.src = this.currentChannelURL;
-    }
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
+  let flashTimer;
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
+  let messageTimer;
 
-    /**
-     * @param {string} direction
-     */
-    changeChannel(direction) {
-      this.displayStatic();
-      if (direction === "up") {
-        this.currentIndex = (this.currentIndex + 1) % this.channels.length;
-      } else {
-        this.currentIndex =
-          (this.currentIndex - 1 + this.channels.length) % this.channels.length;
-      }
-      this.currentChannelURL = this.channels[this.currentIndex];
-      message.set(`CH ${String(this.currentIndex + 1).padStart(2, "0")}`);
-      messageActive.set(true);
-      setTimeout(() => {
-        this.displayChannel();
-      }, 333);
-      setTimeout(() => {
-        messageActive.set(false);
-      }, 2000);
-    }
+  /** @param {"up" | "down"} direction */
+  function changeChannel(direction) {
+    clearTimeout(flashTimer);
+    clearTimeout(messageTimer);
+
+    const next =
+      direction === "up"
+        ? (currentIndex + 1) % channels.length
+        : (currentIndex - 1 + channels.length) % channels.length;
+
+    displaySrc = staticGIF;
+    message = `CH ${String(next + 1).padStart(2, "0")}`;
+    messageActive = true;
+
+    flashTimer = setTimeout(() => {
+      currentIndex = next;
+    }, STATIC_FLASH_MS);
+
+    messageTimer = setTimeout(() => {
+      messageActive = false;
+    }, MESSAGE_VISIBLE_MS);
   }
 
-  onMount(() => {
-    gifTV = document.getElementById("gif_tv_video");
-    const gifTVInstance = new GifTV(urls.length ? urls : gifTVURLs);
-    gifTVInstance.displayChannel();
-    // @ts-ignore
-    document
-      .getElementById("gif_tv_button_channel")
-      .addEventListener("click", () => gifTVInstance.changeChannel("up"));
-    // @ts-ignore
-    document
-      .getElementById("gif_tv_button_channel")
-      .addEventListener("contextmenu", (e) => {
-        e.preventDefault();
-        gifTVInstance.changeChannel("down");
-      });
-  });
+  /** @param {MouseEvent} e */
+  function handleContextMenu(e) {
+    e.preventDefault();
+    changeChannel("down");
+  }
 </script>
 
 <section class="section gutter">
   <div class="wrapper">
     <div class="gif-tv">
-      <div id="gif_tv_viewport" class="viewport">
-        <img
-          id="gif_tv_video"
-          class="video"
-          src="/video-url-goes-here/"
-          alt="meowza"
-        />
-        <div
-          id="gif_tv_pixels"
-          class="pixels"
-          style="background-image: url('{vhsOverlay}')"
-        ></div>
+      <div class="viewport">
+        <img class="video" src={displaySrc} alt="" />
+        <div class="pixels" style="background-image: url('{vhsOverlay}')"></div>
         <div class="meta-left">
-          <span
-            id="gif_tv_message_channel"
-            class:active={$messageActive}
-            class="text-5xl max-md:text-lg">{$message}</span
+          <span class:active={messageActive} class="text-5xl max-md:text-lg"
+            >{message}</span
           >
         </div>
       </div>
       <img class="tv" src={oldTV} alt="" />
       <button
-        id="gif_tv_button_channel"
+        type="button"
         class="dial"
-        title="Change the Channels"
+        title="Change channel (right-click for previous)"
+        aria-label="Change channel"
+        onclick={() => changeChannel("up")}
+        oncontextmenu={handleContextMenu}
       ></button>
     </div>
   </div>
@@ -139,7 +108,6 @@
   }
   .gif-tv {
     position: relative;
-    /* margin-right: 1rem; */
   }
   .gif-tv .viewport {
     position: absolute;
@@ -154,9 +122,6 @@
   .gif-tv .viewport .video {
     z-index: 0;
     position: absolute;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     top: 0;
     right: 0;
     bottom: 0;
@@ -191,9 +156,7 @@
   }
   .gif-tv .viewport span {
     text-shadow: 0 0 3px #888;
-    /* font-size: 4rem; */
     font-family: "Press Start 2P", system-ui;
-    /* font-family: VT323; */
   }
   .gif-tv .viewport span:not(.active) {
     display: none;
@@ -205,6 +168,7 @@
     display: block;
     position: absolute;
     left: 85.6%;
+    top: 56.3%;
     transform: translateY(-50%);
     padding: 0;
     border-radius: 50%;
@@ -224,6 +188,11 @@
     border-color: #0af !important;
     animation: none;
   }
+  .gif-tv button.dial:focus-visible {
+    border-color: #03fcf0;
+    outline: 2px solid #03fcf0;
+    outline-offset: 4px;
+  }
   .gif-tv button.dial:active {
     border-color: #007fff;
   }
@@ -233,11 +202,7 @@
     padding-top: 100%;
     content: "";
   }
-  .gif-tv button#gif_tv_button_channel {
-    top: 56.3%;
-  }
 
-  /* animation that slightly and slowly makes the dial border fade in and out */
   @keyframes dial-pulse {
     0% {
       border-color: #dfddd183;

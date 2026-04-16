@@ -2,7 +2,11 @@
   import { onMount } from "svelte";
   import { gsap } from "gsap";
 
+  /** @type {{ className?: string, children?: import("svelte").Snippet }} */
   let { className = "", children } = $props();
+
+  /** @type {HTMLDivElement | undefined} */
+  let container = $state();
 
   /**
    * @param {number} min
@@ -12,36 +16,23 @@
     return Math.random() * (max - min) + min;
   }
 
-  /**
-   * @param {gsap.TweenTarget} node
-   */
-  function createFloatingAnimation(node) {
-    const duration = getRandom(8, 15);
-    const tl = gsap.timeline({ repeat: -1, yoyo: true });
+  onMount(() => {
+    if (!container) return;
 
-    tl.to(node, {
-      x: () => getRandom(-10, 10),
-      y: () => getRandom(-10, 10),
-      rotation: () => getRandom(-10, 10),
-      duration: duration / 2,
-      ease: "sine.inOut",
-    });
-
-    return tl;
-  }
-
-  /**
-   * @param {gsap.TweenTarget} node
-   */
-  function applyCursorAvoidance(node) {
     const bufferDistance = 160;
-    /**
-     * @type {{ pause: () => void; play: () => void; kill: () => void; }}
-     */
-    let floatingAnimation;
     let isAvoiding = false;
 
-    const avoidanceTween = gsap.to(node, {
+    const floatingAnimation = gsap
+      .timeline({ repeat: -1, yoyo: true })
+      .to(container, {
+        x: () => getRandom(-10, 10),
+        y: () => getRandom(-10, 10),
+        rotation: () => getRandom(-10, 10),
+        duration: getRandom(4, 7.5),
+        ease: "sine.inOut",
+      });
+
+    const avoidanceTween = gsap.to(container, {
       x: 0,
       y: 0,
       rotation: 0,
@@ -50,39 +41,35 @@
       paused: true,
     });
 
-    /**
-     * @param {{ clientX: any; clientY: any; }} event
-     */
+    /** @param {MouseEvent} event */
     function handleMouseMove(event) {
-      const mouseX = event.clientX;
-      const mouseY = event.clientY;
-
-      // @ts-ignore
-      const rect = node.getBoundingClientRect();
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
       const shapeX = rect.left + rect.width / 2;
       const shapeY = rect.top + rect.height / 2;
-      const distance = Math.hypot(shapeX - mouseX, shapeY - mouseY);
+      const distance = Math.hypot(
+        shapeX - event.clientX,
+        shapeY - event.clientY,
+      );
 
       if (distance < bufferDistance) {
         if (!isAvoiding) {
           isAvoiding = true;
-          if (floatingAnimation) floatingAnimation.pause();
+          floatingAnimation.pause();
         }
 
-        const angle = Math.atan2(shapeY - mouseY, shapeX - mouseX);
-        const maxOffset = 30;
+        const angle = Math.atan2(
+          shapeY - event.clientY,
+          shapeX - event.clientX,
+        );
         const offsetFactor = Math.max(0, 1 - distance / bufferDistance);
-        const newOffsetX = Math.cos(angle) * maxOffset * offsetFactor;
-        const newOffsetY = Math.sin(angle) * maxOffset * offsetFactor;
-
+        const maxOffset = 30;
         const maxRotation = 10;
-        const rotationFactor = Math.max(0, 1 - distance / bufferDistance);
-        const rotation = getRandom(-maxRotation, maxRotation) * rotationFactor;
 
-        gsap.to(node, {
-          x: newOffsetX,
-          y: newOffsetY,
-          rotation: rotation,
+        gsap.to(container, {
+          x: Math.cos(angle) * maxOffset * offsetFactor,
+          y: Math.sin(angle) * maxOffset * offsetFactor,
+          rotation: getRandom(-maxRotation, maxRotation) * offsetFactor,
           duration: 0.3,
           ease: "power2.out",
         });
@@ -90,41 +77,22 @@
         isAvoiding = false;
         avoidanceTween.play();
         avoidanceTween.eventCallback("onComplete", () => {
-          if (floatingAnimation) floatingAnimation.play();
+          floatingAnimation.play();
         });
       }
     }
 
     document.addEventListener("mousemove", handleMouseMove);
 
-    return {
-      destroy() {
-        document.removeEventListener("mousemove", handleMouseMove);
-        if (floatingAnimation) floatingAnimation.kill();
-        avoidanceTween.kill();
-      },
-      /**
-       * @param {gsap.core.Timeline} animation
-       */
-      setFloatingAnimation(animation) {
-        floatingAnimation = animation;
-      },
-    };
-  }
-
-  onMount(() => {
-    const node = document.querySelector(`.${className}`);
-    const floatingAnimation = createFloatingAnimation(node);
-    const avoidance = applyCursorAvoidance(node);
-    avoidance.setFloatingAnimation(floatingAnimation);
-
     return () => {
-      avoidance.destroy();
+      document.removeEventListener("mousemove", handleMouseMove);
+      floatingAnimation.kill();
+      avoidanceTween.kill();
     };
   });
 </script>
 
-<div class="floaty-container {className}">
+<div bind:this={container} class="floaty-container {className}">
   {@render children?.()}
 </div>
 
@@ -140,5 +108,24 @@
 
   :global(.floaty-container img) {
     cursor: pointer;
+  }
+
+  :global(.floaty-container .floaty-btn) {
+    all: unset;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+
+  :global(.floaty-container .floaty-btn:focus-visible) {
+    outline: 2px solid #03fcf0;
+    outline-offset: 4px;
+  }
+
+  :global(.floaty-container .floaty-btn img) {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 </style>

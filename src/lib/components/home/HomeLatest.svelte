@@ -5,10 +5,10 @@
   import { showModal } from "$lib/stores/modalStore";
   import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
 
+  /** @type {{ latestPost: App.Post }} */
   let { latestPost } = $props();
 
   const openModal = () => {
-    // @ts-ignore
     showModal(VideoPlayer, {
       urls: [
         "https://i.giphy.com/DwrnYsZCXspu8.webp",
@@ -60,6 +60,7 @@
         <img
           src={latestPost.image}
           alt={latestPost.title}
+          loading="lazy"
           class="h-full w-full object-cover object-top shadow-2xl"
         />
       </div>
@@ -88,9 +89,14 @@
   </div>
 
   <Floaty className="johnny5-floaty">
-    <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-    <img src={johnny5} alt="Johnny 5 from Short Circuit" onclick={openModal} />
+    <button
+      type="button"
+      class="floaty-btn"
+      onclick={openModal}
+      aria-label="Play Short Circuit clips"
+    >
+      <img src={johnny5} alt="" />
+    </button>
   </Floaty>
 </section>
 

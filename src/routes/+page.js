@@ -1,7 +1,5 @@
-export async function load({ fetch }) {
-  const response = await fetch("/api/posts");
-  const posts = await response.json();
-  return {
-    posts,
-  };
+import posts from "../posts.json";
+
+export function load() {
+  return { posts: /** @type {App.Post[]} */ (posts) };
 }

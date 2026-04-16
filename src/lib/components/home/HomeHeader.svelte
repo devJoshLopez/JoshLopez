@@ -8,7 +8,6 @@
   import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
 
   const openModal = () => {
-    // @ts-ignore
     showModal(VideoPlayer, {
       urls: [
         "https://i.giphy.com/Q2W4hziDOyzu0.webp",
@@ -87,9 +86,14 @@
 
   <div class="absolute -bottom-32 -left-10 h-48 w-48 -rotate-12">
     <Floaty className="floppy-disk">
-      <!-- svelte-ignore a11y_click_events_have_key_events -->
-      <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-      <img src={hackersFloppy} alt="Hackers floppy disk" onclick={openModal} />
+      <button
+        type="button"
+        class="floaty-btn"
+        onclick={openModal}
+        aria-label="Play Hackers clips"
+      >
+        <img src={hackersFloppy} alt="" />
+      </button>
     </Floaty>
   </div>
 </section>

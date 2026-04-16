@@ -26,13 +26,20 @@ export default [
     },
   },
   {
+    // RetroButton intentionally accepts both internal SvelteKit routes and
+    // external URLs; callers resolve() internal paths before passing them in.
+    files: ["src/lib/components/fun/RetroButton.svelte"],
+    rules: {
+      "svelte/no-navigation-without-resolve": "off",
+    },
+  },
+  {
     ignores: [
       "build/",
       ".svelte-kit/",
       "dist/",
       "node_modules/",
       "src/posts.json",
-      "src/postsSlugs.json",
     ],
   },
 ];

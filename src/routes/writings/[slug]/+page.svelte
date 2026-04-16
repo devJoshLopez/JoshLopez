@@ -17,8 +17,13 @@
 
 <svelte:head>
   <title>{data.meta.title}</title>
+  <meta name="description" content={data.meta.description} />
   <meta property="og:type" content="article" />
   <meta property="og:title" content={data.meta.title} />
+  <meta property="og:description" content={data.meta.description} />
+  {#if data.meta.image}
+    <meta property="og:image" content={data.meta.image} />
+  {/if}
 </svelte:head>
 
 <div class="mx-auto max-w-4xl">
@@ -40,9 +45,7 @@
             </div>
           {/if}
           <img
-            src={data.meta.image.startsWith(".")
-              ? data.meta.image.substring(1)
-              : data.meta.image}
+            src={data.meta.image}
             alt={data.meta.title}
             class="h-full w-full object-cover object-center shadow-2xl"
           />
@@ -53,8 +56,8 @@
         <h1 class="post-title text-5xl">
           {data.meta.title}
         </h1>
-        <p class="text-gray-600">
-          Published on {data.meta.date}
+        <p class="text-gray-300">
+          Published on <time datetime={data.meta.date}>{data.meta.date}</time>
         </p>
       </hgroup>
 

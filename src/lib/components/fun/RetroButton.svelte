@@ -1,57 +1,49 @@
 <script>
-  import { onMount } from "svelte";
-
+  /** @type {{ url?: string, label?: string, size?: string }} */
   let { url = "#", label = "Click Me", size = "200px" } = $props();
 
-  onMount(() => {
-    document.querySelectorAll(".butn").forEach((button) => {
-      // Click events
-      button.addEventListener("mousedown", () =>
-        button.classList.add("butn-active"),
-      );
-      button.addEventListener("mouseup", () =>
-        button.classList.remove("butn-active"),
-      );
+  /** @type {HTMLAnchorElement | undefined} */
+  let button = $state();
 
-      // Hover events
-      button.addEventListener("mouseleave", () => {
-        button.classList.remove(
-          "butn-center",
-          "butn-right",
-          "butn-left",
-          "butn-active",
-        );
-      });
+  /** @type {"left" | "center" | "right" | null} */
+  let position = $state(null);
+  let active = $state(false);
 
-      button.addEventListener("mousemove", (e) => {
-        const leftOffset = button.getBoundingClientRect().left;
-        // @ts-ignore
-        const butnWidth = button.offsetWidth;
-        // @ts-ignore
-        const myPosX = e.pageX;
-        let newClass;
+  /** @param {MouseEvent} e */
+  function handleMouseMove(e) {
+    if (!button) return;
+    const rect = button.getBoundingClientRect();
+    const relativeX = e.clientX - rect.left;
+    if (relativeX < 0.3 * rect.width) position = "left";
+    else if (relativeX > 0.65 * rect.width) position = "right";
+    else position = "center";
+  }
 
-        if (myPosX < leftOffset + 0.3 * butnWidth) {
-          newClass = "butn-left";
-        } else if (myPosX > leftOffset + 0.65 * butnWidth) {
-          newClass = "butn-right";
-        } else {
-          newClass = "butn-center";
-        }
-
-        button.classList.remove("butn-center", "butn-right", "butn-left");
-        button.classList.add(newClass);
-      });
-    });
-  });
+  function handleMouseLeave() {
+    position = null;
+    active = false;
+  }
 </script>
 
 <div class="retro-wrapper">
-  <div role="button" tabindex="-1" class="retro-butn">
+  <div class="retro-butn">
     <!-- url accepts both internal SvelteKit routes and external URLs;
-         callers are expected to resolve() internal paths themselves. -->
-    <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
-    <a class="butn" href={url} style="width: {size}" aria-label={label}>
+         callers resolve() internal paths themselves. -->
+    <a
+      bind:this={button}
+      class="butn"
+      class:butn-left={position === "left"}
+      class:butn-center={position === "center"}
+      class:butn-right={position === "right"}
+      class:butn-active={active}
+      href={url}
+      style="width: {size}"
+      aria-label={label}
+      onmousemove={handleMouseMove}
+      onmouseleave={handleMouseLeave}
+      onmousedown={() => (active = true)}
+      onmouseup={() => (active = false)}
+    >
       <span class="butn-inner">
         <span class="butn-content-wrapper">
           <span class="butn-content">
@@ -104,7 +96,7 @@
     text-decoration-color: initial;
     border-color: initial;
     -webkit-tap-highlight-color: transparent;
-    /* add a faint inner text shaddow to resemble depth */
+    /* add a faint inner text shadow to resemble depth */
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
   }
   .retro-butn .butn:hover {
@@ -116,6 +108,10 @@
     outline-color: 0;
     outline-style: none;
     outline-width: 0;
+  }
+  .retro-butn .butn:focus-visible {
+    outline: 2px solid #03fcf0;
+    outline-offset: 4px;
   }
   .retro-butn .butn:hover .butn-content-inner:before {
     background-color: rgba(13, 13, 13, 0.1);
@@ -130,83 +126,48 @@
     position: absolute;
     border-radius: 3px;
     z-index: 1;
-    -webkit-transition:
-      background 0.12s ease-out,
-      -webkit-transform 0.12s ease-out;
-    transition:
-      background 0.12s ease-out,
-      -webkit-transform 0.12s ease-out;
     transition:
       transform 0.12s ease-out,
       background 0.12s ease-out;
-    transition:
-      transform 0.12s ease-out,
-      background 0.12s ease-out,
-      -webkit-transform 0.12s ease-out;
   }
-  :global(.retro-butn .butn.butn-left:before) {
-    -webkit-transform: skewY(1deg) translate3d(0, -0.5px, 0);
+  .retro-butn .butn.butn-left:before {
     transform: skewY(1deg) translate3d(0, -0.5px, 0);
   }
-  :global(.retro-butn .butn.butn-left .butn-content) {
-    -webkit-transform: skewY(-1deg);
+  .retro-butn .butn.butn-left .butn-content {
     transform: skewY(-1deg);
   }
-  :global(.retro-butn .butn.butn-right:before) {
-    -webkit-transform: skewY(-1deg) translate3d(0, -0.5px, 0);
+  .retro-butn .butn.butn-right:before {
     transform: skewY(-1deg) translate3d(0, -0.5px, 0);
   }
-  :global(.retro-butn .butn.butn-right .butn-content) {
-    -webkit-transform: skewY(1deg);
+  .retro-butn .butn.butn-right .butn-content {
     transform: skewY(1deg);
   }
-  :global(.retro-butn .butn.butn-center:before) {
-    -webkit-transform: translate3d(0, -1px, 0);
+  .retro-butn .butn.butn-center:before {
     transform: translate3d(0, -1px, 0);
   }
-  :global(.retro-butn .butn.butn-center .butn-content) {
-    -webkit-transform: translate3d(0, 1px, 0);
+  .retro-butn .butn.butn-center .butn-content {
     transform: translate3d(0, 1px, 0);
   }
-  :global(
-    .retro-butn
-      .butn.butn-active
-      .butn-inner
-      .butn-content-wrapper
-      .butn-content
-  ) {
-    -webkit-transition:
-      background 0.12s ease-out,
-      color 0.12s ease-out,
-      -webkit-transform 0.12s ease-out;
-    transition:
-      background 0.12s ease-out,
-      color 0.12s ease-out,
-      -webkit-transform 0.12s ease-out;
+  .retro-butn
+    .butn.butn-active
+    .butn-inner
+    .butn-content-wrapper
+    .butn-content {
     transition:
       transform 0.12s ease-out,
       background 0.12s ease-out,
       color 0.12s ease-out;
-    transition:
-      transform 0.12s ease-out,
-      background 0.12s ease-out,
-      color 0.12s ease-out,
-      -webkit-transform 0.12s ease-out;
-    -webkit-transform: translate3d(0, 2px, 0);
     transform: translate3d(0, 2px, 0);
   }
-  :global(
-    .retro-butn
-      .butn.butn-active
-      .butn-inner
-      .butn-content-wrapper
-      .butn-content
-      .butn-content-inner
-  ) {
+  .retro-butn
+    .butn.butn-active
+    .butn-inner
+    .butn-content-wrapper
+    .butn-content
+    .butn-content-inner {
     opacity: 0.1;
   }
-  :global(.retro-butn .butn.butn-active:before) {
-    -webkit-transform: translate3d(0, -3px, 0);
+  .retro-butn .butn.butn-active:before {
     transform: translate3d(0, -3px, 0);
   }
   .retro-butn .butn .butn-inner {
@@ -216,11 +177,7 @@
   .retro-butn .butn .butn-inner .butn-content-wrapper {
     position: relative;
     font-family: inherit;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
     width: 100%;
     height: calc(100% - 3px);
@@ -244,26 +201,15 @@
     left: 0;
   }
   .retro-butn .butn .butn-inner .butn-content-wrapper:before {
-    background-image: initial;
     background-color: #752330;
     content: " ";
     border-radius: 3px;
     top: auto;
     bottom: -3px;
     z-index: 1;
-    -webkit-transition:
-      background 0.185s ease-out,
-      -webkit-transform 0.185s ease-out;
-    transition:
-      background 0.185s ease-out,
-      -webkit-transform 0.185s ease-out;
     transition:
       transform 0.185s ease-out,
       background 0.185s ease-out;
-    transition:
-      transform 0.185s ease-out,
-      background 0.185s ease-out,
-      -webkit-transform 0.185s ease-out;
   }
   .retro-butn .butn .butn-inner .butn-content-wrapper:after {
     background-color: rgba(13, 13, 13, 0.15);
@@ -274,81 +220,41 @@
     top: 2px;
   }
   .retro-butn .butn .butn-inner .butn-content-wrapper .butn-content {
-    background-image: initial;
     background-color: #e94560;
     color: #ebf1f8;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
     flex: 1;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     border-radius: 3px;
     text-indent: 0;
     z-index: 3;
     overflow: hidden;
     padding: 0 16px;
-    -webkit-transition:
-      border 0.185s ease-out,
-      background 0.185s ease-out,
-      color 0.185s ease-out,
-      -webkit-transform 0.185s ease-out;
-    transition:
-      border 0.185s ease-out,
-      background 0.185s ease-out,
-      color 0.185s ease-out,
-      -webkit-transform 0.185s ease-out;
     transition:
       border 0.185s ease-out,
       transform 0.185s ease-out,
       background 0.185s ease-out,
       color 0.185s ease-out;
-    transition:
-      border 0.185s ease-out,
-      transform 0.185s ease-out,
-      background 0.185s ease-out,
-      color 0.185s ease-out,
-      -webkit-transform 0.185s ease-out;
   }
   .retro-butn .butn .butn-inner .butn-content-wrapper .butn-content:before,
   .retro-butn .butn .butn-inner .butn-content-wrapper .butn-content:after {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     color: rgba(255, 255, 255, 0.8);
     opacity: 0;
-    -webkit-transition:
-      opacity 0.1125s ease-out 0.05s,
-      -webkit-transform 0.185s ease-out 0.05s;
-    transition:
-      opacity 0.1125s ease-out 0.05s,
-      -webkit-transform 0.185s ease-out 0.05s;
     transition:
       transform 0.185s ease-out 0.05s,
-      opacity 0.1125s ease-out 0.05s,
-      -webkit-transform 0.185s ease-out 0.05s;
+      opacity 0.1125s ease-out 0.05s;
   }
   .retro-butn .butn .butn-inner .butn-content-wrapper .butn-content:before {
     content: " ";
-    -webkit-transform: translate3d(0, 50%, 0);
     transform: translate3d(0, 50%, 0);
   }
   .retro-butn .butn .butn-inner .butn-content-wrapper .butn-content:after {
     content: " ";
-    -webkit-transform: translate3d(0, -50%, 0);
     transform: translate3d(0, -50%, 0);
   }
   .retro-butn
@@ -358,7 +264,6 @@
     .butn-content
     .butn-content-inner {
     display: block;
-    -webkit-transition: opacity 75ms ease-out 0.1125s;
     transition: opacity 75ms ease-out 0.1125s;
   }
   .retro-butn
@@ -372,9 +277,6 @@
     font-size: 0.8em;
     font-family: "Press Start 2P", cursive;
     letter-spacing: 0.06em;
-    -webkit-transition:
-      opacity 0.3s ease-out,
-      background-color 0.1125s ease-in;
     transition:
       opacity 0.3s ease-out,
       background-color 0.1125s ease-in;

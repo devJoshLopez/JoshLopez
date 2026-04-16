@@ -7,7 +7,6 @@
   import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
 
   const openModal = () => {
-    // @ts-ignore
     showModal(VideoPlayer, {
       urls: [
         "https://media1.tenor.com/m/_IKIV9nEcwsAAAAC/the-last-starfighter-intro.gif",
@@ -107,13 +106,14 @@
   </p>
 
   <Floaty className="last-starfighter-floaty">
-    <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-    <img
-      src={lastStarfighter}
-      alt="The Last Starfighter"
+    <button
+      type="button"
+      class="floaty-btn"
       onclick={openModal}
-    />
+      aria-label="Play The Last Starfighter clips"
+    >
+      <img src={lastStarfighter} alt="" />
+    </button>
   </Floaty>
 </section>
 

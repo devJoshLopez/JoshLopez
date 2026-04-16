@@ -16,6 +16,10 @@
   const futureProjects = /** @type {Project[]} */ (projectsData.future);
 </script>
 
+<svelte:head>
+  <title>Projects | Josh Lopez</title>
+</svelte:head>
+
 <div class="mx-auto max-w-4xl">
   <section
     class="section-glass relative mt-3 mb-32 gap-4 rounded-md p-8 text-white"
@@ -23,7 +27,7 @@
     <h1 class="mb-6 text-4xl font-bold">Projects</h1>
 
     <div class="p-6 text-white max-md:mb-16 max-md:p-0">
-      <h2 class="text-2x mb-4">Current Projects</h2>
+      <h2 class="mb-4 text-2xl">Current Projects</h2>
       <div
         class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 max-md:gap-6 md:grid-cols-2"
       >
@@ -80,7 +84,7 @@
     </div>
 
     <div class="p-6 text-white max-md:p-0">
-      <h2 class="text-2x mb-4">Future Projects & Ideas</h2>
+      <h2 class="mb-4 text-2xl">Future Projects & Ideas</h2>
       <div
         class="grid grid-cols-1 gap-4 rounded-md text-white max-md:grid-cols-1 max-md:gap-6 md:grid-cols-2"
       >

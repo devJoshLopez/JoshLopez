@@ -7,7 +7,6 @@
   import VideoPlayer from "$lib/components/fun/VideoPlayer.svelte";
 
   const openModal = () => {
-    // @ts-ignore
     showModal(VideoPlayer, {
       urls: [
         "https://i.giphy.com/MCZ39lz83o5lC.webp",
@@ -24,16 +23,22 @@
   <p class="mb-4">
     By day, I craft intuitive tools at <a
       href="https://www.memberstack.com"
-      target="_blank">Memberstack</a
+      target="_blank"
+      rel="noopener noreferrer">Memberstack</a
     > and lead a squad of support heroes. By night, I'm immersed in movies, music,
     comics, and tech. From my Montana basecamp, I balance coding quests with being
     a devoted dad and husband.
   </p>
 
   <Floaty className="spiderman-floaty">
-    <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-    <img src={spidermanFace} alt="Spider-Man face" onclick={openModal} />
+    <button
+      type="button"
+      class="floaty-btn"
+      onclick={openModal}
+      aria-label="Play Spider-Man clips"
+    >
+      <img src={spidermanFace} alt="" />
+    </button>
   </Floaty>
 </section>
 

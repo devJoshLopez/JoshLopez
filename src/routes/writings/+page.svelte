@@ -5,13 +5,13 @@
   let { data } = $props();
 
   const sortedPosts = $derived(
-    [...data.posts]
-      // @ts-ignore
-      .sort((a, b) => new Date(b.date) - new Date(a.date)),
+    [...data.posts].sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    ),
   );
 
   /**
-   * @param {any[]} posts
+   * @param {App.Post[]} posts
    */
   function getLayout(posts) {
     const count = posts.length;
@@ -37,6 +37,10 @@
 
   const layout = $derived(getLayout(sortedPosts));
 </script>
+
+<svelte:head>
+  <title>Writings | Josh Lopez</title>
+</svelte:head>
 
 <div class="mx-auto max-w-4xl">
   <section
@@ -68,10 +72,9 @@
               </div>
             {/if}
             <img
-              src={post.image.startsWith(".")
-                ? post.image.substring(1)
-                : post.image}
+              src={post.image}
               alt={post.title}
+              loading="lazy"
               class="absolute top-0 left-0 h-full w-full rounded-md object-cover"
             />
             <div

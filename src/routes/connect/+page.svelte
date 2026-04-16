@@ -12,6 +12,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>Connect | Josh Lopez</title>
+</svelte:head>
+
 <div class="mx-auto max-w-4xl">
   <section
     class="section-glass relative mt-3 mb-32 rounded-md p-8 text-white max-md:gap-16 md:grid-cols-3"
