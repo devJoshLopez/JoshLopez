@@ -44,5 +44,8 @@
     "@giscus/svelte": "^3.0.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.5"
+  },
+  "overrides": {
+    "cookie": ">=0.7.0"
   }
 }
